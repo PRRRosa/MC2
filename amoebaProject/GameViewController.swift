@@ -29,6 +29,7 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
 
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
@@ -43,6 +44,23 @@ class GameViewController: UIViewController {
             scene.scaleMode = .AspectFill
             
             skView.presentScene(scene)
+        }*/
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        let skView = self.view as! SKView
+        
+        if skView.scene == nil {
+            skView.showsFPS = true
+            skView.showsNodeCount = true
+            
+            let gameScene = GameScene(size: skView.bounds.size)
+            gameScene.scaleMode = SKSceneScaleMode.AspectFill
+            
+            skView.presentScene(gameScene)
+            
         }
     }
 

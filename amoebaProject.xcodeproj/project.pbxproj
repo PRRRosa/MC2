@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D44BE3151B3873A1000BAA1F /* dubstep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3141B3873A1000BAA1F /* dubstep.mp3 */; };
 		D4B9BCEA1B31E811009940A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9BCE91B31E811009940A6 /* AppDelegate.swift */; };
 		D4B9BCEC1B31E811009940A6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D4B9BCEB1B31E811009940A6 /* GameScene.sks */; };
 		D4B9BCEE1B31E811009940A6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9BCED1B31E811009940A6 /* GameScene.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D44BE3141B3873A1000BAA1F /* dubstep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dubstep.mp3; sourceTree = "<group>"; };
 		D4B9BCE41B31E811009940A6 /* amoebaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amoebaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B9BCE81B31E811009940A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4B9BCE91B31E811009940A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,9 +62,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D44BE3131B3873A1000BAA1F /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D44BE3141B3873A1000BAA1F /* dubstep.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		D4B9BCDB1B31E811009940A6 = {
 			isa = PBXGroup;
 			children = (
+				D44BE3131B3873A1000BAA1F /* Sounds */,
 				D4B9BCE61B31E811009940A6 /* amoebaProject */,
 				D4B9BD001B31E811009940A6 /* amoebaProjectTests */,
 				D4B9BCE51B31E811009940A6 /* Products */,
@@ -199,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4B9BCF81B31E811009940A6 /* LaunchScreen.xib in Resources */,
+				D44BE3151B3873A1000BAA1F /* dubstep.mp3 in Resources */,
 				D4B9BCF51B31E811009940A6 /* Images.xcassets in Resources */,
 				D4B9BCEC1B31E811009940A6 /* GameScene.sks in Resources */,
 				D4B9BCF31B31E811009940A6 /* Main.storyboard in Resources */,
@@ -419,6 +431,7 @@
 				D4B9BD091B31E811009940A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4B9BD0A1B31E811009940A6 /* Build configuration list for PBXNativeTarget "amoebaProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +440,7 @@
 				D4B9BD0C1B31E811009940A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

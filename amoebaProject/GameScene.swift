@@ -7,8 +7,53 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 class GameScene: SKScene {
+    
+    let projectileCategoryName = "projectile"
+    let playerCategoryName = "player"
+    let enemyCategoryName = "enemy"
+    
+    var backgroundMusicPlayer = AVAudioPlayer()
+    
+    var player:SKSpriteNode = SKSpriteNode()
+    
+    
+    
+    
+    override init(size: CGSize){
+        super.init(size: size)
+    
+        let bgMusicURL = NSBundle.mainBundle().URLForResource("dubstep", withExtension: "mp3")
+        
+        backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: bgMusicURL, error: nil)
+        
+        backgroundMusicPlayer.numberOfLoops = -1
+        backgroundMusicPlayer.prepareToPlay()
+        backgroundMusicPlayer.play()
+        
+        
+        let backgroundImg = SKSpriteNode(imageNamed: "Fundo")
+        backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
+        self.addChild(backgroundImg)
+        
+        
+        self.physicsWorld.gravity = CGVectorMake(0, 0)
+        
+        
+        
+        
+    
+    }
+    
+    required init?(coder aDecoder: NSCoder){
+        super.init(coder: aDecoder)
+    }
+    
+    
+    
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
@@ -16,7 +61,9 @@ class GameScene: SKScene {
         myLabel.fontSize = 65;
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
         
-        self.addChild(myLabel)
+        //self.addChild(myLabel)
+        
+        
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -35,7 +82,11 @@ class GameScene: SKScene {
             
             sprite.runAction(SKAction.repeatActionForever(action))
             
-            self.addChild(sprite)
+            //self.addChild(sprite)
+            
+            
+            
+            
         }
     }
    
