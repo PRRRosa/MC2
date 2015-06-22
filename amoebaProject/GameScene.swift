@@ -39,6 +39,11 @@ class GameScene: SKScene {
         self.addChild(backgroundImg)
         
         
+        player = SKSpriteNode(imageNamed: "AlienVermelho")
+        player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
+        self.addChild(player)
+        
+        //player.size.height/2 + 180
         self.physicsWorld.gravity = CGVectorMake(0, 0)
         
         
