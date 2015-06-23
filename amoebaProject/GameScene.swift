@@ -39,7 +39,7 @@ class GameScene: SKScene {
         self.addChild(backgroundImg)
         
         
-        player = SKSpriteNode(imageNamed: "AlienVermelho")
+        player = SKSpriteNode(imageNamed: "AmoebaVermelha")
         player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
         self.addChild(player)
         
