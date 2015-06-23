@@ -19,7 +19,7 @@ class GameScene: SKScene {
     
     var player:SKSpriteNode = SKSpriteNode()
     
-    
+    var playerPosition : NSInteger = 0
     
     
     override init(size: CGSize){
@@ -41,6 +41,7 @@ class GameScene: SKScene {
         
         player = SKSpriteNode(imageNamed: "AmoebaVermelha")
         player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
+        playerPosition = 0
         self.addChild(player)
         
         //player.size.height/2 + 180
@@ -56,7 +57,33 @@ class GameScene: SKScene {
         super.init(coder: aDecoder)
     }
     
-    
+//    func swipedRight(sender:UISwipeGestureRecognizer){
+//        switch playerPosition{
+//        case 0:
+//             player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
+//             playerPosition = 1
+//        case 1:
+//             player.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2, self.frame.size.height/3)
+//             playerPosition = 2
+//        default:
+//            player.position = player.position
+//        }
+//        
+//    }
+//    
+//    func swipedLeft(sender:UISwipeGestureRecognizer){
+//        switch playerPosition{
+//        case 2:
+//            player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
+//            playerPosition = 1
+//        case 1:
+//            player.position = CGPointMake((self.frame.size.width/2)/2, self.frame.size.height/3)
+//            playerPosition = 0
+//            
+//        default:
+//            player.position = player.position
+//        }
+//    }
     
     
     override func didMoveToView(view: SKView) {
@@ -68,6 +95,14 @@ class GameScene: SKScene {
         
         //self.addChild(myLabel)
         
+//        let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedRight:"))
+//        swipeRight.direction = .Right
+//        view.addGestureRecognizer(swipeRight)
+//        
+//        
+//        let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedLeft:"))
+//        swipeLeft.direction = .Left
+//        view.addGestureRecognizer(swipeLeft)
         
     }
     
@@ -76,16 +111,32 @@ class GameScene: SKScene {
         
         for touch in (touches as! Set<UITouch>) {
             let location = touch.locationInNode(self)
+            let sprite = player
+            if((location.y >= self.frame.size.height/3 - 20) && (location.y <= self.frame.size.height/2)){
             
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
+                if(location.x <= self.frame.size.width/2 - 10 ){
+                    sprite.position = CGPointMake((self.frame.size.width/2)/2, self.frame.size.height/3)
+                }
+                if(location.x >= self.frame.size.width/2 + 10){
+                    sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2, self.frame.size.height/3)
+                }
             
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
+                if((location.x > self.frame.size.width/2 - 10) && (location.x < self.frame.size.width/2 + 10)){
+                    sprite.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
+                }
+            }
             
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
             
-            sprite.runAction(SKAction.repeatActionForever(action))
+            
+//            sprite.xScale = 0.5
+//            sprite.yScale = 0.5
+            //sprite.position = location
+            
+            
+            
+           // let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
+            
+            //sprite.runAction(SKAction.repeatActionForever(action))
             
             //self.addChild(sprite)
             
