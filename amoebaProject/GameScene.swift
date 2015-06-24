@@ -151,6 +151,20 @@ class GameScene: SKScene {
         return enemyColor!
     }
     
+    func randomEnemyPosition() -> CGFloat{
+        var enemyPositionX: CGFloat?
+        let randomNumber = Int(arc4random_uniform(3))
+        switch randomNumber{
+        case 0:
+             enemyPositionX = (self.frame.size.width/2)/2 - 30
+        case 1:
+            enemyPositionX = (self.frame.size.width/2)
+        default:
+            enemyPositionX = (self.frame.size.width/2) + (self.frame.size.width/2)/2
+        }
+        return enemyPositionX!
+    }
+    
     func addMonster(){
         
         var alien:SKSpriteNode = SKSpriteNode(imageNamed: randomiseEnemy() as String)
@@ -165,7 +179,8 @@ class GameScene: SKScene {
         let minX = alien.size.width/2
         let maxX = self.frame.size.width - alien.size.width/2
         let rangeX = maxX - minX
-        let position:CGFloat = CGFloat(arc4random()) % CGFloat(rangeX) + CGFloat(minX)
+        //let position:CGFloat = CGFloat(arc4random()) % CGFloat(rangeX) + CGFloat(minX)
+        let position:CGFloat = randomEnemyPosition()
         
         alien.position = CGPointMake(position, self.frame.size.height+alien.size.height)
         
