@@ -126,16 +126,8 @@ class GameScene: SKScene {
         
         //player.size.height/2 + 180
         self.physicsWorld.gravity = CGVectorMake(0, 0)
-        createEnemy()
 }
     
-    
-    func createEnemy(){
-        
-        var enemy = SKSpriteNode(imageNamed: "AlienVermelho")
-        enemy.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/1.5)
-        self.addChild(enemy)
-    }
     
     func mouthOpening() {
         player.runAction((
