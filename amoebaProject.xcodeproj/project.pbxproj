@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D44BE3151B3873A1000BAA1F /* dubstep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3141B3873A1000BAA1F /* dubstep.mp3 */; };
+		D44BE3171B39E2A8000BAA1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3161B39E2A8000BAA1F /* Images.xcassets */; };
+		D44BE31A1B39E4E7000BAA1F /* playerAnimation.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3191B39E4E7000BAA1F /* playerAnimation.atlas */; };
+		D4B9BCEA1B31E811009940A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9BCE91B31E811009940A6 /* AppDelegate.swift */; };
+		D4B9BCEC1B31E811009940A6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D4B9BCEB1B31E811009940A6 /* GameScene.sks */; };
+		D4B9BCEE1B31E811009940A6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9BCED1B31E811009940A6 /* GameScene.swift */; };
+		D4B9BCF01B31E811009940A6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9BCEF1B31E811009940A6 /* GameViewController.swift */; };
+		D4B9BCF31B31E811009940A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4B9BCF11B31E811009940A6 /* Main.storyboard */; };
+		D4B9BCF81B31E811009940A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B9BCF61B31E811009940A6 /* LaunchScreen.xib */; };
+		D4B9BD041B31E811009940A6 /* amoebaProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9BD031B31E811009940A6 /* amoebaProjectTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4B9BCFE1B31E811009940A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4B9BCDC1B31E811009940A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4B9BCE31B31E811009940A6;
+			remoteInfo = amoebaProject;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D44BE3141B3873A1000BAA1F /* dubstep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dubstep.mp3; sourceTree = "<group>"; };
+		D44BE3161B39E2A8000BAA1F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
+		D44BE3191B39E4E7000BAA1F /* playerAnimation.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = playerAnimation.atlas; sourceTree = "<group>"; };
+		D4B9BCE41B31E811009940A6 /* amoebaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amoebaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4B9BCE81B31E811009940A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4B9BCE91B31E811009940A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D4B9BCEB1B31E811009940A6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		D4B9BCED1B31E811009940A6 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		D4B9BCEF1B31E811009940A6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D4B9BCF21B31E811009940A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D4B9BCF71B31E811009940A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D4B9BCFD1B31E811009940A6 /* amoebaProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = amoebaProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4B9BD021B31E811009940A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4B9BD031B31E811009940A6 /* amoebaProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amoebaProjectTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4B9BCE11B31E811009940A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4B9BCFA1B31E811009940A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D44BE3131B3873A1000BAA1F /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D44BE3141B3873A1000BAA1F /* dubstep.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		D44BE3181B39E344000BAA1F /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				D44BE3191B39E4E7000BAA1F /* playerAnimation.atlas */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		D4B9BCDB1B31E811009940A6 = {
+			isa = PBXGroup;
+			children = (
+				D44BE3181B39E344000BAA1F /* Animations */,
+				D44BE3131B3873A1000BAA1F /* Sounds */,
+				D4B9BCE61B31E811009940A6 /* amoebaProject */,
+				D4B9BD001B31E811009940A6 /* amoebaProjectTests */,
+				D4B9BCE51B31E811009940A6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4B9BCE51B31E811009940A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4B9BCE41B31E811009940A6 /* amoebaProject.app */,
+				D4B9BCFD1B31E811009940A6 /* amoebaProjectTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4B9BCE61B31E811009940A6 /* amoebaProject */ = {
+			isa = PBXGroup;
+			children = (
+				D4B9BCE91B31E811009940A6 /* AppDelegate.swift */,
+				D4B9BCEB1B31E811009940A6 /* GameScene.sks */,
+				D4B9BCED1B31E811009940A6 /* GameScene.swift */,
+				D4B9BCEF1B31E811009940A6 /* GameViewController.swift */,
+				D4B9BCF11B31E811009940A6 /* Main.storyboard */,
+				D4B9BCF61B31E811009940A6 /* LaunchScreen.xib */,
+				D44BE3161B39E2A8000BAA1F /* Images.xcassets */,
+				D4B9BCE71B31E811009940A6 /* Supporting Files */,
+			);
+			path = amoebaProject;
+			sourceTree = "<group>";
+		};
+		D4B9BCE71B31E811009940A6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4B9BCE81B31E811009940A6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4B9BD001B31E811009940A6 /* amoebaProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4B9BD031B31E811009940A6 /* amoebaProjectTests.swift */,
+				D4B9BD011B31E811009940A6 /* Supporting Files */,
+			);
+			path = amoebaProjectTests;
+			sourceTree = "<group>";
+		};
+		D4B9BD011B31E811009940A6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4B9BD021B31E811009940A6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4B9BCE31B31E811009940A6 /* amoebaProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4B9BD071B31E811009940A6 /* Build configuration list for PBXNativeTarget "amoebaProject" */;
+			buildPhases = (
+				D4B9BCE01B31E811009940A6 /* Sources */,
+				D4B9BCE11B31E811009940A6 /* Frameworks */,
+				D4B9BCE21B31E811009940A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = amoebaProject;
+			productName = amoebaProject;
+			productReference = D4B9BCE41B31E811009940A6 /* amoebaProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4B9BCFC1B31E811009940A6 /* amoebaProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4B9BD0A1B31E811009940A6 /* Build configuration list for PBXNativeTarget "amoebaProjectTests" */;
+			buildPhases = (
+				D4B9BCF91B31E811009940A6 /* Sources */,
+				D4B9BCFA1B31E811009940A6 /* Frameworks */,
+				D4B9BCFB1B31E811009940A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4B9BCFF1B31E811009940A6 /* PBXTargetDependency */,
+			);
+			name = amoebaProjectTests;
+			productName = amoebaProjectTests;
+			productReference = D4B9BCFD1B31E811009940A6 /* amoebaProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4B9BCDC1B31E811009940A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Paulo Ricardo Ramos da Rosa";
+				TargetAttributes = {
+					D4B9BCE31B31E811009940A6 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					D4B9BCFC1B31E811009940A6 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = D4B9BCE31B31E811009940A6;
+					};
+				};
+			};
+			buildConfigurationList = D4B9BCDF1B31E811009940A6 /* Build configuration list for PBXProject "amoebaProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D4B9BCDB1B31E811009940A6;
+			productRefGroup = D4B9BCE51B31E811009940A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4B9BCE31B31E811009940A6 /* amoebaProject */,
+				D4B9BCFC1B31E811009940A6 /* amoebaProjectTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4B9BCE21B31E811009940A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4B9BCF81B31E811009940A6 /* LaunchScreen.xib in Resources */,
+				D44BE3171B39E2A8000BAA1F /* Images.xcassets in Resources */,
+				D44BE3151B3873A1000BAA1F /* dubstep.mp3 in Resources */,
+				D4B9BCEC1B31E811009940A6 /* GameScene.sks in Resources */,
+				D4B9BCF31B31E811009940A6 /* Main.storyboard in Resources */,
+				D44BE31A1B39E4E7000BAA1F /* playerAnimation.atlas in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4B9BCFB1B31E811009940A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4B9BCE01B31E811009940A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4B9BCEE1B31E811009940A6 /* GameScene.swift in Sources */,
+				D4B9BCF01B31E811009940A6 /* GameViewController.swift in Sources */,
+				D4B9BCEA1B31E811009940A6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4B9BCF91B31E811009940A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4B9BD041B31E811009940A6 /* amoebaProjectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4B9BCFF1B31E811009940A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4B9BCE31B31E811009940A6 /* amoebaProject */;
+			targetProxy = D4B9BCFE1B31E811009940A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D4B9BCF11B31E811009940A6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4B9BCF21B31E811009940A6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D4B9BCF61B31E811009940A6 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4B9BCF71B31E811009940A6 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D4B9BD051B31E811009940A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D4B9BD061B31E811009940A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4B9BD081B31E811009940A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = amoebaProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D4B9BD091B31E811009940A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = amoebaProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D4B9BD0B1B31E811009940A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = amoebaProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amoebaProject.app/amoebaProject";
+			};
+			name = Debug;
+		};
+		D4B9BD0C1B31E811009940A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = amoebaProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amoebaProject.app/amoebaProject";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4B9BCDF1B31E811009940A6 /* Build configuration list for PBXProject "amoebaProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4B9BD051B31E811009940A6 /* Debug */,
+				D4B9BD061B31E811009940A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4B9BD071B31E811009940A6 /* Build configuration list for PBXNativeTarget "amoebaProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4B9BD081B31E811009940A6 /* Debug */,
+				D4B9BD091B31E811009940A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4B9BD0A1B31E811009940A6 /* Build configuration list for PBXNativeTarget "amoebaProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4B9BD0B1B31E811009940A6 /* Debug */,
+				D4B9BD0C1B31E811009940A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D4B9BCDC1B31E811009940A6 /* Project object */;
+}

@@ -19,20 +19,99 @@ class GameScene: SKScene {
     var lastYieldTimeInterval:NSTimeInterval = NSTimeInterval()
     var lastUpdateTimerInterval:NSTimeInterval = NSTimeInterval()
     var player:SKSpriteNode = SKSpriteNode()
+    var contentCreated = false
     
+    var playerMouthAnimation : [SKTexture]!
+
     var playerPosition : NSInteger = 0
+
     
     
-    override init(size: CGSize){
-        super.init(size: size)
+//    
+//    override init(size: CGSize){
+//        super.init(size: size)
+//    
+//        let bgMusicURL = NSBundle.mainBundle().URLForResource("dubstep", withExtension: "mp3")
+//        
+//        backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: bgMusicURL, error: nil)
+//        
+//        backgroundMusicPlayer.numberOfLoops = -1
+//        backgroundMusicPlayer.prepareToPlay()
+//        backgroundMusicPlayer.play()
+//        
+//        
+//        let backgroundImg = SKSpriteNode(imageNamed: "Fundo")
+//        backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
+//        self.addChild(backgroundImg)
+//        
+//        
+//        player = SKSpriteNode(imageNamed: "AmoebaVermelha")
+//        player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
+//        self.addChild(player)
+//        
+//        //player.size.height/2 + 180
+//        self.physicsWorld.gravity = CGVectorMake(0, 0)
+//        
+//        
+//        
+//        
+//    
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder){
+//        super.init(coder: aDecoder)
+//    }
     
+    
+    override func didMoveToView(view: SKView) {
+        /* Setup your scene here */
+        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
+        myLabel.text = "Hello, World!";
+        myLabel.fontSize = 65;
+        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
+        
+        //self.addChild(myLabel)
+
+        let playerAnimatedAtlas = SKTextureAtlas(named: "playerAnimation")
+        var mouthFrames = [SKTexture]()
+        
+        let numImages = playerAnimatedAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "\(i)"
+            println(nameA)
+            mouthFrames.append(playerAnimatedAtlas.textureNamed(nameA))
+            
+        }
+        
+        playerMouthAnimation = mouthFrames
+        
+        
+        if (!contentCreated){
+            createContent()
+            contentCreated = true
+        }
+        
+//        let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedRight:"))
+//        swipeRight.direction = .Right
+//        view.addGestureRecognizer(swipeRight)
+//
+//
+//        let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedLeft:"))
+//        swipeLeft.direction = .Left
+//        view.addGestureRecognizer(swipeLeft)
+        
+    }
+    
+    
+    func createContent(){
+        let firstFrame = playerMouthAnimation[0]
         let bgMusicURL = NSBundle.mainBundle().URLForResource("dubstep", withExtension: "mp3")
         
         backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: bgMusicURL, error: nil)
         
         backgroundMusicPlayer.numberOfLoops = -1
         backgroundMusicPlayer.prepareToPlay()
-        backgroundMusicPlayer.play()
+        //backgroundMusicPlayer.play()
         
         
         let backgroundImg = SKSpriteNode(imageNamed: "Fundo")
@@ -47,17 +126,18 @@ class GameScene: SKScene {
         
         //player.size.height/2 + 180
         self.physicsWorld.gravity = CGVectorMake(0, 0)
-        
-        
-        
-        
+}
     
+    
+    func mouthOpening() {
+        player.runAction((
+            SKAction.animateWithTextures(playerMouthAnimation,
+                timePerFrame: 0.1,
+                resize: false,
+                restore: true)),
+            withKey:"mouthOpening")
     }
-    
-    
-    required init?(coder aDecoder: NSCoder){
-        super.init(coder: aDecoder)
-    }
+
     
     
     func addMonster(){
@@ -162,25 +242,8 @@ class GameScene: SKScene {
 //    }
     
     
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-        
-        //self.addChild(myLabel)
-        
-//        let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedRight:"))
-//        swipeRight.direction = .Right
-//        view.addGestureRecognizer(swipeRight)
-//        
-//        
-//        let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedLeft:"))
-//        swipeLeft.direction = .Left
-//        view.addGestureRecognizer(swipeLeft)
-        
-    }
+    
+    
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
