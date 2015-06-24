@@ -14,9 +14,10 @@ class GameScene: SKScene {
     let projectileCategoryName = "projectile"
     let playerCategoryName = "player"
     let enemyCategoryName = "enemy"
-    
+    let enemyCat:UInt32 = 0x1 << 1
     var backgroundMusicPlayer = AVAudioPlayer()
-    
+    var lastYieldTimeInterval:NSTimeInterval = NSTimeInterval()
+    var lastUpdateTimerInterval:NSTimeInterval = NSTimeInterval()
     var player:SKSpriteNode = SKSpriteNode()
     
     var playerPosition : NSInteger = 0
@@ -53,9 +54,84 @@ class GameScene: SKScene {
     
     }
     
+    
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
     }
+    
+    
+    func addMonster(){
+        
+        var alien:SKSpriteNode = SKSpriteNode(imageNamed: "AlienVermelho")
+        alien.physicsBody = SKPhysicsBody(rectangleOfSize: alien.size)
+        alien.physicsBody!.dynamic = true
+        alien.physicsBody!.categoryBitMask = enemyCat
+        //alien.physicsBody!.contactTestBitMask = photonTorpedoCategory
+        alien.physicsBody!.collisionBitMask = 0
+        alien.xScale = 0.5
+        alien.yScale = 0.5
+        
+        let minX = alien.size.width/2
+        let maxX = self.frame.size.width - alien.size.width/2
+        let rangeX = maxX - minX
+        let position:CGFloat = CGFloat(arc4random()) % CGFloat(rangeX) + CGFloat(minX)
+        
+        alien.position = CGPointMake(position, self.frame.size.height+alien.size.height)
+        
+        self.addChild(alien)
+        
+        let minDuration = 2
+        let maxDuration = 4
+        let rangeDuration = maxDuration - minDuration
+        let duration = Int(arc4random()) % Int(rangeDuration) + Int(minDuration)
+        
+        var actionArray:NSMutableArray = NSMutableArray()
+        
+        actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(duration)))
+        actionArray.addObject(SKAction.runBlock({
+            var transition:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
+            //var gameOverScene:SKScene = GameOverScene(size: self.size, won: false)
+            //self.view!.presentScene(gameOverScene, transition: transition)
+        }))
+        
+        actionArray.addObject(SKAction.removeFromParent())
+        
+        alien.runAction(SKAction.sequence(actionArray as [AnyObject]))
+        
+        
+        
+        
+    }
+    
+    
+    func updateWithTimeSinceLastUpdate(timeSinceLastUpdate:CFTimeInterval){
+        
+        lastYieldTimeInterval += timeSinceLastUpdate
+        if (lastYieldTimeInterval > 1){
+            lastYieldTimeInterval = 0
+            addMonster()
+        }
+        
+    }
+
+    
+    override func update(currentTime: CFTimeInterval) {
+        
+        var timeSinceLastUpdate = currentTime - lastUpdateTimerInterval
+        lastUpdateTimerInterval = currentTime
+        
+        if (timeSinceLastUpdate > 1){
+            timeSinceLastUpdate = 1/60
+            lastUpdateTimerInterval = currentTime
+        }
+        
+        updateWithTimeSinceLastUpdate(timeSinceLastUpdate)
+        
+    }
+
+
+    
+    
     
 //    func swipedRight(sender:UISwipeGestureRecognizer){
 //        switch playerPosition{
@@ -144,9 +220,5 @@ class GameScene: SKScene {
             
             
         }
-    }
-   
-    override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
     }
 }
