@@ -138,11 +138,22 @@ class GameScene: SKScene {
             withKey:"mouthOpening")
     }
 
-    
+    func randomiseEnemy() -> NSString{
+        var enemyColor: NSString?
+        let randomNumber = Int(arc4random_uniform(3))
+        if (randomNumber == 0){
+            enemyColor = "AlienVermelho"
+        }else if (randomNumber == 1){
+            enemyColor = "AlienAzul"
+        } else {
+            enemyColor = "AlienAmarelo"
+        }
+        return enemyColor!
+    }
     
     func addMonster(){
         
-        var alien:SKSpriteNode = SKSpriteNode(imageNamed: "AlienVermelho")
+        var alien:SKSpriteNode = SKSpriteNode(imageNamed: randomiseEnemy() as String)
         alien.physicsBody = SKPhysicsBody(rectangleOfSize: alien.size)
         alien.physicsBody!.dynamic = true
         alien.physicsBody!.categoryBitMask = enemyCat
