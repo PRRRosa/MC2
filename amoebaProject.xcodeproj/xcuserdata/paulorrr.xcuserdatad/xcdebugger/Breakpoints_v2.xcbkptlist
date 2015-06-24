@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "amoebaProject/GameScene.swift"
-            timestampString = "456694421.059106"
+            timestampString = "456781013.910941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "init(size:)"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "createContent()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "amoebaProject/GameScene.swift"
+            timestampString = "456781013.910941"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "createContent()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
