@@ -77,6 +77,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         player = SKSpriteNode(imageNamed: "AmoebaVermelha")
+        player.name = "red"
         
         player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
         playerPosition = 0
@@ -87,8 +88,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody!.contactTestBitMask = enemyCat
         
         player.physicsBody!.collisionBitMask = 0
-        player.xScale = 1.0
-        player.yScale = 1.0
+        player.xScale = 0.7
+        player.yScale = 0.7
         
         self.addChild(player)
         
@@ -115,7 +116,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func projectileDidCollideWithMonster(projectile:SKSpriteNode, monster:SKSpriteNode) {
         println("Hit")
-        alien.removeFromParent()
+        println(projectile.name!)
+        
+        if(projectile.name! == monster.name){
+            mouthOpening()
+            monster.removeFromParent()
+        }
+        
+       
     }
     
     
@@ -123,21 +131,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func mouthOpening() {
         player.runAction((
             SKAction.animateWithTextures(playerMouthAnimation,
-                timePerFrame: 0.1,
+                timePerFrame: 0.01,
                 resize: false,
                 restore: true)),
             withKey:"mouthOpening")
     }
 
-    func randomiseEnemy() -> NSString{
-        var enemyColor: NSString?
+    func randomiseEnemy() -> SKSpriteNode{
+        var enemyColor: SKSpriteNode?
         let randomNumber = Int(arc4random_uniform(3))
         if (randomNumber == 0){
-            enemyColor = "AlienVermelho"
+            enemyColor = SKSpriteNode(imageNamed: "AlienVermelho" as String)
+            enemyColor?.name = "red"
         }else if (randomNumber == 1){
-            enemyColor = "AlienAzul"
+            enemyColor = SKSpriteNode(imageNamed: "AlienAzul"  as String)
+            enemyColor?.name = "blue"
         } else {
-            enemyColor = "AlienAmarelo"
+            enemyColor = SKSpriteNode(imageNamed: "AlienAmarelo"  as String)
+            enemyColor?.name = "yellow"
         }
         return enemyColor!
     }
@@ -150,15 +161,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
              enemyPositionX = (self.frame.size.width/2)/2 - 30
         case 1:
             enemyPositionX = (self.frame.size.width/2)
-        default:
+        case 2:
             enemyPositionX = (self.frame.size.width/2) + (self.frame.size.width/2)/2
+        default:
+            println()
         }
         return enemyPositionX!
     }
     
     func addMonster(){
         
-        alien = SKSpriteNode(imageNamed: randomiseEnemy() as String)
+        alien = randomiseEnemy() as SKSpriteNode
         alien.physicsBody = SKPhysicsBody(rectangleOfSize: alien.size)
         alien.physicsBody!.dynamic = true
         alien.physicsBody!.categoryBitMask = enemyCat
@@ -272,14 +285,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if((location.y >= self.frame.size.height/3 - 20) && (location.y <= self.frame.size.height/2)){
             
                 if(location.x <= self.frame.size.width/2 - 10 ){
-                    sprite.position = CGPointMake((self.frame.size.width/2)/2, self.frame.size.height/3)
+                    sprite.position = CGPointMake((self.frame.size.width/2)/2 - 10, self.frame.size.height/3)
                 }
                 if(location.x >= self.frame.size.width/2 + 10){
-                    sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2, self.frame.size.height/3)
+                    sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2 - 10, self.frame.size.height/3)
                 }
             
-                if((location.x > self.frame.size.width/2 - 10) && (location.x < self.frame.size.width/2 + 10)){
-                    sprite.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
+                if((location.x > self.frame.size.width/2 - 30) && (location.x < self.frame.size.width/2 + 30)){
+                    sprite.position = CGPointMake(self.frame.size.width/2 - 10, self.frame.size.height/3)
                 }
             }
             
