@@ -9,12 +9,13 @@
 import SpriteKit
 import AVFoundation
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let projectileCategoryName = "projectile"
     let playerCategoryName = "player"
     let enemyCategoryName = "enemy"
     let enemyCat:UInt32 = 0x1 << 1
+    let amebaCat:UInt32 = 0x1 << 2
     var backgroundMusicPlayer = AVAudioPlayer()
     var lastYieldTimeInterval:NSTimeInterval = NSTimeInterval()
     var lastUpdateTimerInterval:NSTimeInterval = NSTimeInterval()
@@ -24,43 +25,8 @@ class GameScene: SKScene {
     var playerMouthAnimation : [SKTexture]!
 
     var playerPosition : NSInteger = 0
-
+    var alien:SKSpriteNode = SKSpriteNode()
     
-    
-//    
-//    override init(size: CGSize){
-//        super.init(size: size)
-//    
-//        let bgMusicURL = NSBundle.mainBundle().URLForResource("dubstep", withExtension: "mp3")
-//        
-//        backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: bgMusicURL, error: nil)
-//        
-//        backgroundMusicPlayer.numberOfLoops = -1
-//        backgroundMusicPlayer.prepareToPlay()
-//        backgroundMusicPlayer.play()
-//        
-//        
-//        let backgroundImg = SKSpriteNode(imageNamed: "Fundo")
-//        backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
-//        self.addChild(backgroundImg)
-//        
-//        
-//        player = SKSpriteNode(imageNamed: "AmoebaVermelha")
-//        player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
-//        self.addChild(player)
-//        
-//        //player.size.height/2 + 180
-//        self.physicsWorld.gravity = CGVectorMake(0, 0)
-//        
-//        
-//        
-//        
-//    
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder){
-//        super.init(coder: aDecoder)
-//    }
     
     
     override func didMoveToView(view: SKView) {
@@ -91,15 +57,6 @@ class GameScene: SKScene {
             contentCreated = true
         }
         
-//        let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedRight:"))
-//        swipeRight.direction = .Right
-//        view.addGestureRecognizer(swipeRight)
-//
-//
-//        let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedLeft:"))
-//        swipeLeft.direction = .Left
-//        view.addGestureRecognizer(swipeLeft)
-        
     }
     
     
@@ -120,13 +77,47 @@ class GameScene: SKScene {
         
         
         player = SKSpriteNode(imageNamed: "AmoebaVermelha")
+        
         player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
         playerPosition = 0
+        
+        player.physicsBody = SKPhysicsBody(rectangleOfSize: player.size)
+        player.physicsBody!.dynamic = true
+        player.physicsBody!.categoryBitMask = amebaCat
+        player.physicsBody!.contactTestBitMask = enemyCat
+        
+        player.physicsBody!.collisionBitMask = 0
+        player.xScale = 1.0
+        player.yScale = 1.0
+        
         self.addChild(player)
+        
         
         //player.size.height/2 + 180
         self.physicsWorld.gravity = CGVectorMake(0, 0)
-}
+        self.physicsWorld.contactDelegate = self
+    }
+    
+    func didBeginContact(contact: SKPhysicsContact)
+    {
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        
+        firstBody = contact.bodyA
+        secondBody = contact.bodyB
+        
+        
+        if ((firstBody.categoryBitMask & amebaCat != 0) && (secondBody.categoryBitMask & enemyCat != 0)) {
+                projectileDidCollideWithMonster(firstBody.node as! SKSpriteNode, monster: secondBody.node as! SKSpriteNode)
+        }
+    }
+    
+    
+    func projectileDidCollideWithMonster(projectile:SKSpriteNode, monster:SKSpriteNode) {
+        println("Hit")
+        alien.removeFromParent()
+    }
+    
     
     
     func mouthOpening() {
@@ -167,11 +158,11 @@ class GameScene: SKScene {
     
     func addMonster(){
         
-        var alien:SKSpriteNode = SKSpriteNode(imageNamed: randomiseEnemy() as String)
+        alien = SKSpriteNode(imageNamed: randomiseEnemy() as String)
         alien.physicsBody = SKPhysicsBody(rectangleOfSize: alien.size)
         alien.physicsBody!.dynamic = true
         alien.physicsBody!.categoryBitMask = enemyCat
-        //alien.physicsBody!.contactTestBitMask = photonTorpedoCategory
+        alien.physicsBody!.contactTestBitMask = amebaCat
         alien.physicsBody!.collisionBitMask = 0
         alien.xScale = 0.5
         alien.yScale = 0.5
@@ -194,6 +185,7 @@ class GameScene: SKScene {
         var actionArray:NSMutableArray = NSMutableArray()
         
         actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(duration)))
+        
         actionArray.addObject(SKAction.runBlock({
             var transition:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
             //var gameOverScene:SKScene = GameOverScene(size: self.size, won: false)
