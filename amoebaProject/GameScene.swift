@@ -130,7 +130,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             monster.removeFromParent()
         }
         else{
-            monster.removeAllActions()
+            //monster.removeAllActions()
         }
         
        
