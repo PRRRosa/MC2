@@ -21,6 +21,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var lastYieldTimeInterval:NSTimeInterval = NSTimeInterval()
     var lastUpdateTimerInterval:NSTimeInterval = NSTimeInterval()
     var player:SKSpriteNode = SKSpriteNode()
+    var btnRed:SKSpriteNode = SKSpriteNode()
+    var btnBlue:SKSpriteNode = SKSpriteNode()
+    var btnYellow:SKSpriteNode = SKSpriteNode()
     var contentCreated = false
     
     var playerMouthAnimation : [SKTexture]!
@@ -82,37 +85,41 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.addChild(backgroundImg)
         
-        let botaoVermelho = SKSpriteNode(imageNamed: "Vermelho")
-        botaoVermelho.position = CGPointMake(botaoVermelho.position.x + self.frame.size.width/5, botaoVermelho.position.y + self.frame.size.height/8)
-        self.addChild(botaoVermelho)
-        
-        let botaoAzul = SKSpriteNode(imageNamed: "Azul")
-        botaoAzul.position = CGPointMake(botaoVermelho.position.x + self.frame.size.width/3.5, botaoAzul.position.y + self.frame.size.height/8)
-        self.addChild(botaoAzul)
-
-        let botaoAmarelo = SKSpriteNode(imageNamed: "Amarelo")
-        botaoAmarelo.position = CGPointMake(botaoAzul.position.x + self.frame.size.width/3.5, botaoAmarelo.position.y + self.frame.size.height/8)
-        self.addChild(botaoAmarelo)
-        
-        
-        
         
         player = SKSpriteNode(imageNamed: "AmoebaVermelha")
         player.name = "red"
-        
         player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
         playerPosition = 0
-        
         player.physicsBody = SKPhysicsBody(rectangleOfSize: player.size)
         player.physicsBody!.dynamic = true
         player.physicsBody!.categoryBitMask = amebaCat
         player.physicsBody!.contactTestBitMask = enemyCat
-        
         player.physicsBody!.collisionBitMask = 0
         player.xScale = 0.7
         player.yScale = 0.7
-        
         self.addChild(player)
+        
+        
+        btnBlue = SKSpriteNode(imageNamed: "Azul")
+        btnBlue.name = "btnB"
+        btnBlue.position = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height/2 * 0.3)
+        btnBlue.xScale = 1.3
+        btnBlue.yScale = 1.3
+        self.addChild(btnBlue)
+        
+        btnRed = SKSpriteNode(imageNamed: "Vermelho")
+        btnRed.name = "btnR"
+        btnRed.position = CGPointMake(self.frame.size.width * 0.20, self.frame.size.height/2 * 0.3)
+        btnRed.xScale = 1.3
+        btnRed.yScale = 1.3
+        self.addChild(btnRed)
+        
+        btnYellow = SKSpriteNode(imageNamed: "Amarelo")
+        btnYellow.name = "btnY"
+        btnYellow.position = CGPointMake(self.frame.size.width * 0.80, self.frame.size.height/2 * 0.3)
+        btnYellow.xScale = 1.3
+        btnYellow.yScale = 1.3
+        self.addChild(btnYellow)
         
         
         //player.size.height/2 + 180
@@ -137,9 +144,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func projectileDidCollideWithMonster(projectile:SKSpriteNode, monster:SKSpriteNode) {
         println("Hit")
+        println(monster.name!)
         println(projectile.name!)
         
-        if(projectile.name! == monster.name){
+        if(projectile.name! == monster.name!){
             mouthOpening()
             gulpSound.play()
             monster.removeFromParent()
@@ -163,19 +171,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     func randomiseEnemy() -> SKSpriteNode{
-        var enemyColor: SKSpriteNode?
+        let enemyColor: SKSpriteNode
         let randomNumber = Int(arc4random_uniform(3))
         if (randomNumber == 0){
             enemyColor = SKSpriteNode(imageNamed: "AlienVermelho" as String)
-            enemyColor?.name = "red"
+            enemyColor.name = "red"
         }else if (randomNumber == 1){
             enemyColor = SKSpriteNode(imageNamed: "AlienAzul"  as String)
-            enemyColor?.name = "blue"
+            enemyColor.name = "blue"
         } else {
             enemyColor = SKSpriteNode(imageNamed: "AlienAmarelo"  as String)
-            enemyColor?.name = "yellow"
+            enemyColor.name = "yellow"
         }
-        return enemyColor!
+        return enemyColor
     }
     
     func randomEnemyPosition() -> CGFloat{
@@ -287,9 +295,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        default:
 //            player.position = player.position
 //        }
-//        
+//
 //    }
-//    
+//
 //    func swipedLeft(sender:UISwipeGestureRecognizer){
 //        switch playerPosition{
 //        case 2:
@@ -298,7 +306,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        case 1:
 //            player.position = CGPointMake((self.frame.size.width/2)/2, self.frame.size.height/3)
 //            playerPosition = 0
-//            
+//
 //        default:
 //            player.position = player.position
 //        }
@@ -314,6 +322,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for touch in (touches as! Set<UITouch>) {
             let location = touch.locationInNode(self)
             let sprite = player
+            let nodeColor = self.nodeAtPoint(location)
             if((location.y >= self.frame.size.height/3 - 20) && (location.y <= self.frame.size.height/2)){
             
                 if(location.x <= self.frame.size.width/2 - 10 ){
@@ -326,6 +335,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if((location.x > self.frame.size.width/2 - 30) && (location.x < self.frame.size.width/2 + 30)){
                     sprite.position = CGPointMake(self.frame.size.width/2 - 10, self.frame.size.height/3)
                 }
+                
+            }else{
+            
+            
+            if let name = nodeColor.name{
+                if(name == "btnY"){
+                    //player = SKSpriteNode(imageNamed: "AlienAmarelo" as String)
+                    player.name = "yellow"
+                    println(nodeColor.name!)
+                    println(player.name!)
+                }
+                
+                if(name == "btnR"){
+                    //player = SKSpriteNode(imageNamed: "AlienVermelho" as String)
+                    player.name = "red"
+                    println(nodeColor.name!)
+                    println(player.name!)
+                }
+                
+                if(name == "btnB"){
+                    //player = SKSpriteNode(imageNamed: "AlienAzul" as String)
+                    player.name = "blue"
+                    println(nodeColor.name!)
+                    println(player.name!)
+                }
+            }
             }
             
             
