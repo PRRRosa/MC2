@@ -82,6 +82,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.addChild(backgroundImg)
         
+        let botaoVermelho = SKSpriteNode(imageNamed: "Vermelho")
+        botaoVermelho.position = CGPointMake(botaoVermelho.position.x + self.frame.size.width/5, botaoVermelho.position.y + self.frame.size.height/8)
+        self.addChild(botaoVermelho)
+        
+        let botaoAzul = SKSpriteNode(imageNamed: "Azul")
+        botaoAzul.position = CGPointMake(botaoVermelho.position.x + self.frame.size.width/3.5, botaoAzul.position.y + self.frame.size.height/8)
+        self.addChild(botaoAzul)
+
+        let botaoAmarelo = SKSpriteNode(imageNamed: "Amarelo")
+        botaoAmarelo.position = CGPointMake(botaoAzul.position.x + self.frame.size.width/3.5, botaoAmarelo.position.y + self.frame.size.height/8)
+        self.addChild(botaoAmarelo)
+        
+        
+        
         
         player = SKSpriteNode(imageNamed: "AmoebaVermelha")
         player.name = "red"
