@@ -116,6 +116,7 @@ class GameScene: SKScene {
         
         let backgroundImg = SKSpriteNode(imageNamed: "Fundo")
         backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
+        
         self.addChild(backgroundImg)
         
         
