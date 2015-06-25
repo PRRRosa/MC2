@@ -9,13 +9,15 @@
 import SpriteKit
 import AVFoundation
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let projectileCategoryName = "projectile"
     let playerCategoryName = "player"
     let enemyCategoryName = "enemy"
     let enemyCat:UInt32 = 0x1 << 1
+    let amebaCat:UInt32 = 0x1 << 2
     var backgroundMusicPlayer = AVAudioPlayer()
+    var gulpSound = AVAudioPlayer()
     var lastYieldTimeInterval:NSTimeInterval = NSTimeInterval()
     var lastUpdateTimerInterval:NSTimeInterval = NSTimeInterval()
     var player:SKSpriteNode = SKSpriteNode()
@@ -24,43 +26,8 @@ class GameScene: SKScene {
     var playerMouthAnimation : [SKTexture]!
 
     var playerPosition : NSInteger = 0
-
+    var alien:SKSpriteNode = SKSpriteNode()
     
-    
-//    
-//    override init(size: CGSize){
-//        super.init(size: size)
-//    
-//        let bgMusicURL = NSBundle.mainBundle().URLForResource("dubstep", withExtension: "mp3")
-//        
-//        backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: bgMusicURL, error: nil)
-//        
-//        backgroundMusicPlayer.numberOfLoops = -1
-//        backgroundMusicPlayer.prepareToPlay()
-//        backgroundMusicPlayer.play()
-//        
-//        
-//        let backgroundImg = SKSpriteNode(imageNamed: "Fundo")
-//        backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
-//        self.addChild(backgroundImg)
-//        
-//        
-//        player = SKSpriteNode(imageNamed: "AmoebaVermelha")
-//        player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
-//        self.addChild(player)
-//        
-//        //player.size.height/2 + 180
-//        self.physicsWorld.gravity = CGVectorMake(0, 0)
-//        
-//        
-//        
-//        
-//    
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder){
-//        super.init(coder: aDecoder)
-//    }
     
     
     override func didMoveToView(view: SKView) {
@@ -91,15 +58,6 @@ class GameScene: SKScene {
             contentCreated = true
         }
         
-//        let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedRight:"))
-//        swipeRight.direction = .Right
-//        view.addGestureRecognizer(swipeRight)
-//
-//
-//        let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedLeft:"))
-//        swipeLeft.direction = .Left
-//        view.addGestureRecognizer(swipeLeft)
-        
     }
     
     
@@ -113,6 +71,11 @@ class GameScene: SKScene {
         backgroundMusicPlayer.prepareToPlay()
         //backgroundMusicPlayer.play()
         
+        let gulpEffect = NSBundle.mainBundle().URLForResource("gulp", withExtension: "m4a")
+        gulpSound = AVAudioPlayer(contentsOfURL: gulpEffect, error: nil)
+        
+        gulpSound.numberOfLoops = 0
+        gulpSound.prepareToPlay()
         
         let backgroundImg = SKSpriteNode(imageNamed: "Fundo")
         backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
@@ -121,44 +84,109 @@ class GameScene: SKScene {
         
         
         player = SKSpriteNode(imageNamed: "AmoebaVermelha")
+        player.name = "red"
+        
         player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
         playerPosition = 0
+        
+        player.physicsBody = SKPhysicsBody(rectangleOfSize: player.size)
+        player.physicsBody!.dynamic = true
+        player.physicsBody!.categoryBitMask = amebaCat
+        player.physicsBody!.contactTestBitMask = enemyCat
+        
+        player.physicsBody!.collisionBitMask = 0
+        player.xScale = 0.7
+        player.yScale = 0.7
+        
         self.addChild(player)
+        
         
         //player.size.height/2 + 180
         self.physicsWorld.gravity = CGVectorMake(0, 0)
-}
+        self.physicsWorld.contactDelegate = self
+    }
+    
+    func didBeginContact(contact: SKPhysicsContact)
+    {
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        
+        firstBody = contact.bodyA
+        secondBody = contact.bodyB
+        
+        
+        if ((firstBody.categoryBitMask & amebaCat != 0) && (secondBody.categoryBitMask & enemyCat != 0)) {
+                projectileDidCollideWithMonster(firstBody.node as! SKSpriteNode, monster: secondBody.node as! SKSpriteNode)
+        }
+    }
+    
+    
+    func projectileDidCollideWithMonster(projectile:SKSpriteNode, monster:SKSpriteNode) {
+        println("Hit")
+        println(projectile.name!)
+        
+        if(projectile.name! == monster.name){
+            mouthOpening()
+            gulpSound.play()
+            monster.removeFromParent()
+        }
+        else{
+            //monster.removeAllActions()
+        }
+        
+       
+    }
+    
     
     
     func mouthOpening() {
         player.runAction((
             SKAction.animateWithTextures(playerMouthAnimation,
-                timePerFrame: 0.1,
+                timePerFrame: 0.01,
                 resize: false,
                 restore: true)),
             withKey:"mouthOpening")
     }
 
-    func randomiseEnemy() -> NSString{
-        var enemyColor: NSString?
+    func randomiseEnemy() -> SKSpriteNode{
+        var enemyColor: SKSpriteNode?
         let randomNumber = Int(arc4random_uniform(3))
         if (randomNumber == 0){
-            enemyColor = "AlienVermelho"
+            enemyColor = SKSpriteNode(imageNamed: "AlienVermelho" as String)
+            enemyColor?.name = "red"
         }else if (randomNumber == 1){
-            enemyColor = "AlienAzul"
+            enemyColor = SKSpriteNode(imageNamed: "AlienAzul"  as String)
+            enemyColor?.name = "blue"
         } else {
-            enemyColor = "AlienAmarelo"
+            enemyColor = SKSpriteNode(imageNamed: "AlienAmarelo"  as String)
+            enemyColor?.name = "yellow"
         }
         return enemyColor!
     }
     
+    func randomEnemyPosition() -> CGFloat{
+        var enemyPositionX: CGFloat?
+        let randomNumber = Int(arc4random_uniform(3))
+        switch randomNumber{
+        case 0:
+             enemyPositionX = (self.frame.size.width/2)/2 - 30
+        case 1:
+            enemyPositionX = (self.frame.size.width/2)
+        case 2:
+            enemyPositionX = (self.frame.size.width/2) + (self.frame.size.width/2)/2
+        default:
+            println()
+        }
+        return enemyPositionX!
+    }
+    
     func addMonster(){
         
-        var alien:SKSpriteNode = SKSpriteNode(imageNamed: randomiseEnemy() as String)
+        alien = randomiseEnemy() as SKSpriteNode
         alien.physicsBody = SKPhysicsBody(rectangleOfSize: alien.size)
         alien.physicsBody!.dynamic = true
         alien.physicsBody!.categoryBitMask = enemyCat
-        //alien.physicsBody!.contactTestBitMask = photonTorpedoCategory
+        alien.physicsBody!.contactTestBitMask = amebaCat
         alien.physicsBody!.collisionBitMask = 0
         alien.xScale = 0.5
         alien.yScale = 0.5
@@ -166,12 +194,14 @@ class GameScene: SKScene {
         let minX = alien.size.width/2
         let maxX = self.frame.size.width - alien.size.width/2
         let rangeX = maxX - minX
-        let position:CGFloat = CGFloat(arc4random()) % CGFloat(rangeX) + CGFloat(minX)
+        //let position:CGFloat = CGFloat(arc4random()) % CGFloat(rangeX) + CGFloat(minX)
+        let position:CGFloat = randomEnemyPosition()
         
         alien.position = CGPointMake(position, self.frame.size.height+alien.size.height)
         
         self.addChild(alien)
         
+        //duração de queda aleatória
         let minDuration = 2
         let maxDuration = 4
         let rangeDuration = maxDuration - minDuration
@@ -179,7 +209,14 @@ class GameScene: SKScene {
         
         var actionArray:NSMutableArray = NSMutableArray()
         
-        actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(duration)))
+        
+        
+        //sprite.runAction(SKAction.repeatActionForever(action))
+        
+        actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(2.5)))
+        
+        
+        
         actionArray.addObject(SKAction.runBlock({
             var transition:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
             //var gameOverScene:SKScene = GameOverScene(size: self.size, won: false)
@@ -266,14 +303,14 @@ class GameScene: SKScene {
             if((location.y >= self.frame.size.height/3 - 20) && (location.y <= self.frame.size.height/2)){
             
                 if(location.x <= self.frame.size.width/2 - 10 ){
-                    sprite.position = CGPointMake((self.frame.size.width/2)/2, self.frame.size.height/3)
+                    sprite.position = CGPointMake((self.frame.size.width/2)/2 - 10, self.frame.size.height/3)
                 }
                 if(location.x >= self.frame.size.width/2 + 10){
-                    sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2, self.frame.size.height/3)
+                    sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2 - 10, self.frame.size.height/3)
                 }
             
-                if((location.x > self.frame.size.width/2 - 10) && (location.x < self.frame.size.width/2 + 10)){
-                    sprite.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
+                if((location.x > self.frame.size.width/2 - 30) && (location.x < self.frame.size.width/2 + 30)){
+                    sprite.position = CGPointMake(self.frame.size.width/2 - 10, self.frame.size.height/3)
                 }
             }
             
