@@ -27,7 +27,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var contentCreated = false
     
     var playerMouthAnimation : [SKTexture]!
-
+    
     var playerPosition : NSInteger = 0
     var alien:SKSpriteNode = SKSpriteNode()
     
@@ -41,7 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
         
         //self.addChild(myLabel)
-
+        
         let playerAnimatedAtlas = SKTextureAtlas(named: "playerAnimation")
         var mouthFrames = [SKTexture]()
         
@@ -103,22 +103,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         btnBlue = SKSpriteNode(imageNamed: "Azul")
         btnBlue.name = "btnB"
         btnBlue.position = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height/2 * 0.3)
-        btnBlue.xScale = 1.3
-        btnBlue.yScale = 1.3
+//        btnBlue.xScale = 1.3
+//        btnBlue.yScale = 1.3
         self.addChild(btnBlue)
         
         btnRed = SKSpriteNode(imageNamed: "Vermelho")
         btnRed.name = "btnR"
         btnRed.position = CGPointMake(self.frame.size.width * 0.20, self.frame.size.height/2 * 0.3)
-        btnRed.xScale = 1.3
-        btnRed.yScale = 1.3
+//        btnRed.xScale = 1.3
+//        btnRed.yScale = 1.3
         self.addChild(btnRed)
         
         btnYellow = SKSpriteNode(imageNamed: "Amarelo")
         btnYellow.name = "btnY"
         btnYellow.position = CGPointMake(self.frame.size.width * 0.80, self.frame.size.height/2 * 0.3)
-        btnYellow.xScale = 1.3
-        btnYellow.yScale = 1.3
+//        btnYellow.xScale = 1.3
+//        btnYellow.yScale = 1.3
         self.addChild(btnYellow)
         
         
@@ -137,7 +137,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         if ((firstBody.categoryBitMask & amebaCat != 0) && (secondBody.categoryBitMask & enemyCat != 0)) {
-                projectileDidCollideWithMonster(firstBody.node as! SKSpriteNode, monster: secondBody.node as! SKSpriteNode)
+            projectileDidCollideWithMonster(firstBody.node as! SKSpriteNode, monster: secondBody.node as! SKSpriteNode)
         }
     }
     
@@ -156,7 +156,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //monster.removeAllActions()
         }
         
-       
+        
     }
     
     
@@ -169,7 +169,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 restore: true)),
             withKey:"mouthOpening")
     }
-
+    
     func randomiseEnemy() -> SKSpriteNode{
         let enemyColor: SKSpriteNode
         let randomNumber = Int(arc4random_uniform(3))
@@ -191,7 +191,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let randomNumber = Int(arc4random_uniform(3))
         switch randomNumber{
         case 0:
-             enemyPositionX = (self.frame.size.width/2)/2 - 30
+            enemyPositionX = (self.frame.size.width/2)/2 - 30
         case 1:
             enemyPositionX = (self.frame.size.width/2)
         case 2:
@@ -224,16 +224,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(alien)
         
         //duração de queda aleatória
-        let minDuration = 2
-        let maxDuration = 4
-        let rangeDuration = maxDuration - minDuration
-        let duration = Int(arc4random()) % Int(rangeDuration) + Int(minDuration)
+//        let minDuration = 2
+//        let maxDuration = 4
+//        let rangeDuration = maxDuration - minDuration
+//        let duration = Int(arc4random()) % Int(rangeDuration) + Int(minDuration)
         
         var actionArray:NSMutableArray = NSMutableArray()
-        
-        
-        
-        //sprite.runAction(SKAction.repeatActionForever(action))
         
         actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(2.5)))
         
@@ -264,7 +260,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
     }
-
+    
     
     override func update(currentTime: CFTimeInterval) {
         
@@ -279,38 +275,38 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         updateWithTimeSinceLastUpdate(timeSinceLastUpdate)
         
     }
-
-
     
     
     
-//    func swipedRight(sender:UISwipeGestureRecognizer){
-//        switch playerPosition{
-//        case 0:
-//             player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
-//             playerPosition = 1
-//        case 1:
-//             player.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2, self.frame.size.height/3)
-//             playerPosition = 2
-//        default:
-//            player.position = player.position
-//        }
-//
-//    }
-//
-//    func swipedLeft(sender:UISwipeGestureRecognizer){
-//        switch playerPosition{
-//        case 2:
-//            player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
-//            playerPosition = 1
-//        case 1:
-//            player.position = CGPointMake((self.frame.size.width/2)/2, self.frame.size.height/3)
-//            playerPosition = 0
-//
-//        default:
-//            player.position = player.position
-//        }
-//    }
+    
+    
+    //    func swipedRight(sender:UISwipeGestureRecognizer){
+    //        switch playerPosition{
+    //        case 0:
+    //             player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
+    //             playerPosition = 1
+    //        case 1:
+    //             player.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2, self.frame.size.height/3)
+    //             playerPosition = 2
+    //        default:
+    //            player.position = player.position
+    //        }
+    //
+    //    }
+    //
+    //    func swipedLeft(sender:UISwipeGestureRecognizer){
+    //        switch playerPosition{
+    //        case 2:
+    //            player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
+    //            playerPosition = 1
+    //        case 1:
+    //            player.position = CGPointMake((self.frame.size.width/2)/2, self.frame.size.height/3)
+    //            playerPosition = 0
+    //
+    //        default:
+    //            player.position = player.position
+    //        }
+    //    }
     
     
     
@@ -324,54 +320,54 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let sprite = player
             let nodeColor = self.nodeAtPoint(location)
             if((location.y >= self.frame.size.height/3 - 20) && (location.y <= self.frame.size.height/2)){
-            
+                
                 if(location.x <= self.frame.size.width/2 - 10 ){
                     sprite.position = CGPointMake((self.frame.size.width/2)/2 - 10, self.frame.size.height/3)
                 }
                 if(location.x >= self.frame.size.width/2 + 10){
                     sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2 - 10, self.frame.size.height/3)
                 }
-            
+                
                 if((location.x > self.frame.size.width/2 - 30) && (location.x < self.frame.size.width/2 + 30)){
                     sprite.position = CGPointMake(self.frame.size.width/2 - 10, self.frame.size.height/3)
                 }
                 
             }else{
-            
-            
-            if let name = nodeColor.name{
-                if(name == "btnY"){
-                    //player = SKSpriteNode(imageNamed: "AlienAmarelo" as String)
-                    player.name = "yellow"
-                    println(nodeColor.name!)
-                    println(player.name!)
-                }
                 
-                if(name == "btnR"){
-                    //player = SKSpriteNode(imageNamed: "AlienVermelho" as String)
-                    player.name = "red"
-                    println(nodeColor.name!)
-                    println(player.name!)
-                }
                 
-                if(name == "btnB"){
-                    //player = SKSpriteNode(imageNamed: "AlienAzul" as String)
-                    player.name = "blue"
-                    println(nodeColor.name!)
-                    println(player.name!)
+                if let name = nodeColor.name{
+                    if(name == "btnY"){
+                        //player = SKSpriteNode(imageNamed: "AlienAmarelo" as String)
+                        player.name = "yellow"
+                        println(nodeColor.name!)
+                        println(player.name!)
+                    }
+                    
+                    if(name == "btnR"){
+                        //player = SKSpriteNode(imageNamed: "AlienVermelho" as String)
+                        player.name = "red"
+                        println(nodeColor.name!)
+                        println(player.name!)
+                    }
+                    
+                    if(name == "btnB"){
+                        //player = SKSpriteNode(imageNamed: "AlienAzul" as String)
+                        player.name = "blue"
+                        println(nodeColor.name!)
+                        println(player.name!)
+                    }
                 }
             }
-            }
             
             
             
-//            sprite.xScale = 0.5
-//            sprite.yScale = 0.5
+            //            sprite.xScale = 0.5
+            //            sprite.yScale = 0.5
             //sprite.position = location
             
             
             
-           // let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
+            // let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
             
             //sprite.runAction(SKAction.repeatActionForever(action))
             
