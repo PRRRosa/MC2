@@ -17,6 +17,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let enemyCat:UInt32 = 0x1 << 1
     let amebaCat:UInt32 = 0x1 << 2
     var backgroundMusicPlayer = AVAudioPlayer()
+    var gulpSound = AVAudioPlayer()
     var lastYieldTimeInterval:NSTimeInterval = NSTimeInterval()
     var lastUpdateTimerInterval:NSTimeInterval = NSTimeInterval()
     var player:SKSpriteNode = SKSpriteNode()
@@ -70,6 +71,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         backgroundMusicPlayer.prepareToPlay()
         //backgroundMusicPlayer.play()
         
+        let gulpEffect = NSBundle.mainBundle().URLForResource("gulp", withExtension: "m4a")
+        gulpSound = AVAudioPlayer(contentsOfURL: gulpEffect, error: nil)
+        
+        gulpSound.numberOfLoops = 0
+        gulpSound.prepareToPlay()
         
         let backgroundImg = SKSpriteNode(imageNamed: "Fundo")
         backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
@@ -120,7 +126,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if(projectile.name! == monster.name){
             mouthOpening()
+            gulpSound.play()
             monster.removeFromParent()
+        }
+        else{
+            monster.removeAllActions()
         }
         
        
@@ -190,6 +200,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.addChild(alien)
         
+        //duração de queda aleatória
         let minDuration = 2
         let maxDuration = 4
         let rangeDuration = maxDuration - minDuration
@@ -197,7 +208,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         var actionArray:NSMutableArray = NSMutableArray()
         
-        actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(duration)))
+        
+        
+        //sprite.runAction(SKAction.repeatActionForever(action))
+        
+        actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(2.5)))
+        
+        
         
         actionArray.addObject(SKAction.runBlock({
             var transition:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
