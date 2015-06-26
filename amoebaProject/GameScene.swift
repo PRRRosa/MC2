@@ -231,7 +231,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         var actionArray:NSMutableArray = NSMutableArray()
         
-        actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(2.5)))
+        actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(5.5)))
         
         
         
@@ -339,6 +339,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if(name == "btnY"){
                         //player = SKSpriteNode(imageNamed: "AlienAmarelo" as String)
                         player.name = "yellow"
+                        player.texture = SKTexture(imageNamed: "AmoebaAmarelo")
                         println(nodeColor.name!)
                         println(player.name!)
                     }
@@ -346,6 +347,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if(name == "btnR"){
                         //player = SKSpriteNode(imageNamed: "AlienVermelho" as String)
                         player.name = "red"
+                        player.texture = SKTexture(imageNamed: "AmoebaVermelha")
                         println(nodeColor.name!)
                         println(player.name!)
                     }
@@ -353,6 +355,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if(name == "btnB"){
                         //player = SKSpriteNode(imageNamed: "AlienAzul" as String)
                         player.name = "blue"
+                        player.texture = SKTexture(imageNamed: "AmoebaAzul")
                         println(nodeColor.name!)
                         println(player.name!)
                     }
