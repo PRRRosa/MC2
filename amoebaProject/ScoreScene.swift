@@ -17,7 +17,7 @@ class ScoreScene: SKScene
     
     override func didMoveToView(view: SKView)
     {
-        
+        //Criando a view
         self.menuView = SKView(frame: CGRectMake(self.frame.size.width/4, self.frame.size.height/4,
             self.frame.size.width/2, self.frame.size.height/2))
         
@@ -55,6 +55,8 @@ class ScoreScene: SKScene
             }
         }
     }
+    
+    //registro que salva a view principal para ter onde criar a proxima scene
     
     func registerView(view:UIView)
     {

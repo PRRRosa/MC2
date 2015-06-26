@@ -21,6 +21,7 @@ class MenuScene: SKScene
     override func didMoveToView(view: SKView)
     {
         
+        //Criando a view
         self.menuView = SKView(frame: CGRectMake(self.frame.size.width/4, self.frame.size.height/4,
             self.frame.size.width/2, self.frame.size.height/2))
         
@@ -34,6 +35,8 @@ class MenuScene: SKScene
         let backgroundImg = SKSpriteNode(imageNamed: "fundoMenu")
         backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
         self.addChild(backgroundImg)
+        
+        //Opcoes do menu
         
         playButton = SKSpriteNode(imageNamed:"buttonPlay")
         playButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:540.0);
@@ -49,6 +52,8 @@ class MenuScene: SKScene
         
     }
     
+    //tocar nos botoes
+    
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent)
     {
         // Loop over all the touches in this event
@@ -57,6 +62,9 @@ class MenuScene: SKScene
             // Get the location of the touch in this scene
             let location = touch.locationInNode(self)
             // Check if the location of the touch is within the button's bounds
+            
+            //PLAY BUTTON
+            
             if playButton.containsPoint(location)
             {
                 let skView = mainView as! SKView
@@ -68,6 +76,9 @@ class MenuScene: SKScene
                 
                 self.removeFromParent()
             }
+                
+            //SCORE BUTTON
+                
             else if scoreButton.containsPoint(location)
             {
                 let skView = mainView as! SKView
@@ -79,6 +90,9 @@ class MenuScene: SKScene
                 
                 self.removeFromParent()
             }
+                
+            //HOW TO PLAY BUTTON
+                
             else if howButton.containsPoint(location)
             {
                 let skView = mainView as! SKView
@@ -92,6 +106,8 @@ class MenuScene: SKScene
             }
         }
     }
+    
+    //registro que salva a view principal para ter onde criar a proxima scene
     
     func registerView(view:UIView)
     {
