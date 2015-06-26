@@ -24,6 +24,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var contentCreated = false
     
     var playerMouthAnimation : [SKTexture]!
+    var playerVermelhoAnimation : [SKTexture]!
+//    var playerAzulAnimation : [SKTexture]!
+//    var playerAmareloAnimation : [SKTexture]!
+
+    
 
     var playerPosition : NSInteger = 0
     var alien:SKSpriteNode = SKSpriteNode()
@@ -45,7 +50,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let numImages = playerAnimatedAtlas.textureNames.count
         for (var i = 0; i < numImages; i++) {
             let nameA = "\(i)"
-            println(nameA)
             mouthFrames.append(playerAnimatedAtlas.textureNamed(nameA))
             
         }
@@ -60,9 +64,100 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func createRedAnimation(){
+        let amoebaVermelhaAtlas = SKTextureAtlas(named: "amoebaVermelha")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = amoebaVermelhaAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "amoeba_\(i)@2x"
+            playerFrames.append(amoebaVermelhaAtlas.textureNamed(nameA))
+            
+        }
+        
+        playerVermelhoAnimation = playerFrames
+        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: false, restore: false)), withKey:"playerVermelho")
+        //player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005)), withKey:"playerVermelho")
+
+    }
+    
+    func createBlueAnimation(){
+        let amoebaAzulAtlas = SKTextureAtlas(named: "amoebaAzul")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = amoebaAzulAtlas.textureNames.count
+        for (var i = 64; i < numImages; i++) {
+            let nameA = "amoeba_\(i)@2x"
+            playerFrames.append(amoebaAzulAtlas.textureNamed(nameA))
+            
+        }
+        
+        //playerAzulAnimation = playerFrames
+        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerAzul")
+    }
+    
+    func createYellowAnimation(){
+        let amoebaAmarelaAtlas = SKTextureAtlas(named: "amoebaAmarela")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = amoebaAmarelaAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "ameba_\(i)@2x"
+            playerFrames.append(amoebaAmarelaAtlas.textureNamed(nameA))
+            
+        }
+        
+        //playerAmareloAnimation = playerFrames
+        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerAmarelo")
+    }
+    
+    func createOrangeAnimation(){
+        let amoebaLaranjaAtlas = SKTextureAtlas(named: "amoebaLaranja")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = amoebaLaranjaAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "amoebaL_\(i)@2x"
+            playerFrames.append(amoebaLaranjaAtlas.textureNamed(nameA))
+            
+        }
+        
+        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerLaranja")
+    }
+    
+    func createGreenAnimation(){
+        let amoebaVerdeAtlas = SKTextureAtlas(named: "amoebaVerde")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = amoebaVerdeAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "amoebaVerde_\(i)@2x"
+            playerFrames.append(amoebaVerdeAtlas.textureNamed(nameA))
+            
+        }
+        
+        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerVerde")
+    }
+    
+    func createPurpleAnimation(){
+        let amoebaVioletaAtlas = SKTextureAtlas(named: "amoebaVioleta")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = amoebaVioletaAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "amoebaV_\(i)@2x"
+            playerFrames.append(amoebaVioletaAtlas.textureNamed(nameA))
+            
+        }
+        
+        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerVioleta")
+    }
+    
+    
+    
     
     func createContent(){
-        let firstFrame = playerMouthAnimation[0]
+        //let firstFrame = playerMouthAnimation[0]
         let bgMusicURL = NSBundle.mainBundle().URLForResource("dubstep", withExtension: "mp3")
         
         backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: bgMusicURL, error: nil)
@@ -79,6 +174,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let backgroundImg = SKSpriteNode(imageNamed: "Fundo")
         backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
+        backgroundImg.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
         
         self.addChild(backgroundImg)
         
@@ -99,8 +195,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         player = SKSpriteNode(imageNamed: "AmoebaVermelha")
         player.name = "red"
+        createRedAnimation()
         
-        player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3)
+        player.position = CGPointMake(self.frame.size.width/2, player.position.y + self.frame.size.height/3)
         playerPosition = 0
         
         player.physicsBody = SKPhysicsBody(rectangleOfSize: player.size)
@@ -219,7 +316,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let minDuration = 2
         let maxDuration = 4
         let rangeDuration = maxDuration - minDuration
-        let duration = Int(arc4random()) % Int(rangeDuration) + Int(minDuration)
+        //let duration = Int(arc4random()) % Int(rangeDuration) + Int(minDuration)
         
         var actionArray:NSMutableArray = NSMutableArray()
         
