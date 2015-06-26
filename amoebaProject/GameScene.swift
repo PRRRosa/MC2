@@ -41,10 +41,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         myLabel.text = "Hello, World!";
         myLabel.fontSize = 65;
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-        
         //self.addChild(myLabel)
-        
-        
+
         if (!contentCreated){
             createContent()
             contentCreated = true
@@ -475,7 +473,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func updateWithTimeSinceLastUpdate(timeSinceLastUpdate:CFTimeInterval){
         
         lastYieldTimeInterval += timeSinceLastUpdate
-        if (lastYieldTimeInterval > 1){
+        if (lastYieldTimeInterval > 2){
             lastYieldTimeInterval = 0
             addMonster()
         }
@@ -488,7 +486,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var timeSinceLastUpdate = currentTime - lastUpdateTimerInterval
         lastUpdateTimerInterval = currentTime
         
-        if (timeSinceLastUpdate > 1){
+        if (timeSinceLastUpdate > 2){
             timeSinceLastUpdate = 1/60
             lastUpdateTimerInterval = currentTime
         }
