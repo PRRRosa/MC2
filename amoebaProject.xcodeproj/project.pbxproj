@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		30E933261B3C060600DD9D0F /* gulp.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 30E933251B3C060600DD9D0F /* gulp.m4a */; };
+		C028FE931B3CE454000E37E9 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE921B3CE454000E37E9 /* GameOverScene.swift */; };
+		C028FE951B3CE481000E37E9 /* HowToPlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE941B3CE481000E37E9 /* HowToPlayScene.swift */; };
+		C028FE971B3CE4B4000E37E9 /* ScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE961B3CE4B4000E37E9 /* ScoreScene.swift */; };
+		C0CAE9581B3C76A200DDE4E3 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CAE9571B3C76A200DDE4E3 /* MenuScene.swift */; };
 		D44BE3151B3873A1000BAA1F /* dubstep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3141B3873A1000BAA1F /* dubstep.mp3 */; };
 		D44BE3171B39E2A8000BAA1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3161B39E2A8000BAA1F /* Images.xcassets */; };
 		D44BE31A1B39E4E7000BAA1F /* playerAnimation.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3191B39E4E7000BAA1F /* playerAnimation.atlas */; };
@@ -38,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		30E933251B3C060600DD9D0F /* gulp.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = gulp.m4a; sourceTree = "<group>"; };
+		C028FE921B3CE454000E37E9 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		C028FE941B3CE481000E37E9 /* HowToPlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPlayScene.swift; sourceTree = "<group>"; };
+		C028FE961B3CE4B4000E37E9 /* ScoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreScene.swift; sourceTree = "<group>"; };
+		C0CAE9571B3C76A200DDE4E3 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuScene.swift; path = ../MenuScene.swift; sourceTree = "<group>"; };
 		D44BE3141B3873A1000BAA1F /* dubstep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dubstep.mp3; sourceTree = "<group>"; };
 		D44BE3161B39E2A8000BAA1F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		D44BE3191B39E4E7000BAA1F /* playerAnimation.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = playerAnimation.atlas; sourceTree = "<group>"; };
@@ -124,10 +132,14 @@
 		D4B9BCE61B31E811009940A6 /* amoebaProject */ = {
 			isa = PBXGroup;
 			children = (
+				D4B9BCEF1B31E811009940A6 /* GameViewController.swift */,
+				C0CAE9571B3C76A200DDE4E3 /* MenuScene.swift */,
 				D4B9BCE91B31E811009940A6 /* AppDelegate.swift */,
+				C028FE921B3CE454000E37E9 /* GameOverScene.swift */,
 				D4B9BCEB1B31E811009940A6 /* GameScene.sks */,
 				D4B9BCED1B31E811009940A6 /* GameScene.swift */,
-				D4B9BCEF1B31E811009940A6 /* GameViewController.swift */,
+				C028FE961B3CE4B4000E37E9 /* ScoreScene.swift */,
+				C028FE941B3CE481000E37E9 /* HowToPlayScene.swift */,
 				D4B9BCF11B31E811009940A6 /* Main.storyboard */,
 				D4B9BCF61B31E811009940A6 /* LaunchScreen.xib */,
 				D44BE3161B39E2A8000BAA1F /* Images.xcassets */,
@@ -271,8 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C028FE931B3CE454000E37E9 /* GameOverScene.swift in Sources */,
+				C028FE971B3CE4B4000E37E9 /* ScoreScene.swift in Sources */,
 				D4B9BCEE1B31E811009940A6 /* GameScene.swift in Sources */,
+				C0CAE9581B3C76A200DDE4E3 /* MenuScene.swift in Sources */,
 				D4B9BCF01B31E811009940A6 /* GameViewController.swift in Sources */,
+				C028FE951B3CE481000E37E9 /* HowToPlayScene.swift in Sources */,
 				D4B9BCEA1B31E811009940A6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
