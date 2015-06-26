@@ -93,7 +93,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         //playerAzulAnimation = playerFrames
-        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerAzul")
+        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: false, restore: false)), withKey:"playerAzul")
     }
     
     func createYellowAnimation(){
@@ -108,7 +108,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         //playerAmareloAnimation = playerFrames
-        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerAmarelo")
+        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: false, restore: false)), withKey:"playerAmarelo")
     }
     
     func createOrangeAnimation(){
@@ -122,7 +122,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerLaranja")
+        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: false, restore: false)), withKey:"playerLaranja")
     }
     
     func createGreenAnimation(){
@@ -136,7 +136,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerVerde")
+        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: false, restore: false)), withKey:"playerVerde")
     }
     
     func createPurpleAnimation(){
@@ -150,7 +150,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerVioleta")
+        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: false, restore: false)), withKey:"playerVioleta")
     }
     
     
@@ -439,6 +439,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         player.texture = SKTexture(imageNamed: "AmoebaAmarelo")
                         println(nodeColor.name!)
                         println(player.name!)
+                        createYellowAnimation()
                     }
                     
                     if(name == "btnR"){
@@ -447,6 +448,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         player.texture = SKTexture(imageNamed: "AmoebaVermelha")
                         println(nodeColor.name!)
                         println(player.name!)
+                        createRedAnimation()
                     }
                     
                     if(name == "btnB"){
@@ -455,6 +457,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         player.texture = SKTexture(imageNamed: "AmoebaAzul")
                         println(nodeColor.name!)
                         println(player.name!)
+                        createBlueAnimation()
                     }
                 }
             }
