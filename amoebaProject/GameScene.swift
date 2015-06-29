@@ -28,7 +28,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score:NSInteger = 0
     var scoreLabel: SKLabelNode = SKLabelNode()
 //    var playerMouthAnimation : [SKTexture]!
-    var playerVermelhoAnimation : SKTexture!
+//    var playerVermelhoAnimation : SKTexture!
 //    var playerAzulAnimation : [SKTexture]!
 //    var playerAmareloAnimation : [SKTexture]!
     var playerPosition : NSInteger = 0
@@ -83,7 +83,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-        playerVermelhoAnimation = playerFrames[0]
+        //playerVermelhoAnimation = playerFrames[0]
+        player.name = "red"
         player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.0034, resize: true, restore: false)), withKey:"playerVermelho")
 
     }
@@ -106,6 +107,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         //playerAzulAnimation = playerFrames
+        player.name = "blue"
         player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerAzul")
     }
     
@@ -126,6 +128,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         //playerAmareloAnimation = playerFrames
+        player.name = "yellow"
         player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.003, resize: true, restore: false)), withKey:"playerAmarelo")
     }
     
@@ -480,7 +483,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         var actionArray:NSMutableArray = NSMutableArray()
         
-        actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(5.5)))
+        actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(4)))
         
         
         
@@ -512,13 +515,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func updateWithTimeSinceLastUpdate(timeSinceLastUpdate:CFTimeInterval){
         
         lastYieldTimeInterval += timeSinceLastUpdate
-        if (lastYieldTimeInterval > 2){
+        if (lastYieldTimeInterval > 1.5){
             lastYieldTimeInterval = 0
             addMonster()
+            randomisePlayer()
         }
+        
         
     }
     
+    func randomisePlayer(){
+        let random = Int(arc4random_uniform(3))
+        if (random == 0){
+            createRedAnimation()
+        }else if (random == 1){
+            createBlueAnimation()
+        } else {
+            createYellowAnimation()
+        }
+    }
     
     override func update(currentTime: CFTimeInterval) {
         
