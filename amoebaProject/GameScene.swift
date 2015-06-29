@@ -68,7 +68,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         playerVermelhoAnimation = playerFrames[0]
-        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerVermelho")
+        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.0034, resize: true, restore: false)), withKey:"playerVermelho")
 
     }
     
@@ -110,7 +110,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         //playerAmareloAnimation = playerFrames
-        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerAmarelo")
+        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.003, resize: true, restore: false)), withKey:"playerAmarelo")
     }
     
     func createOrangeAnimation(){
@@ -366,7 +366,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         println(projectile.name!)
         
         if(projectile.name! == monster.name!){
-            //mouthOpening()
             if(player.name == "red"){
                 createRedMouthOpeningAnimation()
             } else if (player.name == "blue"){
