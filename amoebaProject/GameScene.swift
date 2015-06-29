@@ -27,10 +27,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var contentCreated = false
     var score:NSInteger = 0
     var scoreLabel: SKLabelNode = SKLabelNode()
-//    var playerMouthAnimation : [SKTexture]!
-//    var playerVermelhoAnimation : SKTexture!
-//    var playerAzulAnimation : [SKTexture]!
-//    var playerAmareloAnimation : [SKTexture]!
     var playerPosition : NSInteger = 0
     var alien:SKSpriteNode = SKSpriteNode()
     
@@ -324,7 +320,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.name = "red"
         createRedAnimation()
         
-        player.position = CGPointMake(self.frame.size.width/2, player.position.y + self.frame.size.height/3.5)
+        player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3.5)
 
         playerPosition = 0
         player.physicsBody = SKPhysicsBody(rectangleOfSize: player.size)
@@ -518,6 +514,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (lastYieldTimeInterval > 1.5){
             lastYieldTimeInterval = 0
             addMonster()
+            
             randomisePlayer()
         }
         
@@ -595,14 +592,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if((location.y >= self.frame.size.height/3 - 20) && (location.y <= self.frame.size.height/2)){
                 
                 if(location.x <= self.frame.size.width/2 - 10 ){
-                    sprite.position = CGPointMake((self.frame.size.width/2)/2 - 10, self.frame.size.height/3)
+                    sprite.position = CGPointMake((self.frame.size.width/2)/2 - 10, self.frame.size.height/3.5)
                 }
                 if(location.x >= self.frame.size.width/2 + 10){
-                    sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2 - 10, self.frame.size.height/3)
+                    sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2 - 10, self.frame.size.height/3.5)
                 }
                 
                 if((location.x > self.frame.size.width/2 - 30) && (location.x < self.frame.size.width/2 + 30)){
-                    sprite.position = CGPointMake(self.frame.size.width/2 - 10, self.frame.size.height/3)
+                    sprite.position = CGPointMake(self.frame.size.width/2 - 10, self.frame.size.height/3.5)
                 }
                 
             }else{
