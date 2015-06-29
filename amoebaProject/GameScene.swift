@@ -25,7 +25,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var btnBlue:SKSpriteNode = SKSpriteNode()
     var btnYellow:SKSpriteNode = SKSpriteNode()
     var contentCreated = false
-    
+    var score:NSInteger = 0
+    var scoreLabel: SKLabelNode = SKLabelNode()
 //    var playerMouthAnimation : [SKTexture]!
 //    var playerVermelhoAnimation : [SKTexture]!
 //    var playerAzulAnimation : [SKTexture]!
@@ -48,6 +49,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             contentCreated = true
         }
         
+    }
+    
+    func setupHud(){
+        scoreLabel = SKLabelNode(fontNamed: "Courier")
+        scoreLabel.name = "scoreHud"
+        scoreLabel.fontSize = 15
+        scoreLabel.fontColor = UIColor.greenColor()
+        scoreLabel.text = "Score: " + String(score)
+        scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.9)
+        self.addChild(scoreLabel)
+    }
+    
+    func adjustScore(){
+        self.score = self.score + 100
+        scoreLabel.text = "Score: " + String(score)
     }
     
     func createRedAnimation(){
@@ -307,8 +323,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody!.categoryBitMask = amebaCat
         player.physicsBody!.contactTestBitMask = enemyCat
         player.physicsBody!.collisionBitMask = 0
-        player.xScale = 0.7
-        player.yScale = 0.7
+        player.xScale = 0.4
+        player.yScale = 0.4
         self.addChild(player)
         
         
@@ -337,6 +353,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //player.size.height/2 + 180
         self.physicsWorld.gravity = CGVectorMake(0, 0)
         self.physicsWorld.contactDelegate = self
+        setupHud()
     }
     
     func didBeginContact(contact: SKPhysicsContact)
@@ -370,9 +387,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
             gulpSound.play()
             monster.removeFromParent()
+            adjustScore()
         }
         else{
             //monster.removeAllActions()
+            let reveal = SKTransition.flipVerticalWithDuration(0.5)
+            let gameOverScene = GameOverScene(size: self.size)
+            self.view?.presentScene(gameOverScene, transition: reveal)
+            
         }
         
         
@@ -412,6 +434,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         return enemyPositionX!
     }
     
+    
+    
+    
     func addMonster(){
         
         alien = randomiseEnemy() as SKSpriteNode
@@ -427,8 +452,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alien.physicsBody!.categoryBitMask = enemyCat
         alien.physicsBody!.contactTestBitMask = amebaCat
         alien.physicsBody!.collisionBitMask = 0
-        alien.xScale = 0.5
-        alien.yScale = 0.5
+        alien.xScale = 0.3
+        alien.yScale = 0.3
         
         let minX = alien.size.width/2
         let maxX = self.frame.size.width - alien.size.width/2
@@ -454,14 +479,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         
-        actionArray.addObject(SKAction.runBlock({
-            var transition:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
-            //var gameOverScene:SKScene = GameOverScene(size: self.size, won: false)
-            //self.view!.presentScene(gameOverScene, transition: transition)
-        }))
+//        actionArray.addObject(SKAction.runBlock({
+//            var transition:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
+//            //var gameOverScene:SKScene = GameOverScene(size: self.size, won: false)
+//            //self.view!.presentScene(gameOverScene, transition: transition)
+//        }))
+//        
+//        actionArray.addObject(SKAction.removeFromParent())
+//        
+//        alien.runAction(SKAction.sequence(actionArray as [AnyObject]))
         
-        actionArray.addObject(SKAction.removeFromParent())
+        let loseAction = SKAction.runBlock() {
+            let reveal = SKTransition.flipVerticalWithDuration(0.5)
+            let gameOverScene = GameOverScene(size: self.size)
+            self.view?.presentScene(gameOverScene, transition: reveal)
+        }
         
+        //actionArray.addObject(loseAction)
         alien.runAction(SKAction.sequence(actionArray as [AnyObject]))
         
         
