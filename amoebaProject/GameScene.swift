@@ -312,7 +312,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gulpSound.numberOfLoops = 0
         gulpSound.prepareToPlay()
         
-        let backgroundImg = SKSpriteNode(imageNamed: "Fundo")
+        let backgroundImg = SKSpriteNode(imageNamed: "Fundo_Ipad")
         backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
         backgroundImg.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
         
@@ -324,7 +324,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.name = "red"
         createRedAnimation()
         
-        player.position = CGPointMake(self.frame.size.width/2, player.position.y + self.frame.size.height/3)
+        player.position = CGPointMake(self.frame.size.width/2, player.position.y + self.frame.size.height/3.5)
 
         playerPosition = 0
         player.physicsBody = SKPhysicsBody(rectangleOfSize: player.size)
