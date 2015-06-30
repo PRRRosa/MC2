@@ -12,6 +12,14 @@
 		C028FE931B3CE454000E37E9 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE921B3CE454000E37E9 /* GameOverScene.swift */; };
 		C028FE951B3CE481000E37E9 /* HowToPlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE941B3CE481000E37E9 /* HowToPlayScene.swift */; };
 		C028FE971B3CE4B4000E37E9 /* ScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE961B3CE4B4000E37E9 /* ScoreScene.swift */; };
+		C0C2F15F1B42D88600234065 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2F15E1B42D88600234065 /* InterfaceController.swift */; };
+		C0C2F1611B42D88600234065 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2F1601B42D88600234065 /* NotificationController.swift */; };
+		C0C2F1631B42D88600234065 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2F1621B42D88600234065 /* GlanceController.swift */; };
+		C0C2F1651B42D88600234065 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0C2F1641B42D88600234065 /* Images.xcassets */; };
+		C0C2F1691B42D88600234065 /* amoebaProject WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = C0C2F1681B42D88600234065 /* amoebaProject WatchKit App.app */; };
+		C0C2F1711B42D88600234065 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C2F16F1B42D88600234065 /* Interface.storyboard */; };
+		C0C2F1731B42D88600234065 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0C2F1721B42D88600234065 /* Images.xcassets */; };
+		C0C2F1761B42D88600234065 /* amoebaProject WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C0C2F1591B42D88600234065 /* amoebaProject WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D44BE3151B3873A1000BAA1F /* dubstep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3141B3873A1000BAA1F /* dubstep.mp3 */; };
 		D44BE3171B39E2A8000BAA1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3161B39E2A8000BAA1F /* Images.xcassets */; };
 		D44BE3241B3C6452000BAA1F /* amoebaLaranja.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D44BE31F1B3C6452000BAA1F /* amoebaLaranja.atlas */; };
@@ -36,6 +44,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C0C2F16A1B42D88600234065 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4B9BCDC1B31E811009940A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0C2F1671B42D88600234065;
+			remoteInfo = "amoebaProject WatchKit App";
+		};
+		C0C2F1741B42D88600234065 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4B9BCDC1B31E811009940A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0C2F1581B42D88600234065;
+			remoteInfo = "amoebaProject WatchKit Extension";
+		};
 		D4B9BCFE1B31E811009940A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D4B9BCDC1B31E811009940A6 /* Project object */;
@@ -45,12 +67,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C0C2F17D1B42D88700234065 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C0C2F1761B42D88600234065 /* amoebaProject WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		30E933251B3C060600DD9D0F /* gulp.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = gulp.m4a; sourceTree = "<group>"; };
 		C010ECD11B3CED9C00151101 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		C028FE921B3CE454000E37E9 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		C028FE941B3CE481000E37E9 /* HowToPlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPlayScene.swift; sourceTree = "<group>"; };
 		C028FE961B3CE4B4000E37E9 /* ScoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreScene.swift; sourceTree = "<group>"; };
+		C0C2F1591B42D88600234065 /* amoebaProject WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "amoebaProject WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0C2F15C1B42D88600234065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0C2F15D1B42D88600234065 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		C0C2F15E1B42D88600234065 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		C0C2F1601B42D88600234065 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		C0C2F1621B42D88600234065 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		C0C2F1641B42D88600234065 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C0C2F1681B42D88600234065 /* amoebaProject WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "amoebaProject WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0C2F16E1B42D88600234065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0C2F1701B42D88600234065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		C0C2F1721B42D88600234065 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D44BE3141B3873A1000BAA1F /* dubstep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dubstep.mp3; sourceTree = "<group>"; };
 		D44BE3161B39E2A8000BAA1F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		D44BE31F1B3C6452000BAA1F /* amoebaLaranja.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaLaranja.atlas; sourceTree = "<group>"; };
@@ -79,6 +126,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C0C2F1561B42D88600234065 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4B9BCE11B31E811009940A6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -96,6 +150,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0C2F15A1B42D88600234065 /* amoebaProject WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C0C2F15E1B42D88600234065 /* InterfaceController.swift */,
+				C0C2F1601B42D88600234065 /* NotificationController.swift */,
+				C0C2F1621B42D88600234065 /* GlanceController.swift */,
+				C0C2F1641B42D88600234065 /* Images.xcassets */,
+				C0C2F15B1B42D88600234065 /* Supporting Files */,
+			);
+			path = "amoebaProject WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		C0C2F15B1B42D88600234065 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C0C2F15C1B42D88600234065 /* Info.plist */,
+				C0C2F15D1B42D88600234065 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C0C2F16C1B42D88600234065 /* amoebaProject WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				C0C2F16F1B42D88600234065 /* Interface.storyboard */,
+				C0C2F1721B42D88600234065 /* Images.xcassets */,
+				C0C2F16D1B42D88600234065 /* Supporting Files */,
+			);
+			path = "amoebaProject WatchKit App";
+			sourceTree = "<group>";
+		};
+		C0C2F16D1B42D88600234065 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C0C2F16E1B42D88600234065 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D44BE3131B3873A1000BAA1F /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +224,8 @@
 				D44BE3131B3873A1000BAA1F /* Sounds */,
 				D4B9BCE61B31E811009940A6 /* amoebaProject */,
 				D4B9BD001B31E811009940A6 /* amoebaProjectTests */,
+				C0C2F15A1B42D88600234065 /* amoebaProject WatchKit Extension */,
+				C0C2F16C1B42D88600234065 /* amoebaProject WatchKit App */,
 				D4B9BCE51B31E811009940A6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,6 +235,8 @@
 			children = (
 				D4B9BCE41B31E811009940A6 /* amoebaProject.app */,
 				D4B9BCFD1B31E811009940A6 /* amoebaProjectTests.xctest */,
+				C0C2F1591B42D88600234065 /* amoebaProject WatchKit Extension.appex */,
+				C0C2F1681B42D88600234065 /* amoebaProject WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +288,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C0C2F1581B42D88600234065 /* amoebaProject WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0C2F17C1B42D88700234065 /* Build configuration list for PBXNativeTarget "amoebaProject WatchKit Extension" */;
+			buildPhases = (
+				C0C2F1551B42D88600234065 /* Sources */,
+				C0C2F1561B42D88600234065 /* Frameworks */,
+				C0C2F1571B42D88600234065 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0C2F16B1B42D88600234065 /* PBXTargetDependency */,
+			);
+			name = "amoebaProject WatchKit Extension";
+			productName = "amoebaProject WatchKit Extension";
+			productReference = C0C2F1591B42D88600234065 /* amoebaProject WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		C0C2F1671B42D88600234065 /* amoebaProject WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0C2F17B1B42D88700234065 /* Build configuration list for PBXNativeTarget "amoebaProject WatchKit App" */;
+			buildPhases = (
+				C0C2F1661B42D88600234065 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "amoebaProject WatchKit App";
+			productName = "amoebaProject WatchKit App";
+			productReference = C0C2F1681B42D88600234065 /* amoebaProject WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		D4B9BCE31B31E811009940A6 /* amoebaProject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4B9BD071B31E811009940A6 /* Build configuration list for PBXNativeTarget "amoebaProject" */;
@@ -198,10 +328,12 @@
 				D4B9BCE01B31E811009940A6 /* Sources */,
 				D4B9BCE11B31E811009940A6 /* Frameworks */,
 				D4B9BCE21B31E811009940A6 /* Resources */,
+				C0C2F17D1B42D88700234065 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C0C2F1751B42D88600234065 /* PBXTargetDependency */,
 			);
 			name = amoebaProject;
 			productName = amoebaProject;
@@ -235,6 +367,12 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Paulo Ricardo Ramos da Rosa";
 				TargetAttributes = {
+					C0C2F1581B42D88600234065 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					C0C2F1671B42D88600234065 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
 					D4B9BCE31B31E811009940A6 = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
@@ -259,11 +397,31 @@
 			targets = (
 				D4B9BCE31B31E811009940A6 /* amoebaProject */,
 				D4B9BCFC1B31E811009940A6 /* amoebaProjectTests */,
+				C0C2F1581B42D88600234065 /* amoebaProject WatchKit Extension */,
+				C0C2F1671B42D88600234065 /* amoebaProject WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C0C2F1571B42D88600234065 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0C2F1651B42D88600234065 /* Images.xcassets in Resources */,
+				C0C2F1691B42D88600234065 /* amoebaProject WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0C2F1661B42D88600234065 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0C2F1711B42D88600234065 /* Interface.storyboard in Resources */,
+				C0C2F1731B42D88600234065 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4B9BCE21B31E811009940A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -299,6 +457,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C0C2F1551B42D88600234065 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0C2F1611B42D88600234065 /* NotificationController.swift in Sources */,
+				C0C2F15F1B42D88600234065 /* InterfaceController.swift in Sources */,
+				C0C2F1631B42D88600234065 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4B9BCE01B31E811009940A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -324,6 +492,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C0C2F16B1B42D88600234065 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0C2F1671B42D88600234065 /* amoebaProject WatchKit App */;
+			targetProxy = C0C2F16A1B42D88600234065 /* PBXContainerItemProxy */;
+		};
+		C0C2F1751B42D88600234065 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0C2F1581B42D88600234065 /* amoebaProject WatchKit Extension */;
+			targetProxy = C0C2F1741B42D88600234065 /* PBXContainerItemProxy */;
+		};
 		D4B9BCFF1B31E811009940A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D4B9BCE31B31E811009940A6 /* amoebaProject */;
@@ -332,6 +510,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C0C2F16F1B42D88600234065 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0C2F1701B42D88600234065 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		D4B9BCF11B31E811009940A6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -351,6 +537,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C0C2F1771B42D88700234065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "amoebaProject WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C0C2F1781B42D88700234065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "amoebaProject WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C0C2F1791B42D88700234065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = amoebaProject_WatchKit_Extension;
+				INFOPLIST_FILE = "amoebaProject WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		C0C2F17A1B42D88700234065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = amoebaProject_WatchKit_Extension;
+				INFOPLIST_FILE = "amoebaProject WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 		D4B9BD051B31E811009940A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -501,6 +747,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C0C2F17B1B42D88700234065 /* Build configuration list for PBXNativeTarget "amoebaProject WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0C2F1791B42D88700234065 /* Debug */,
+				C0C2F17A1B42D88700234065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C0C2F17C1B42D88700234065 /* Build configuration list for PBXNativeTarget "amoebaProject WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0C2F1771B42D88700234065 /* Debug */,
+				C0C2F1781B42D88700234065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D4B9BCDF1B31E811009940A6 /* Build configuration list for PBXProject "amoebaProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
