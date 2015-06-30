@@ -29,7 +29,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreLabel: SKLabelNode = SKLabelNode()
     var playerPosition : NSInteger = 0
     var alien:SKSpriteNode = SKSpriteNode()
-    
+    var eat = 0
     var randomEnemyNumber = 0
     
     override func didMoveToView(view: SKView) {
@@ -48,19 +48,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupHud(){
-        scoreLabel = SKLabelNode(fontNamed: "orange juice.ttf")
+        scoreLabel = SKLabelNode(fontNamed: "Marker Felt")
         println(scoreLabel.fontName)
         scoreLabel.name = "scoreHud"
-        scoreLabel.fontSize = 15
+        scoreLabel.fontSize = 50
         scoreLabel.fontColor = UIColor.greenColor()
-        scoreLabel.text = "Score: " + String(score)
-        scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.9)
+        scoreLabel.text =  String(format: "%05d", arguments: [score])
+        scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.1)
         self.addChild(scoreLabel)
     }
     
     func adjustScore(){
         self.score = self.score + 100
-        scoreLabel.text = "Score: " + String(score)
+        scoreLabel.text = String(format: "%05d", arguments: [score])
     }
     
     func createRedAnimation(){
@@ -339,21 +339,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         btnBlue.position = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height/2 * 0.3)
 //        btnBlue.xScale = 1.3
 //        btnBlue.yScale = 1.3
-        self.addChild(btnBlue)
+//        self.addChild(btnBlue)
         
         btnRed = SKSpriteNode(imageNamed: "Vermelho")
         btnRed.name = "btnR"
         btnRed.position = CGPointMake(self.frame.size.width * 0.20, self.frame.size.height/2 * 0.3)
 //        btnRed.xScale = 1.3
 //        btnRed.yScale = 1.3
-        self.addChild(btnRed)
+//        self.addChild(btnRed)
         
         btnYellow = SKSpriteNode(imageNamed: "Amarelo")
         btnYellow.name = "btnY"
         btnYellow.position = CGPointMake(self.frame.size.width * 0.80, self.frame.size.height/2 * 0.3)
 //        btnYellow.xScale = 1.3
 //        btnYellow.yScale = 1.3
-        self.addChild(btnYellow)
+//        self.addChild(btnYellow)
         
         
         //player.size.height/2 + 180
@@ -393,6 +393,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             gulpSound.play()
             monster.removeFromParent()
             adjustScore()
+            eatCount()
         }
         else{
             //monster.removeAllActions()
@@ -405,7 +406,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    
+    func eatCount(){
+        eat++
+        if eat == 3{
+            eat = 0
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_BACKGROUND.value), 0)){
+            self.randomisePlayer()
+            }
+        }
+    }
     
     func randomiseEnemy() -> SKSpriteNode{
         let enemyColor: SKSpriteNode
@@ -516,7 +525,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             lastYieldTimeInterval = 0
             addMonster()
             
-            randomisePlayer()
+            //randomisePlayer()
         }
         
         

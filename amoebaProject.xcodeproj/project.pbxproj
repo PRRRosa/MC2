@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301E47F91B42F73B00681A61 /* cartoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 301E47F81B42F73B00681A61 /* cartoon.ttf */; };
 		30E933261B3C060600DD9D0F /* gulp.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 30E933251B3C060600DD9D0F /* gulp.m4a */; };
 		C010ECD21B3CED9C00151101 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010ECD11B3CED9C00151101 /* MenuScene.swift */; };
 		C028FE931B3CE454000E37E9 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE921B3CE454000E37E9 /* GameOverScene.swift */; };
@@ -83,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		301E47F51B42F2CB00681A61 /* orange juice.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "orange juice.ttf"; sourceTree = "<group>"; };
+		301E47F81B42F73B00681A61 /* cartoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cartoon.ttf; sourceTree = "<group>"; };
 		30E933251B3C060600DD9D0F /* gulp.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = gulp.m4a; sourceTree = "<group>"; };
 		C010ECD11B3CED9C00151101 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		C028FE921B3CE454000E37E9 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 		D4B9BCE71B31E811009940A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				301E47F81B42F73B00681A61 /* cartoon.ttf */,
 				D4B9BCE81B31E811009940A6 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -437,6 +440,7 @@
 				D461274C1B41C19400BCAC51 /* amoebaAmarelaBoca.atlas in Resources */,
 				D46127831B41C92800BCAC51 /* amoebaAzulBoca.atlas in Resources */,
 				D46127481B41BE0800BCAC51 /* amoebaVermelha.atlas in Resources */,
+				301E47F91B42F73B00681A61 /* cartoon.ttf in Resources */,
 				D461274A1B41BE2800BCAC51 /* amoebaVermelhaBoca.atlas in Resources */,
 				D46127851B41CAB200BCAC51 /* amoebaAzul.atlas in Resources */,
 				D44BE3241B3C6452000BAA1F /* amoebaLaranja.atlas in Resources */,
@@ -756,6 +760,7 @@
 				C0C2F17A1B42D88700234065 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C0C2F17C1B42D88700234065 /* Build configuration list for PBXNativeTarget "amoebaProject WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -764,6 +769,7 @@
 				C0C2F1781B42D88700234065 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4B9BCDF1B31E811009940A6 /* Build configuration list for PBXProject "amoebaProject" */ = {
 			isa = XCConfigurationList;

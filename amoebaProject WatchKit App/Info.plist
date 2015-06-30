@@ -31,5 +31,9 @@
 	<string>com.project.amoebaProject</string>
 	<key>WKWatchKitApp</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string></string>
+	</array>
 </dict>
 </plist>
