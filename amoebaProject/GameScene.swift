@@ -63,71 +63,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.text = "Score: " + String(score)
     }
     
-    func createRedAnimation(){
-        let amoebaVermelhaAtlas = SKTextureAtlas(named: "amoebaVermelha")
-        var playerFrames = [SKTexture]()
-        
-        let numImages = amoebaVermelhaAtlas.textureNames.count
-        for (var i = 0; i < numImages; i++) {
-            let nameA = "amoeba_\(i)@2x"
-            playerFrames.append(amoebaVermelhaAtlas.textureNamed(nameA))
-            
-        }
-        
-        for (var i = numImages - 1; i >= 0; i--) {
-            let nameA = "amoeba_\(i)@2x"
-            playerFrames.append(amoebaVermelhaAtlas.textureNamed(nameA))
-            
-        }
-        
-        //playerVermelhoAnimation = playerFrames[0]
-        player.name = "red"
-        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.0034, resize: true, restore: false)), withKey:"playerVermelho")
-
-    }
-    
-    func createBlueAnimation(){
-        let amoebaAzulAtlas = SKTextureAtlas(named: "amoebaAzul")
-        var playerFrames = [SKTexture]()
-        
-        let numImages = amoebaAzulAtlas.textureNames.count
-        for (var i = 0; i < numImages; i++) {
-            let nameA = "amebaAzul_\(i)@2x"
-            playerFrames.append(amoebaAzulAtlas.textureNamed(nameA))
-            
-        }
-        
-        for (var i = numImages - 1; i >= 0; i--) {
-            let nameA = "amebaAzul_\(i)@2x"
-            playerFrames.append(amoebaAzulAtlas.textureNamed(nameA))
-            
-        }
-        
-        //playerAzulAnimation = playerFrames
-        player.name = "blue"
-        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerAzul")
-    }
-    
-    func createYellowAnimation(){
-        let amoebaAmarelaAtlas = SKTextureAtlas(named: "amoebaAmarela")
-        var playerFrames = [SKTexture]()
-        
-        let numImages = amoebaAmarelaAtlas.textureNames.count
-        for (var i = 0; i < numImages; i++) {
-            let nameA = "ameba_\(i)@2x"
-            playerFrames.append(amoebaAmarelaAtlas.textureNamed(nameA))
-            
-        }
-        for (var i = numImages - 1; i >= 0; i--) {
-            let nameA = "ameba_\(i)@2x"
-            playerFrames.append(amoebaAmarelaAtlas.textureNamed(nameA))
-            
-        }
-        
-        //playerAmareloAnimation = playerFrames
-        player.name = "yellow"
-        player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.003, resize: true, restore: false)), withKey:"playerAmarelo")
-    }
     
     func createOrangeAnimation(){
         let amoebaLaranjaAtlas = SKTextureAtlas(named: "amoebaLaranja")
@@ -140,6 +75,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
+        for (var i = numImages - 1; i >= 0; i--){
+            let nameA = "amoebaL_\(i)@2x"
+            playerFrames.append(amoebaLaranjaAtlas.textureNamed(nameA))
+        }
+
+        
+        player.name = "orange"
         player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerLaranja")
     }
     
@@ -154,6 +96,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
+        for (var i = numImages - 1; i >= 0; i--){
+            let nameA = "amoebaVerde_\(i)@2x"
+            playerFrames.append(amoebaVerdeAtlas.textureNamed(nameA))
+        }
+
+        
+        player.name = "green"
         player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerVerde")
     }
     
@@ -168,6 +117,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
+        for (var i = numImages - 1; i >= 0; i--){
+            let nameA = "amoebaV_\(i)@2x"
+            playerFrames.append(amoebaVioletaAtlas.textureNamed(nameA))
+        }
+        
+        player.name = "purple"
         player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerVioleta")
     }
     
@@ -232,64 +187,65 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alien.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(alienFrames, timePerFrame: 0.05, resize: true, restore: false)), withKey:"amoebafeiaAmarela")
     }
 
-    func createRedMouthOpeningAnimation(){
-        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaVermelhaBoca")
+    
+    func createPurpleMouthOpeningAnimation(){
+        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaVioletaBoca")
         var mouthFrames = [SKTexture]()
         
         let numImages = playerAnimatedAtlas.textureNames.count
         for (var i = 0; i < numImages; i++) {
-            let nameA = "amebaVermelha_\(i)"
+            let nameA = "amebaVioleta_\(i)"
             mouthFrames.append(playerAnimatedAtlas.textureNamed(nameA))
             
         }
         for (var i = numImages - 1; i >= 0; i--) {
-            let nameA = "amebaVermelha_\(i)"
+            let nameA = "amebaVioleta_\(i)"
             mouthFrames.append(playerAnimatedAtlas.textureNamed(nameA))
             
         }
         
         //playerMouthAnimation = mouthFrames
-        player.runAction((SKAction.animateWithTextures(mouthFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"redMouthOpening")
+        player.runAction((SKAction.animateWithTextures(mouthFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"purpleMouthOpening")
     }
     
-    func createBlueMouthOpeningAnimation(){
-        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaAzulBoca")
+    func createGreenMouthOpeningAnimation(){
+        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaVerdeBoca")
         var mouthFrames = [SKTexture]()
         
         let numImages = playerAnimatedAtlas.textureNames.count
         for (var i = 0; i < numImages; i++) {
-            let nameA = "amebaAzul_\(i)"
+            let nameA = "amebaVerde_\(i)"
             mouthFrames.append(playerAnimatedAtlas.textureNamed(nameA))
             
         }
         for (var i = numImages - 1; i >= 0; i--) {
-            let nameA = "amebaAzul_\(i)"
+            let nameA = "amebaVerde_\(i)"
             mouthFrames.append(playerAnimatedAtlas.textureNamed(nameA))
             
         }
         
         //playerMouthAnimation = mouthFrames
-        player.runAction((SKAction.animateWithTextures(mouthFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"blueMouthOpening")
+        player.runAction((SKAction.animateWithTextures(mouthFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"greenMouthOpening")
     }
     
-    func createYellowMouthOpeningAnimation(){
-        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaAmarelaBoca")
+    func createOrangeMouthOpeningAnimation(){
+        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaLaranjaBoca")
         var mouthFrames = [SKTexture]()
         
         let numImages = playerAnimatedAtlas.textureNames.count
         for (var i = 0; i < numImages; i++) {
-            let nameA = "amebaAmarela_\(i)"
+            let nameA = "amebaLaranja_\(i)"
             mouthFrames.append(playerAnimatedAtlas.textureNamed(nameA))
             
         }
         for (var i = numImages - 1; i >= 0; i--) {
-            let nameA = "amebaAmarela_\(i)"
+            let nameA = "amebaLaranja_\(i)"
             mouthFrames.append(playerAnimatedAtlas.textureNamed(nameA))
             
         }
         
         //playerMouthAnimation = mouthFrames
-        player.runAction((SKAction.animateWithTextures(mouthFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"blueMouthOpening")
+        player.runAction((SKAction.animateWithTextures(mouthFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"orangeMouthOpening")
     }
     
     
@@ -318,8 +274,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         player = SKSpriteNode(imageNamed: "AmoebaVermelha")
         //player = SKSpriteNode(texture: firstFrame)
-        player.name = "red"
-        createRedAnimation()
+        player.name = "purple"
+        createPurpleAnimation()
         
         player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3.5)
 
@@ -382,19 +338,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         println(monster.name!)
         println(projectile.name!)
         
-        if(projectile.name! == monster.name!){
-            if(player.name == "red"){
-                createRedMouthOpeningAnimation()
-            } else if (player.name == "blue"){
-                createBlueMouthOpeningAnimation()
-                } else{
-                    createYellowMouthOpeningAnimation()
-                }
+        if(projectile.name! == "purple" && (monster.name! == "blue" || monster.name! == "red")){
+            createPurpleMouthOpeningAnimation()
+            
             gulpSound.play()
             monster.removeFromParent()
             adjustScore()
         }
-        else{
+        else if(projectile.name! == "green" && (monster.name! == "blue" || monster.name! == "yellow")){
+            createGreenMouthOpeningAnimation()
+            
+            gulpSound.play()
+            monster.removeFromParent()
+            adjustScore()
+        }else if(projectile.name! == "orange" && (monster.name! == "red" || monster.name! == "yellow")){
+            createOrangeMouthOpeningAnimation()
+            
+            gulpSound.play()
+            monster.removeFromParent()
+            adjustScore()
+        }else {
             //monster.removeAllActions()
             let reveal = SKTransition.flipVerticalWithDuration(0.5)
             let gameOverScene = GameOverScene(size: self.size)
@@ -525,11 +488,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func randomisePlayer(){
         let random = Int(arc4random_uniform(3))
         if (random == 0){
-            createRedAnimation()
+            createPurpleAnimation()
         }else if (random == 1){
-            createBlueAnimation()
+            createGreenAnimation()
         } else {
-            createYellowAnimation()
+            createOrangeAnimation()
         }
     }
     
@@ -613,7 +576,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         player.texture = SKTexture(imageNamed: "AmoebaAmarelo")
                         println(nodeColor.name!)
                         println(player.name!)
-                        createYellowAnimation()
+                        //createYellowAnimation()
                     }
                     
                     if(name == "btnR"){
@@ -622,7 +585,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         player.texture = SKTexture(imageNamed: "AmoebaVermelha")
                         println(nodeColor.name!)
                         println(player.name!)
-                        createRedAnimation()
+                        //createRedAnimation()
                     }
                     
                     if(name == "btnB"){
@@ -631,7 +594,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         player.texture = SKTexture(imageNamed: "AmoebaAzul")
                         println(nodeColor.name!)
                         println(player.name!)
-                        createBlueAnimation()
+                        //createBlueAnimation()
                     }
                 }
             }

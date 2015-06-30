@@ -20,20 +20,17 @@
 		C0C2F1711B42D88600234065 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C2F16F1B42D88600234065 /* Interface.storyboard */; };
 		C0C2F1731B42D88600234065 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0C2F1721B42D88600234065 /* Images.xcassets */; };
 		C0C2F1761B42D88600234065 /* amoebaProject WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C0C2F1591B42D88600234065 /* amoebaProject WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D407E60C1B430A4C002EB9AA /* amoebaLaranja.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D407E6091B430A4C002EB9AA /* amoebaLaranja.atlas */; };
+		D407E60D1B430A4C002EB9AA /* amoebaVerde.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D407E60A1B430A4C002EB9AA /* amoebaVerde.atlas */; };
+		D407E60E1B430A4C002EB9AA /* amoebaVioleta.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D407E60B1B430A4C002EB9AA /* amoebaVioleta.atlas */; };
+		D407E6121B430DEF002EB9AA /* amoebaLaranjaBoca.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D407E60F1B430DEF002EB9AA /* amoebaLaranjaBoca.atlas */; };
+		D407E6131B430DEF002EB9AA /* amoebaVerdeBoca.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D407E6101B430DEF002EB9AA /* amoebaVerdeBoca.atlas */; };
+		D407E6141B430DEF002EB9AA /* amoebaVioletaBoca.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D407E6111B430DEF002EB9AA /* amoebaVioletaBoca.atlas */; };
 		D44BE3151B3873A1000BAA1F /* dubstep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3141B3873A1000BAA1F /* dubstep.mp3 */; };
 		D44BE3171B39E2A8000BAA1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3161B39E2A8000BAA1F /* Images.xcassets */; };
-		D44BE3241B3C6452000BAA1F /* amoebaLaranja.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D44BE31F1B3C6452000BAA1F /* amoebaLaranja.atlas */; };
-		D44BE3251B3C6452000BAA1F /* amoebaVerde.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3201B3C6452000BAA1F /* amoebaVerde.atlas */; };
-		D44BE3271B3C6452000BAA1F /* amoebaVioleta.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3221B3C6452000BAA1F /* amoebaVioleta.atlas */; };
-		D44BE3291B3C6494000BAA1F /* amoebaAmarela.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3281B3C6494000BAA1F /* amoebaAmarela.atlas */; };
 		D455F6CE1B3DC7E800A888DD /* amoebaFeiaAmarela.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D455F6CB1B3DC7E800A888DD /* amoebaFeiaAmarela.atlas */; };
 		D455F6CF1B3DC7E800A888DD /* amoebaFeiaAzul.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D455F6CC1B3DC7E800A888DD /* amoebaFeiaAzul.atlas */; };
 		D455F6D01B3DC7E800A888DD /* amoebaFeiaVermelha.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D455F6CD1B3DC7E800A888DD /* amoebaFeiaVermelha.atlas */; };
-		D46127481B41BE0800BCAC51 /* amoebaVermelha.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D46127471B41BE0800BCAC51 /* amoebaVermelha.atlas */; };
-		D461274A1B41BE2800BCAC51 /* amoebaVermelhaBoca.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D46127491B41BE2800BCAC51 /* amoebaVermelhaBoca.atlas */; };
-		D461274C1B41C19400BCAC51 /* amoebaAmarelaBoca.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D461274B1B41C19400BCAC51 /* amoebaAmarelaBoca.atlas */; };
-		D46127831B41C92800BCAC51 /* amoebaAzulBoca.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D46127821B41C92800BCAC51 /* amoebaAzulBoca.atlas */; };
-		D46127851B41CAB200BCAC51 /* amoebaAzul.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D46127841B41CAB200BCAC51 /* amoebaAzul.atlas */; };
 		D4B9BCEA1B31E811009940A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9BCE91B31E811009940A6 /* AppDelegate.swift */; };
 		D4B9BCEC1B31E811009940A6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D4B9BCEB1B31E811009940A6 /* GameScene.sks */; };
 		D4B9BCEE1B31E811009940A6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9BCED1B31E811009940A6 /* GameScene.swift */; };
@@ -99,20 +96,17 @@
 		C0C2F16E1B42D88600234065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0C2F1701B42D88600234065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		C0C2F1721B42D88600234065 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D407E6091B430A4C002EB9AA /* amoebaLaranja.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaLaranja.atlas; sourceTree = "<group>"; };
+		D407E60A1B430A4C002EB9AA /* amoebaVerde.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaVerde.atlas; sourceTree = "<group>"; };
+		D407E60B1B430A4C002EB9AA /* amoebaVioleta.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaVioleta.atlas; sourceTree = "<group>"; };
+		D407E60F1B430DEF002EB9AA /* amoebaLaranjaBoca.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaLaranjaBoca.atlas; sourceTree = "<group>"; };
+		D407E6101B430DEF002EB9AA /* amoebaVerdeBoca.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaVerdeBoca.atlas; sourceTree = "<group>"; };
+		D407E6111B430DEF002EB9AA /* amoebaVioletaBoca.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaVioletaBoca.atlas; sourceTree = "<group>"; };
 		D44BE3141B3873A1000BAA1F /* dubstep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dubstep.mp3; sourceTree = "<group>"; };
 		D44BE3161B39E2A8000BAA1F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
-		D44BE31F1B3C6452000BAA1F /* amoebaLaranja.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaLaranja.atlas; sourceTree = "<group>"; };
-		D44BE3201B3C6452000BAA1F /* amoebaVerde.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaVerde.atlas; sourceTree = "<group>"; };
-		D44BE3221B3C6452000BAA1F /* amoebaVioleta.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaVioleta.atlas; sourceTree = "<group>"; };
-		D44BE3281B3C6494000BAA1F /* amoebaAmarela.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaAmarela.atlas; sourceTree = "<group>"; };
 		D455F6CB1B3DC7E800A888DD /* amoebaFeiaAmarela.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaFeiaAmarela.atlas; sourceTree = "<group>"; };
 		D455F6CC1B3DC7E800A888DD /* amoebaFeiaAzul.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaFeiaAzul.atlas; sourceTree = "<group>"; };
 		D455F6CD1B3DC7E800A888DD /* amoebaFeiaVermelha.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaFeiaVermelha.atlas; sourceTree = "<group>"; };
-		D46127471B41BE0800BCAC51 /* amoebaVermelha.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaVermelha.atlas; sourceTree = "<group>"; };
-		D46127491B41BE2800BCAC51 /* amoebaVermelhaBoca.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaVermelhaBoca.atlas; sourceTree = "<group>"; };
-		D461274B1B41C19400BCAC51 /* amoebaAmarelaBoca.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaAmarelaBoca.atlas; sourceTree = "<group>"; };
-		D46127821B41C92800BCAC51 /* amoebaAzulBoca.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaAzulBoca.atlas; sourceTree = "<group>"; };
-		D46127841B41CAB200BCAC51 /* amoebaAzul.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaAzul.atlas; sourceTree = "<group>"; };
 		D4B9BCE41B31E811009940A6 /* amoebaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amoebaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B9BCE81B31E811009940A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4B9BCE91B31E811009940A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -202,18 +196,15 @@
 		D44BE3181B39E344000BAA1F /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				D46127841B41CAB200BCAC51 /* amoebaAzul.atlas */,
-				D46127821B41C92800BCAC51 /* amoebaAzulBoca.atlas */,
-				D461274B1B41C19400BCAC51 /* amoebaAmarelaBoca.atlas */,
-				D46127491B41BE2800BCAC51 /* amoebaVermelhaBoca.atlas */,
-				D46127471B41BE0800BCAC51 /* amoebaVermelha.atlas */,
+				D407E60F1B430DEF002EB9AA /* amoebaLaranjaBoca.atlas */,
+				D407E6101B430DEF002EB9AA /* amoebaVerdeBoca.atlas */,
+				D407E6111B430DEF002EB9AA /* amoebaVioletaBoca.atlas */,
+				D407E6091B430A4C002EB9AA /* amoebaLaranja.atlas */,
+				D407E60A1B430A4C002EB9AA /* amoebaVerde.atlas */,
+				D407E60B1B430A4C002EB9AA /* amoebaVioleta.atlas */,
 				D455F6CB1B3DC7E800A888DD /* amoebaFeiaAmarela.atlas */,
 				D455F6CC1B3DC7E800A888DD /* amoebaFeiaAzul.atlas */,
 				D455F6CD1B3DC7E800A888DD /* amoebaFeiaVermelha.atlas */,
-				D44BE3281B3C6494000BAA1F /* amoebaAmarela.atlas */,
-				D44BE31F1B3C6452000BAA1F /* amoebaLaranja.atlas */,
-				D44BE3201B3C6452000BAA1F /* amoebaVerde.atlas */,
-				D44BE3221B3C6452000BAA1F /* amoebaVioleta.atlas */,
 			);
 			name = Animations;
 			sourceTree = "<group>";
@@ -428,22 +419,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D407E6131B430DEF002EB9AA /* amoebaVerdeBoca.atlas in Resources */,
 				30E933261B3C060600DD9D0F /* gulp.m4a in Resources */,
 				D4B9BCF81B31E811009940A6 /* LaunchScreen.xib in Resources */,
 				D44BE3171B39E2A8000BAA1F /* Images.xcassets in Resources */,
+				D407E60E1B430A4C002EB9AA /* amoebaVioleta.atlas in Resources */,
+				D407E6121B430DEF002EB9AA /* amoebaLaranjaBoca.atlas in Resources */,
 				D44BE3151B3873A1000BAA1F /* dubstep.mp3 in Resources */,
-				D44BE3271B3C6452000BAA1F /* amoebaVioleta.atlas in Resources */,
 				D4B9BCEC1B31E811009940A6 /* GameScene.sks in Resources */,
-				D461274C1B41C19400BCAC51 /* amoebaAmarelaBoca.atlas in Resources */,
-				D46127831B41C92800BCAC51 /* amoebaAzulBoca.atlas in Resources */,
-				D46127481B41BE0800BCAC51 /* amoebaVermelha.atlas in Resources */,
-				D461274A1B41BE2800BCAC51 /* amoebaVermelhaBoca.atlas in Resources */,
-				D46127851B41CAB200BCAC51 /* amoebaAzul.atlas in Resources */,
-				D44BE3241B3C6452000BAA1F /* amoebaLaranja.atlas in Resources */,
-				D44BE3251B3C6452000BAA1F /* amoebaVerde.atlas in Resources */,
 				D455F6D01B3DC7E800A888DD /* amoebaFeiaVermelha.atlas in Resources */,
+				D407E60C1B430A4C002EB9AA /* amoebaLaranja.atlas in Resources */,
+				D407E60D1B430A4C002EB9AA /* amoebaVerde.atlas in Resources */,
+				D407E6141B430DEF002EB9AA /* amoebaVioletaBoca.atlas in Resources */,
 				D455F6CF1B3DC7E800A888DD /* amoebaFeiaAzul.atlas in Resources */,
-				D44BE3291B3C6494000BAA1F /* amoebaAmarela.atlas in Resources */,
 				D455F6CE1B3DC7E800A888DD /* amoebaFeiaAmarela.atlas in Resources */,
 				D4B9BCF31B31E811009940A6 /* Main.storyboard in Resources */,
 			);
@@ -756,6 +744,7 @@
 				C0C2F17A1B42D88700234065 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C0C2F17C1B42D88700234065 /* Build configuration list for PBXNativeTarget "amoebaProject WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -764,6 +753,7 @@
 				C0C2F1781B42D88700234065 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4B9BCDF1B31E811009940A6 /* Build configuration list for PBXProject "amoebaProject" */ = {
 			isa = XCConfigurationList;

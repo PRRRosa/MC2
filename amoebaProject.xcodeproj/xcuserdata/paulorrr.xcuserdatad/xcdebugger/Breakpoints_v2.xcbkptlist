@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "amoebaProject/GameScene.swift"
-            timestampString = "457297200.490405"
+            timestampString = "457379801.315487"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "createContent()"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "amoebaProject/GameScene.swift"
-            timestampString = "457297200.490405"
+            timestampString = "457379801.315487"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "createContent()"
             landmarkType = "5">
          </BreakpointContent>

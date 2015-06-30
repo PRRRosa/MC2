@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import GameKit
 
 extension SKNode {
     class func unarchiveFromFile(file : String) -> SKNode? {
@@ -25,7 +26,7 @@ extension SKNode {
     }
 }
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GKGameCenterControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,16 @@ class GameViewController: UIViewController {
             
             skView.presentScene(scene)
         }*/
+        
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setGameCenter()
+        showLeaderboard()
+    }
+    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -68,6 +78,39 @@ class GameViewController: UIViewController {
             
         }
     }
+    
+    func setGameCenter(){
+        var localPlayer = GKLocalPlayer.localPlayer()
+        localPlayer.authenticateHandler = {(viewController : UIViewController!, error : NSError!) -> Void in
+            if ((viewController) != nil) {
+                self.presentViewController(viewController, animated: true, completion: nil)
+            }else {
+                println((GKLocalPlayer.localPlayer().authenticated))
+            }
+        }
+    }
+    
+    func showLeaderboard() {
+        
+        var gcViewController: GKGameCenterViewController = GKGameCenterViewController()
+        gcViewController.gameCenterDelegate = self
+        
+        gcViewController.viewState = GKGameCenterViewControllerState.Leaderboards
+        
+        
+        gcViewController.leaderboardIdentifier = "YOUR_BOARD_NAME"
+        
+        self.showViewController(gcViewController, sender: self)
+        self.navigationController?.pushViewController(gcViewController, animated: true)
+        
+    }
+    
+    func gameCenterViewControllerDidFinish(gcViewController: GKGameCenterViewController!){
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    
 
     override func shouldAutorotate() -> Bool {
         return true
