@@ -410,9 +410,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         eat++
         if eat == 3{
             eat = 0
-            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_BACKGROUND.value), 0)){
-            self.randomisePlayer()
-            }
+            randomisePlayer()
         }
     }
     
