@@ -352,17 +352,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             gulpSound.play()
             monster.removeFromParent()
             adjustScore()
+            eatCount()
         }else if(projectile.name! == "orange" && (monster.name! == "red" || monster.name! == "yellow")){
             createOrangeMouthOpeningAnimation()
             
             gulpSound.play()
             monster.removeFromParent()
             adjustScore()
+            eatCount()
         }else {
             //monster.removeAllActions()
-            let reveal = SKTransition.flipVerticalWithDuration(0.5)
-            let gameOverScene = GameOverScene(size: self.size)
-            self.view?.presentScene(gameOverScene, transition: reveal)
+            self.gameOver()
+            
             
         }
         
@@ -624,5 +625,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             
         }
+    }
+    
+    
+    func gameOver(){
+        
+        if let savedScore: Int = NSUserDefaults.standardUserDefaults().objectForKey("HighestScore") as? Int{
+        println(savedScore)
+            if savedScore < score{
+                NSUserDefaults.standardUserDefaults().setObject(savedScore, forKey:"HighestScore")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                //inserir score no gameCenter
+            }
+        }else{
+            var highestScore:Int = score
+                    NSUserDefaults.standardUserDefaults().setObject(highestScore, forKey:"HighestScore")
+                    NSUserDefaults.standardUserDefaults().synchronize()
+                    //inserir score no gameCenter
+        }
+        let reveal = SKTransition.flipVerticalWithDuration(0.5)
+        let gameOverScene = GameOverScene(size: self.size)
+        self.view?.presentScene(gameOverScene, transition: reveal)
     }
 }
