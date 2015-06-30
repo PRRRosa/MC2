@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301E47F91B42F73B00681A61 /* cartoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 301E47F81B42F73B00681A61 /* cartoon.ttf */; };
 		30E933261B3C060600DD9D0F /* gulp.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 30E933251B3C060600DD9D0F /* gulp.m4a */; };
 		C010ECD21B3CED9C00151101 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010ECD11B3CED9C00151101 /* MenuScene.swift */; };
 		C028FE931B3CE454000E37E9 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE921B3CE454000E37E9 /* GameOverScene.swift */; };
@@ -80,6 +81,7 @@
 
 /* Begin PBXFileReference section */
 		301E47F51B42F2CB00681A61 /* orange juice.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "orange juice.ttf"; sourceTree = "<group>"; };
+		301E47F81B42F73B00681A61 /* cartoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cartoon.ttf; sourceTree = "<group>"; };
 		30E933251B3C060600DD9D0F /* gulp.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = gulp.m4a; sourceTree = "<group>"; };
 		C010ECD11B3CED9C00151101 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		C028FE921B3CE454000E37E9 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		D4B9BCE71B31E811009940A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				301E47F81B42F73B00681A61 /* cartoon.ttf */,
 				D4B9BCE81B31E811009940A6 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -427,6 +430,7 @@
 				D407E6121B430DEF002EB9AA /* amoebaLaranjaBoca.atlas in Resources */,
 				D44BE3151B3873A1000BAA1F /* dubstep.mp3 in Resources */,
 				D4B9BCEC1B31E811009940A6 /* GameScene.sks in Resources */,
+				301E47F91B42F73B00681A61 /* cartoon.ttf in Resources */,
 				D455F6D01B3DC7E800A888DD /* amoebaFeiaVermelha.atlas in Resources */,
 				D407E60C1B430A4C002EB9AA /* amoebaLaranja.atlas in Resources */,
 				D407E60D1B430A4C002EB9AA /* amoebaVerde.atlas in Resources */,
