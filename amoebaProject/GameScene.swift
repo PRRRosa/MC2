@@ -8,6 +8,7 @@
 
 import SpriteKit
 import AVFoundation
+import GameKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -633,15 +634,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let savedScore: Int = NSUserDefaults.standardUserDefaults().objectForKey("HighestScore") as? Int{
         println(savedScore)
             if savedScore < score{
-                NSUserDefaults.standardUserDefaults().setObject(savedScore, forKey:"HighestScore")
+                NSUserDefaults.standardUserDefaults().setObject(score, forKey:"HighestScore")
                 NSUserDefaults.standardUserDefaults().synchronize()
                 //inserir score no gameCenter
+                var game: GameViewController = self.view?.window?.rootViewController as! GameViewController
+                if (game.playerIsAuthenticated){
+                    var leaderboardScore = GKScore(leaderboardIdentifier: "ID DA LEADERBOARD")
+                    leaderboardScore.value = Int64(score)
+                    GKScore.reportScores([leaderboardScore], withCompletionHandler: {(error) -> Void in
+                        let alert = UIAlertView(title: "Success", message: "Score updated", delegate: self, cancelButtonTitle: "Ok")
+                        alert.show()
+                    })
+                    
+                }
             }
         }else{
             var highestScore:Int = score
                     NSUserDefaults.standardUserDefaults().setObject(highestScore, forKey:"HighestScore")
                     NSUserDefaults.standardUserDefaults().synchronize()
                     //inserir score no gameCenter
+            var game: GameViewController = self.view?.window?.rootViewController as! GameViewController
+            if (game.playerIsAuthenticated){
+                var leaderboardScore = GKScore(leaderboardIdentifier: "ID DA LEADERBOARD")
+                leaderboardScore.value = Int64(highestScore)
+                GKScore.reportScores([leaderboardScore], withCompletionHandler: {(error) -> Void in
+                    let alert = UIAlertView(title: "Success", message: "Score updated", delegate: self, cancelButtonTitle: "Ok")
+                    alert.show()
+                })
+                
+            }
         }
         let reveal = SKTransition.flipVerticalWithDuration(0.5)
         let gameOverScene = GameOverScene(size: self.size)
