@@ -52,6 +52,7 @@ class MenuScene: SKScene
         
     }
     
+    
     //tocar nos botoes
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent)
@@ -81,14 +82,16 @@ class MenuScene: SKScene
                 
             else if scoreButton.containsPoint(location)
             {
-                let skView = mainView as! SKView
-                
-                let gameScene = ScoreScene(size: skView.bounds.size)
-                gameScene.registerView(mainView!)
-                gameScene.scaleMode = SKSceneScaleMode.AspectFill
-                skView.presentScene(gameScene)
-                
-                self.removeFromParent()
+                var game: GameViewController = self.view?.window?.rootViewController as! GameViewController
+                game.showLeaderboard()
+//                let skView = mainView as! SKView
+//                
+//                let gameScene = ScoreScene(size: skView.bounds.size)
+//                gameScene.registerView(mainView!)
+//                gameScene.scaleMode = SKSceneScaleMode.AspectFill
+//                skView.presentScene(gameScene)
+//                
+//                self.removeFromParent()
             }
                 
             //HOW TO PLAY BUTTON
