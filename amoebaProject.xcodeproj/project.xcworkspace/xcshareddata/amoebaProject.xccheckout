@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>18BF80A9-F9E4-45C9-A069-333688190366</string>
+	<string>142220DF-4C64-4443-AF94-23829A98357F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>amoebaProject</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6397FF948D47FB0785867B7391390995A2813BF5</key>
-		<string>https://github.com/PauloRRR/MC2</string>
+		<string>https://github.com/PauloRRR/MC2.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>amoebaProject.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/PauloRRR/MC2</string>
+	<string>https://github.com/PauloRRR/MC2.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
