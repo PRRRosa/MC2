@@ -48,7 +48,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupHud(){
-        scoreLabel = SKLabelNode(fontNamed: "Courier")
+        scoreLabel = SKLabelNode(fontNamed: "orange juice.ttf")
+        println(scoreLabel.fontName)
         scoreLabel.name = "scoreHud"
         scoreLabel.fontSize = 15
         scoreLabel.fontColor = UIColor.greenColor()
@@ -537,7 +538,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var timeSinceLastUpdate = currentTime - lastUpdateTimerInterval
         lastUpdateTimerInterval = currentTime
         
-        if (timeSinceLastUpdate > 2){
+        if (timeSinceLastUpdate > 1.5){
             timeSinceLastUpdate = 1/60
             lastUpdateTimerInterval = currentTime
         }

@@ -46,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		301E47F51B42F2CB00681A61 /* orange juice.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "orange juice.ttf"; sourceTree = "<group>"; };
 		30E933251B3C060600DD9D0F /* gulp.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = gulp.m4a; sourceTree = "<group>"; };
 		C010ECD11B3CED9C00151101 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		C028FE921B3CE454000E37E9 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
@@ -183,6 +184,7 @@
 		D4B9BD011B31E811009940A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				301E47F51B42F2CB00681A61 /* orange juice.ttf */,
 				D4B9BD021B31E811009940A6 /* Info.plist */,
 			);
 			name = "Supporting Files";
