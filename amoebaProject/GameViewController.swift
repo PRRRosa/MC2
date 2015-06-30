@@ -53,7 +53,6 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         super.viewDidAppear(animated)
         
         setGameCenter()
-        showLeaderboard()
     }
     
     
