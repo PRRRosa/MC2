@@ -16,6 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound |
+            UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
+        
+        var notification = UILocalNotification()
+        notification.alertBody = "I'm hungry!"
+        notification.alertAction = "open"
+        notification.fireDate = NSDate().dateByAddingTimeInterval(10)
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.userInfo = ["title": "Reminder Test"]
+        notification.category = "TODO_CATEGORY"
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
+        
         return true
     }
 
@@ -39,6 +54,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        
+        println(notification.userInfo!["title"] as! String)
+        
+        switch (identifier!) {
+        case "REMIND":
+            println("REMIND LATER")
+        default: // switch statements must be exhaustive - this condition should never be met
+            println("Error: unexpected notification action identifier!")
+        }
+        completionHandler() // per developer documentation, app will terminate if we fail to call this
     }
 
 

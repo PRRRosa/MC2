@@ -32,25 +32,46 @@ class MenuScene: SKScene
         let leftMargin = view.bounds.width/4
         let topMargin = view.bounds.height/4
         
-        let backgroundImg = SKSpriteNode(imageNamed: "fundoMenu")
+        let backgroundImg = SKSpriteNode(imageNamed: "Fundo_Ipad")
         backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
+        backgroundImg.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
         self.addChild(backgroundImg)
+        
+        let titleImg = SKSpriteNode(imageNamed: "Chompy")
+        titleImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2 * 0.22)
+        self.addChild(titleImg)
+        
+        let player = SKSpriteNode(imageNamed: randomPlayerColor() as! String)
+        player.position = CGPointMake(self.frame.size.width/2 * 0.4, self.frame.size.height * 0.3)
+        self.addChild(player)
         
         //Opcoes do menu
         
-        playButton = SKSpriteNode(imageNamed:"buttonPlay")
+        playButton = SKSpriteNode(imageNamed:"playbutton")
         playButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:540.0);
         self.addChild(playButton)
         
-        scoreButton = SKSpriteNode(imageNamed:"buttonScore")
+        scoreButton = SKSpriteNode(imageNamed:"scorebutton")
         scoreButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:460.0);
         self.addChild(scoreButton)
         
-        howButton = SKSpriteNode(imageNamed:"buttonHow")
+        howButton = SKSpriteNode(imageNamed:"howbutton")
         howButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:380.0);
         self.addChild(howButton)
         
     }
+    
+    func randomPlayerColor()->NSString{
+        var randomNumber = Int(arc4random_uniform(3))
+        if(randomNumber == 0){
+            return "amoebaV_00"
+        }else if (randomNumber == 1){
+            return "amoebaVerde_00"
+        }else {
+            return "amoebaL_00"
+        }
+    }
+    
     
     //tocar nos botoes
     
@@ -81,14 +102,16 @@ class MenuScene: SKScene
                 
             else if scoreButton.containsPoint(location)
             {
-                let skView = mainView as! SKView
-                
-                let gameScene = ScoreScene(size: skView.bounds.size)
-                gameScene.registerView(mainView!)
-                gameScene.scaleMode = SKSceneScaleMode.AspectFill
-                skView.presentScene(gameScene)
-                
-                self.removeFromParent()
+                var game: GameViewController = self.view?.window?.rootViewController as! GameViewController
+                game.showLeaderboard()
+//                let skView = mainView as! SKView
+//                
+//                let gameScene = ScoreScene(size: skView.bounds.size)
+//                gameScene.registerView(mainView!)
+//                gameScene.scaleMode = SKSceneScaleMode.AspectFill
+//                skView.presentScene(gameScene)
+//                
+//                self.removeFromParent()
             }
                 
             //HOW TO PLAY BUTTON
