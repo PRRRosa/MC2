@@ -32,21 +32,21 @@ class MenuScene: SKScene
         let leftMargin = view.bounds.width/4
         let topMargin = view.bounds.height/4
         
-        let backgroundImg = SKSpriteNode(imageNamed: "fundoMenu")
+        let backgroundImg = SKSpriteNode(imageNamed: "Initial")
         backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
         self.addChild(backgroundImg)
         
         //Opcoes do menu
         
-        playButton = SKSpriteNode(imageNamed:"buttonPlay")
+        playButton = SKSpriteNode(imageNamed:"playbutton")
         playButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:540.0);
         self.addChild(playButton)
         
-        scoreButton = SKSpriteNode(imageNamed:"buttonScore")
+        scoreButton = SKSpriteNode(imageNamed:"scorebutton")
         scoreButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:460.0);
         self.addChild(scoreButton)
         
-        howButton = SKSpriteNode(imageNamed:"buttonHow")
+        howButton = SKSpriteNode(imageNamed:"howbutton")
         howButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:380.0);
         self.addChild(howButton)
         
