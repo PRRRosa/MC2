@@ -123,8 +123,8 @@ class HowToPlayScene: SKScene
                     redoButton.hidden = false;
                     
                     myLabel.text = "Cuidado!"
-                    myLabel2.text = "Chumpy só pode errar"
-                    myLabel3.text = "de yummy 5 vezes"
+                    myLabel2.text = "Chompy só pode errar"
+                    myLabel3.text = "de yummy 3 vezes"
                 
                     runAction(SKAction.sequence([
                         SKAction.waitForDuration(1.0),

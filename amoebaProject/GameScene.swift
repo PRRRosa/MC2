@@ -552,7 +552,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func updateWithTimeSinceLastUpdate(timeSinceLastUpdate:CFTimeInterval){
         
         lastYieldTimeInterval += timeSinceLastUpdate
-        if (lastYieldTimeInterval > 1.5){
+        if (lastYieldTimeInterval > 1.5 * alienSpeed){
             lastYieldTimeInterval = 0
             addMonster()
             
@@ -614,7 +614,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var timeSinceLastUpdate = currentTime - lastUpdateTimerInterval
         lastUpdateTimerInterval = currentTime
         
-        if (timeSinceLastUpdate > 1.5){
+        if (timeSinceLastUpdate > 1.5 * alienSpeed){
             timeSinceLastUpdate = 1/60
             lastUpdateTimerInterval = currentTime
         }
