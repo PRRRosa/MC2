@@ -37,7 +37,12 @@ class GameOverScene: SKScene {
         
         let gameOverImg = SKSpriteNode(imageNamed: "Game Over")
         gameOverImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.7)
-        //backgroundImg.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
+        
+        
+        let retryImg = SKSpriteNode(imageNamed: "againButton")
+        retryImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.4)
+        retryImg.name = "retry"
+
         
         againButton = SKSpriteNode(imageNamed:"againButton")
         againButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.size.height/2);
@@ -45,6 +50,7 @@ class GameOverScene: SKScene {
         self.addChild(backgroundImg)
         
         self.addChild(gameOverImg)
+        self.addChild(retryImg)
         
         self.addChild(againButton)
     
@@ -59,7 +65,34 @@ class GameOverScene: SKScene {
         //        self.view?.presentScene(scene, transition:reveal)
         //    }
         //    ]))
+
         
+        let rotate = SKAction.rotateByAngle(-3.2, duration: 3)
+        let repeat = SKAction.repeatActionForever(rotate)
+        retryImg.runAction(repeat)
+       
+        
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        /* Called when a touch begins */
+        
+        for touch in (touches as! Set<UITouch>) {
+            let location = touch.locationInNode(self)
+            let nodeColor = self.nodeAtPoint(location)
+            
+                if let name = nodeColor.name{
+                    if(name == "retry"){
+                        let reveal = SKTransition.moveInWithDirection(SKTransitionDirection.Left, duration: 0.5)
+                        let scene = GameScene(size: size)
+                        self.view?.presentScene(scene, transition:reveal)
+
+                      
+                    }
+                    
+                    
+                }
+            }
     }
     
     // 6
