@@ -32,15 +32,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var alien:SKSpriteNode = SKSpriteNode()
     var eat = 0
     var randomEnemyNumber = 0
-    
+    var life = 3
+    var alienSpeed = 1.0
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-        //self.addChild(myLabel)
-
         if (!contentCreated){
             createContent()
             contentCreated = true
@@ -53,7 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         println(scoreLabel.fontName)
         scoreLabel.name = "scoreHud"
         scoreLabel.fontSize = 50
-        scoreLabel.fontColor = UIColor.greenColor()
+        //scoreLabel.fontColor = UIColor.greenColor()
         scoreLabel.text =  String(format: "%05d", arguments: [score])
         scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.1)
         self.addChild(scoreLabel)
@@ -62,6 +58,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func adjustScore(){
         self.score = self.score + 100
         scoreLabel.text = String(format: "%05d", arguments: [score])
+        if (score%200 == 0){
+            alienSpeed = alienSpeed * 0.95
+        }
     }
     
     
@@ -81,7 +80,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             playerFrames.append(amoebaLaranjaAtlas.textureNamed(nameA))
         }
 
-        
+        scoreLabel.fontColor = UIColor.orangeColor()
         player.name = "orange"
         player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerLaranja")
     }
@@ -102,7 +101,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             playerFrames.append(amoebaVerdeAtlas.textureNamed(nameA))
         }
 
-        
+        scoreLabel.fontColor = UIColor.greenColor()
         player.name = "green"
         player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerVerde")
     }
@@ -122,7 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let nameA = "amoebaV_\(i)@2x"
             playerFrames.append(amoebaVioletaAtlas.textureNamed(nameA))
         }
-        
+        scoreLabel.fontColor = UIColor.purpleColor()
         player.name = "purple"
         player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerVioleta")
     }
@@ -188,7 +187,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alien.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(alienFrames, timePerFrame: 0.05, resize: true, restore: false)), withKey:"amoebafeiaAmarela")
     }
 
-    
     func createPurpleMouthOpeningAnimation(){
         let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaVioletaBoca")
         var mouthFrames = [SKTexture]()
@@ -208,6 +206,56 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //playerMouthAnimation = mouthFrames
         player.runAction((SKAction.animateWithTextures(mouthFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"purpleMouthOpening")
     }
+    
+    func createPurpleHitAnimation(){
+        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaVioletaHit")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = playerAnimatedAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "amebaMortaRoxa_\(i)"
+            playerFrames.append(playerAnimatedAtlas.textureNamed(nameA))
+            
+        }
+        
+        
+        //playerMouthAnimation = mouthFrames
+        player.runAction((SKAction.animateWithTextures(playerFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"purpleHit")
+    }
+    
+    func createGreenHitAnimation(){
+        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaVerdeHit")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = playerAnimatedAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "amebaMortaVerde_\(i)"
+            playerFrames.append(playerAnimatedAtlas.textureNamed(nameA))
+            
+        }
+        
+        
+        //playerMouthAnimation = mouthFrames
+        player.runAction((SKAction.animateWithTextures(playerFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"greenHit")
+    }
+    
+    func createOrangeHitAnimation(){
+        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaLaranjaHit")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = playerAnimatedAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "amebaMortaLaranja_\(i)"
+            playerFrames.append(playerAnimatedAtlas.textureNamed(nameA))
+            
+        }
+        
+        
+        //playerMouthAnimation = mouthFrames
+        player.runAction((SKAction.animateWithTextures(playerFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"orangeHit")
+    }
+    
+
     
     func createGreenMouthOpeningAnimation(){
         let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaVerdeBoca")
@@ -251,6 +299,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func createContent(){
+        
         //let firstFrame: SKTexture = playerVermelhoAnimation[0]
         let bgMusicURL = NSBundle.mainBundle().URLForResource("dubstep", withExtension: "mp3")
         
@@ -275,8 +324,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         player = SKSpriteNode(imageNamed: "AmoebaVermelha")
         //player = SKSpriteNode(texture: firstFrame)
-        player.name = "purple"
-        createPurpleAnimation()
+        //player.name = "purple"
+        //createPurpleAnimation()
+        randomisePlayerInit()
         
         player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3.5)
 
@@ -316,7 +366,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //player.size.height/2 + 180
         self.physicsWorld.gravity = CGVectorMake(0, 0)
         self.physicsWorld.contactDelegate = self
+        
         setupHud()
+        randomisePlayerInit()
+
     }
     
     func didBeginContact(contact: SKPhysicsContact)
@@ -362,9 +415,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             adjustScore()
             eatCount()
         }else {
-            //monster.removeAllActions()
-            self.gameOver()
-            
+            if (projectile.name == "purple"){
+                createPurpleHitAnimation()
+                monster.removeFromParent()
+                life--
+            }else if (projectile.name == "green"){
+                createGreenHitAnimation()
+                monster.removeFromParent()
+                life--
+            }else {
+                createOrangeHitAnimation()
+                monster.removeFromParent()
+                life--
+            }
+
+            if (life == 0){
+                //monster.removeAllActions()
+                self.gameOver()
+            }
             
         }
         
@@ -373,7 +441,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func eatCount(){
         eat++
-        if eat == 3{
+        if eat == 2{
             eat = 0
             randomisePlayer()
         }
@@ -400,7 +468,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let randomNumber = Int(arc4random_uniform(3))
         switch randomNumber{
         case 0:
-            enemyPositionX = (self.frame.size.width/2)/2 - 30
+            enemyPositionX = (self.frame.size.width/2)/2
         case 1:
             enemyPositionX = (self.frame.size.width/2)
         case 2:
@@ -429,8 +497,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alien.physicsBody!.categoryBitMask = enemyCat
         alien.physicsBody!.contactTestBitMask = amebaCat
         alien.physicsBody!.collisionBitMask = 0
-        alien.xScale = 0.3
-        alien.yScale = 0.3
+        alien.xScale = 0.2
+        alien.yScale = 0.2
         
         let minX = alien.size.width/2
         let maxX = self.frame.size.width - alien.size.width/2
@@ -452,7 +520,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         var actionArray:NSMutableArray = NSMutableArray()
         
-        actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(4)))
+        actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(4 * alienSpeed)))
         
         
         
@@ -494,7 +562,43 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    
     func randomisePlayer(){
+        let random = Int(arc4random_uniform(2))
+        
+        if(player.name == "purple"){
+            if (random == 0){
+                createOrangeAnimation()
+                
+            }else if (random == 1){
+                createGreenAnimation()
+                
+            }
+            
+        }
+        else{
+            if(player.name == "green"){
+                if (random == 0){
+                    createPurpleAnimation()
+                }else if (random == 1){
+                    createOrangeAnimation()
+                }
+                
+            }
+            else{
+                if(player.name == "orange"){
+                    if (random == 0){
+                        createPurpleAnimation()
+                    }else if (random == 1){
+                        createGreenAnimation()
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+    func randomisePlayerInit(){
         let random = Int(arc4random_uniform(3))
         if (random == 0){
             createPurpleAnimation()
@@ -562,20 +666,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let location = touch.locationInNode(self)
             let sprite = player
             let nodeColor = self.nodeAtPoint(location)
-            if((location.y >= self.frame.size.height/3 - 20) && (location.y <= self.frame.size.height/2)){
+            //if((location.y >= self.frame.size.height/3 - 20) && (location.y <= self.frame.size.height/2)){
                 
-                if(location.x <= self.frame.size.width/2 - 10 ){
+                if(location.x < self.frame.size.width * 0.3 ){
                     sprite.position = CGPointMake((self.frame.size.width/2)/2 - 10, self.frame.size.height/3.5)
                 }
-                if(location.x >= self.frame.size.width/2 + 10){
-                    sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2 - 10, self.frame.size.height/3.5)
+                if(location.x > self.frame.size.width * 0.6){
+                    sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2, self.frame.size.height/3.5)
                 }
                 
-                if((location.x > self.frame.size.width/2 - 30) && (location.x < self.frame.size.width/2 + 30)){
-                    sprite.position = CGPointMake(self.frame.size.width/2 - 10, self.frame.size.height/3.5)
+                if((location.x >= self.frame.size.width * 0.3) && (location.x <= self.frame.size.width * 0.6)){
+                    sprite.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3.5)
                 }
                 
-            }else{
+            //}else{
                 
                 
                 if let name = nodeColor.name{
@@ -605,7 +709,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         println(player.name!)
                         //createBlueAnimation()
                     }
-                }
+                //}
             }
             
             
