@@ -633,7 +633,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let savedScore: Int = NSUserDefaults.standardUserDefaults().objectForKey("HighestScore") as? Int{
         println(savedScore)
             if savedScore < score{
-                NSUserDefaults.standardUserDefaults().setObject(savedScore, forKey:"HighestScore")
+                NSUserDefaults.standardUserDefaults().setObject(score, forKey:"HighestScore")
                 NSUserDefaults.standardUserDefaults().synchronize()
                 //inserir score no gameCenter
             }
