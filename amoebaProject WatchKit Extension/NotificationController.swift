@@ -12,9 +12,12 @@ import Foundation
 
 class NotificationController: WKUserNotificationInterfaceController {
 
+    @IBOutlet weak var imgAmeba: WKInterfaceImage!
     override init() {
         // Initialize variables here.
         super.init()
+        
+        imgAmeba.setImageNamed("Amoeba_")
         
         // Configure interface objects here.
     }
@@ -22,6 +25,9 @@ class NotificationController: WKUserNotificationInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        imgAmeba.startAnimatingWithImagesInRange(
+            NSRange(location: 0, length: 48), duration: 2, repeatCount: 5)
     }
 
     override func didDeactivate() {
@@ -29,7 +35,7 @@ class NotificationController: WKUserNotificationInterfaceController {
         super.didDeactivate()
     }
 
-    /*
+    
     override func didReceiveLocalNotification(localNotification: UILocalNotification, withCompletion completionHandler: ((WKUserNotificationInterfaceType) -> Void)) {
         // This method is called when a local notification needs to be presented.
         // Implement it if you use a dynamic notification interface.
@@ -38,9 +44,9 @@ class NotificationController: WKUserNotificationInterfaceController {
         // After populating your dynamic notification interface call the completion block.
         completionHandler(.Custom)
     }
-    */
     
-    /*
+    
+    
     override func didReceiveRemoteNotification(remoteNotification: [NSObject : AnyObject], withCompletion completionHandler: ((WKUserNotificationInterfaceType) -> Void)) {
         // This method is called when a remote notification needs to be presented.
         // Implement it if you use a dynamic notification interface.
@@ -49,5 +55,5 @@ class NotificationController: WKUserNotificationInterfaceController {
         // After populating your dynamic notification interface call the completion block.
         completionHandler(.Custom)
     }
-    */
+    
 }

@@ -17,16 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let userNotificationTypes = (UIUserNotificationType.Alert |
-            UIUserNotificationType.Badge |
-            UIUserNotificationType.Sound);
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound |
+            UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
         
-        var notification = UILocalNotification() // create a new reminder notification
-        notification.alertBody = "I'm hungry!" // text that will be displayed in the notification
-        notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
-        notification.fireDate = NSDate().dateByAddingTimeInterval(10) // 10 seconds from current time
-        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
-        notification.userInfo = ["title": "Reminder Test"] // assign a title to the notification that we can use to retrieve it later
+        var notification = UILocalNotification()
+        notification.alertBody = "I'm hungry!"
+        notification.alertAction = "open"
+        notification.fireDate = NSDate().dateByAddingTimeInterval(10)
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.userInfo = ["title": "Reminder Test"]
         notification.category = "TODO_CATEGORY"
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
