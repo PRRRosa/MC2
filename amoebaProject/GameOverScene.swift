@@ -29,13 +29,13 @@ class GameOverScene: SKScene {
         label.fontSize = 40
         label.fontColor = SKColor.blackColor()
         label.position = CGPoint(x: size.width/2, y: size.height/2)
-        self.addChild(label)
+        //self.addChild(label)
         
         let backgroundImg = SKSpriteNode(imageNamed: "Fundo_Ipad")
         backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
         backgroundImg.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
         
-        let gameOverImg = SKSpriteNode(imageNamed: "gameoverBack")
+        let gameOverImg = SKSpriteNode(imageNamed: "Game Over")
         gameOverImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.7)
         
         
