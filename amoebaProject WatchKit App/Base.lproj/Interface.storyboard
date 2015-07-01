@@ -10,7 +10,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="amoebaProject_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <imageView alignment="center" verticalAlignment="center" image="verde" id="K9X-5h-q1m"/>
+                        <imageView alignment="center" verticalAlignment="center" image="verde-1" id="K9X-5h-q1m"/>
                     </items>
                     <connections>
                         <segue destination="bEB-WH-OTs" kind="relationship" relationship="nextPage" id="yqf-k4-Pf5"/>
@@ -24,7 +24,7 @@
             <objects>
                 <controller id="bEB-WH-OTs">
                     <items>
-                        <imageView alignment="center" verticalAlignment="center" image="roxo" id="Zvr-OQ-paS"/>
+                        <imageView alignment="center" verticalAlignment="center" image="roxo-1" id="Zvr-OQ-paS"/>
                     </items>
                     <connections>
                         <segue destination="Nek-Zj-gmp" kind="relationship" relationship="nextPage" id="3Ui-sh-XQJ"/>
@@ -38,7 +38,7 @@
             <objects>
                 <controller id="Nek-Zj-gmp">
                     <items>
-                        <imageView alignment="center" verticalAlignment="center" image="laranja" id="ozy-d5-9At"/>
+                        <imageView alignment="center" verticalAlignment="center" image="laranja-1" id="ozy-d5-9At"/>
                     </items>
                 </controller>
             </objects>
