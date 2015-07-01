@@ -35,7 +35,7 @@ class GameOverScene: SKScene {
         backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
         backgroundImg.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
         
-        let gameOverImg = SKSpriteNode(imageNamed: "Game Over")
+        let gameOverImg = SKSpriteNode(imageNamed: "gameoverBack")
         gameOverImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.7)
         
         
