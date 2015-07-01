@@ -372,7 +372,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func eatCount(){
         eat++
-        if eat == 3{
+        if eat == 2{
             eat = 0
             randomisePlayer()
         }
@@ -561,20 +561,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let location = touch.locationInNode(self)
             let sprite = player
             let nodeColor = self.nodeAtPoint(location)
-            if((location.y >= self.frame.size.height/3 - 20) && (location.y <= self.frame.size.height/2)){
+            //if((location.y >= self.frame.size.height/3 - 20) && (location.y <= self.frame.size.height/2)){
                 
-                if(location.x <= self.frame.size.width/2 - 10 ){
+                if(location.x < self.frame.size.width * 0.3 ){
                     sprite.position = CGPointMake((self.frame.size.width/2)/2 - 10, self.frame.size.height/3.5)
                 }
-                if(location.x >= self.frame.size.width/2 + 10){
+                if(location.x > self.frame.size.width * 0.6){
                     sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2 - 10, self.frame.size.height/3.5)
                 }
                 
-                if((location.x > self.frame.size.width/2 - 30) && (location.x < self.frame.size.width/2 + 30)){
+                if((location.x >= self.frame.size.width * 0.3) && (location.x <= self.frame.size.width * 0.6)){
                     sprite.position = CGPointMake(self.frame.size.width/2 - 10, self.frame.size.height/3.5)
                 }
                 
-            }else{
+            //}else{
                 
                 
                 if let name = nodeColor.name{
@@ -604,7 +604,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         println(player.name!)
                         //createBlueAnimation()
                     }
-                }
+                //}
             }
             
             
