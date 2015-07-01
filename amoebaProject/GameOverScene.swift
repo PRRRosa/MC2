@@ -44,15 +44,16 @@ class GameOverScene: SKScene {
         retryImg.name = "retry"
 
         
-        againButton = SKSpriteNode(imageNamed:"againButton")
-        againButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.size.height/2);
+//        againButton = SKSpriteNode(imageNamed:"againButton")
+//        againButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.size.height/2);
         
         self.addChild(backgroundImg)
         
         self.addChild(gameOverImg)
         self.addChild(retryImg)
         
-        //self.addChild(againButton)
+
+//        self.addChild(againButton)
     
         
         // 4

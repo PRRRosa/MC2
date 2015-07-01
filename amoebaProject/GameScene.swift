@@ -33,7 +33,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var eat = 0
     var randomEnemyNumber = 0
     var life = 3
-    
+    var alienSpeed = 1.0
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
@@ -63,6 +63,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func adjustScore(){
         self.score = self.score + 100
         scoreLabel.text = String(format: "%05d", arguments: [score])
+        if (score%200 == 0){
+            alienSpeed = alienSpeed * 0.95
+        }
     }
     
     
@@ -325,8 +328,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         player = SKSpriteNode(imageNamed: "AmoebaVermelha")
         //player = SKSpriteNode(texture: firstFrame)
-        player.name = "purple"
-        createPurpleAnimation()
+        //player.name = "purple"
+        //createPurpleAnimation()
+        randomisePlayerInit()
         
         player.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3.5)
 
@@ -465,7 +469,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let randomNumber = Int(arc4random_uniform(3))
         switch randomNumber{
         case 0:
-            enemyPositionX = (self.frame.size.width/2)/2 - 30
+            enemyPositionX = (self.frame.size.width/2)/2
         case 1:
             enemyPositionX = (self.frame.size.width/2)
         case 2:
@@ -494,8 +498,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alien.physicsBody!.categoryBitMask = enemyCat
         alien.physicsBody!.contactTestBitMask = amebaCat
         alien.physicsBody!.collisionBitMask = 0
-        alien.xScale = 0.3
-        alien.yScale = 0.3
+        alien.xScale = 0.2
+        alien.yScale = 0.2
         
         let minX = alien.size.width/2
         let maxX = self.frame.size.width - alien.size.width/2
@@ -517,7 +521,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         var actionArray:NSMutableArray = NSMutableArray()
         
-        actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(4)))
+        actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(4 * alienSpeed)))
         
         
         
@@ -559,7 +563,41 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    
     func randomisePlayer(){
+        let random = Int(arc4random_uniform(2))
+        
+        if(player.name == "purple"){
+            if (random == 0){
+                createOrangeAnimation()
+            }else if (random == 1){
+                createGreenAnimation()
+            }
+            
+        }
+        else{
+            if(player.name == "green"){
+                if (random == 0){
+                    createPurpleAnimation()
+                }else if (random == 1){
+                    createOrangeAnimation()
+                }
+                
+            }
+            else{
+                if(player.name == "orange"){
+                    if (random == 0){
+                        createPurpleAnimation()
+                    }else if (random == 1){
+                        createGreenAnimation()
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+    func randomisePlayerInit(){
         let random = Int(arc4random_uniform(3))
         if (random == 0){
             createPurpleAnimation()
@@ -633,11 +671,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     sprite.position = CGPointMake((self.frame.size.width/2)/2 - 10, self.frame.size.height/3.5)
                 }
                 if(location.x > self.frame.size.width * 0.6){
-                    sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2 - 10, self.frame.size.height/3.5)
+                    sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2, self.frame.size.height/3.5)
                 }
                 
                 if((location.x >= self.frame.size.width * 0.3) && (location.x <= self.frame.size.width * 0.6)){
-                    sprite.position = CGPointMake(self.frame.size.width/2 - 10, self.frame.size.height/3.5)
+                    sprite.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3.5)
                 }
                 
             //}else{
