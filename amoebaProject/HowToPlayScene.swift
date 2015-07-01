@@ -14,6 +14,14 @@ class HowToPlayScene: SKScene
     var mainView: UIView?
     
     var backButton: SKNode! = nil
+    var nextButton: SKNode! = nil
+    var redoButton: SKNode! = nil
+    
+    var myLabel: SKLabelNode = SKLabelNode()
+    var myLabel2: SKLabelNode = SKLabelNode()
+    var myLabel3: SKLabelNode = SKLabelNode()
+    
+    var gambi: Int! = 0
     
     override func didMoveToView(view: SKView)
     {
@@ -24,14 +32,45 @@ class HowToPlayScene: SKScene
         let leftMargin = view.bounds.width/4
         let topMargin = view.bounds.height/4
         
-        let backgroundImg = SKSpriteNode(imageNamed: "howFundo")
+        let backgroundImg = SKSpriteNode(imageNamed: "blur")
         backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
         self.addChild(backgroundImg)
         
-        backButton = SKSpriteNode(imageNamed:"backButton")
-        backButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:200.0);
+        backButton = SKSpriteNode(imageNamed:"how+back")
+        backButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.size.height-28);
         self.addChild(backButton)
         
+        let tutorial = SKSpriteNode(imageNamed: "pagina1")
+        tutorial.position = CGPointMake(self.frame.size.width/2, (self.frame.size.height/2)+30)
+        self.gambi = 1
+        self.addChild(tutorial)
+        
+        nextButton = SKSpriteNode(imageNamed:"setacont")
+        nextButton.position = CGPointMake((self.frame.size.width/2)+160, (self.frame.size.height/2)+30)
+        self.addChild(nextButton)
+        
+        redoButton = SKSpriteNode(imageNamed:"seta")
+        redoButton.position = CGPointMake((self.frame.size.width/2)-160, (self.frame.size.height/2)+30)
+        self.addChild(redoButton)
+        redoButton.hidden = true
+        
+        myLabel = SKLabelNode(fontNamed:"Noteworthy")
+        myLabel.text = "Chompy está com fome"
+        myLabel.fontSize = 25;
+        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)/4 + 70);
+        self.addChild(myLabel)
+        
+        myLabel2 = SKLabelNode(fontNamed:"Noteworthy")
+        myLabel2.text = "e precisa comer muitos"
+        myLabel2.fontSize = 25;
+        myLabel2.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)/4 + 30);
+        self.addChild(myLabel2)
+        
+        myLabel3 = SKLabelNode(fontNamed:"Noteworthy")
+        myLabel3.text = "yummies"
+        myLabel3.fontSize = 25;
+        myLabel3.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)/4 - 10);
+        self.addChild(myLabel3)
         
     }
     
@@ -54,6 +93,84 @@ class HowToPlayScene: SKScene
                 
                 self.removeFromParent()
             }
+            
+                
+            else if nextButton.containsPoint(location)
+            {
+                if(gambi == 1)
+                {
+                    let tutorial1 = SKSpriteNode(imageNamed: "pagina2")
+                    tutorial1.position = CGPointMake(self.frame.size.width/2, (self.frame.size.height/2)+30)
+                    self.gambi = 2
+                    self.addChild(tutorial1)
+                    redoButton.hidden = false;
+                    nextButton.hidden = false;
+
+                    myLabel.text = "Chompy se alimenta"
+                    myLabel2.text = "somente de yummies que"
+                    myLabel3.text = "formam sua cor"
+                    
+                }
+                
+                else if(gambi == 2)
+                {
+                    
+                    let tutorial2 = SKSpriteNode(imageNamed: "pagina3")
+                    tutorial2.position = CGPointMake(self.frame.size.width/2, (self.frame.size.height/2)+30)
+                    self.gambi = 3
+                    self.addChild(tutorial2)
+                    nextButton.hidden = true;
+                    redoButton.hidden = false;
+                    
+                    myLabel.text = "Cuidado!"
+                    myLabel2.text = "Chumpy só pode errar"
+                    myLabel3.text = "de yummy 5 vezes"
+                
+                    runAction(SKAction.sequence([
+                        SKAction.waitForDuration(1.0),
+                        SKAction.runBlock() {
+                            
+                            let tutorial3 = SKSpriteNode(imageNamed: "pagina4")
+                            tutorial3.position = CGPointMake(self.frame.size.width/2, (self.frame.size.height/2)+30)
+                            self.addChild(tutorial3)
+
+                        }
+                    ]))
+                }
+            }
+                
+                
+            else if redoButton.containsPoint(location)
+            {
+                if(gambi == 2)
+                {
+                    let tutorial = SKSpriteNode(imageNamed: "pagina1")
+                    tutorial.position = CGPointMake(self.frame.size.width/2, (self.frame.size.height/2)+30)
+                    self.gambi = 1
+                    self.addChild(tutorial)
+                    redoButton.hidden = true
+                    nextButton.hidden = false
+                    
+                    myLabel.text = "Chompy está com fome"
+                    myLabel2.text = "e precisa comer muitos"
+                    myLabel3.text = "yummies"
+                }
+                else if(gambi == 3)
+                {
+                    let tutorial1 = SKSpriteNode(imageNamed: "pagina2")
+                    tutorial1.position = CGPointMake(self.frame.size.width/2, (self.frame.size.height/2)+30)
+                    self.gambi = 2
+                    self.addChild(tutorial1)
+                    redoButton.hidden = false
+                    nextButton.hidden = false
+                    
+                    myLabel.text = "Chompy se alimenta"
+                    myLabel2.text = "somente de yummies que"
+                    myLabel3.text = "formam sua cor"
+                }
+
+            }
+            
         }
     }
     
