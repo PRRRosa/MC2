@@ -37,11 +37,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-        //self.addChild(myLabel)
-
         if (!contentCreated){
             createContent()
             contentCreated = true
@@ -54,7 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         println(scoreLabel.fontName)
         scoreLabel.name = "scoreHud"
         scoreLabel.fontSize = 50
-        scoreLabel.fontColor = UIColor.greenColor()
+        //scoreLabel.fontColor = UIColor.greenColor()
         scoreLabel.text =  String(format: "%05d", arguments: [score])
         scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.1)
         self.addChild(scoreLabel)
@@ -85,7 +80,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             playerFrames.append(amoebaLaranjaAtlas.textureNamed(nameA))
         }
 
-        
+        scoreLabel.fontColor = UIColor.orangeColor()
         player.name = "orange"
         player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerLaranja")
     }
@@ -106,7 +101,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             playerFrames.append(amoebaVerdeAtlas.textureNamed(nameA))
         }
 
-        
+        scoreLabel.fontColor = UIColor.greenColor()
         player.name = "green"
         player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerVerde")
     }
@@ -126,7 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let nameA = "amoebaV_\(i)@2x"
             playerFrames.append(amoebaVioletaAtlas.textureNamed(nameA))
         }
-        
+        scoreLabel.fontColor = UIColor.purpleColor()
         player.name = "purple"
         player.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.005, resize: true, restore: false)), withKey:"playerVioleta")
     }
@@ -304,6 +299,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func createContent(){
+        
         //let firstFrame: SKTexture = playerVermelhoAnimation[0]
         let bgMusicURL = NSBundle.mainBundle().URLForResource("dubstep", withExtension: "mp3")
         
@@ -370,7 +366,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //player.size.height/2 + 180
         self.physicsWorld.gravity = CGVectorMake(0, 0)
         self.physicsWorld.contactDelegate = self
+        
         setupHud()
+        randomisePlayerInit()
+
     }
     
     func didBeginContact(contact: SKPhysicsContact)
@@ -553,7 +552,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func updateWithTimeSinceLastUpdate(timeSinceLastUpdate:CFTimeInterval){
         
         lastYieldTimeInterval += timeSinceLastUpdate
-        if (lastYieldTimeInterval > 1.5){
+        if (lastYieldTimeInterval > 1.5 * alienSpeed){
             lastYieldTimeInterval = 0
             addMonster()
             
@@ -570,8 +569,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if(player.name == "purple"){
             if (random == 0){
                 createOrangeAnimation()
+                
             }else if (random == 1){
                 createGreenAnimation()
+                
             }
             
         }
@@ -613,7 +614,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var timeSinceLastUpdate = currentTime - lastUpdateTimerInterval
         lastUpdateTimerInterval = currentTime
         
-        if (timeSinceLastUpdate > 1.5){
+        if (timeSinceLastUpdate > 1.5 * alienSpeed){
             timeSinceLastUpdate = 1/60
             lastUpdateTimerInterval = currentTime
         }

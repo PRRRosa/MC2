@@ -47,15 +47,15 @@ class MenuScene: SKScene
         
         //Opcoes do menu
         
-        playButton = SKSpriteNode(imageNamed:"buttonPlay")
+        playButton = SKSpriteNode(imageNamed:"playbutton")
         playButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:540.0);
         self.addChild(playButton)
         
-        scoreButton = SKSpriteNode(imageNamed:"buttonScore")
+        scoreButton = SKSpriteNode(imageNamed:"scorebutton")
         scoreButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:460.0);
         self.addChild(scoreButton)
         
-        howButton = SKSpriteNode(imageNamed:"buttonHow")
+        howButton = SKSpriteNode(imageNamed:"howbutton")
         howButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:380.0);
         self.addChild(howButton)
         
