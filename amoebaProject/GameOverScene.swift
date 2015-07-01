@@ -52,7 +52,7 @@ class GameOverScene: SKScene {
         self.addChild(gameOverImg)
         self.addChild(retryImg)
         
-        self.addChild(againButton)
+        //self.addChild(againButton)
     
         
         // 4
