@@ -32,6 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var alien:SKSpriteNode = SKSpriteNode()
     var eat = 0
     var randomEnemyNumber = 0
+    var life = 3
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -188,7 +189,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alien.runAction( SKAction.repeatActionForever(SKAction.animateWithTextures(alienFrames, timePerFrame: 0.05, resize: true, restore: false)), withKey:"amoebafeiaAmarela")
     }
 
-    
     func createPurpleMouthOpeningAnimation(){
         let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaVioletaBoca")
         var mouthFrames = [SKTexture]()
@@ -208,6 +208,56 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //playerMouthAnimation = mouthFrames
         player.runAction((SKAction.animateWithTextures(mouthFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"purpleMouthOpening")
     }
+    
+    func createPurpleHitAnimation(){
+        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaVioletaHit")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = playerAnimatedAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "amebaMortaRoxa_\(i)"
+            playerFrames.append(playerAnimatedAtlas.textureNamed(nameA))
+            
+        }
+        
+        
+        //playerMouthAnimation = mouthFrames
+        player.runAction((SKAction.animateWithTextures(playerFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"purpleHit")
+    }
+    
+    func createGreenHitAnimation(){
+        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaVerdeHit")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = playerAnimatedAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "amebaMortaVerde_\(i)"
+            playerFrames.append(playerAnimatedAtlas.textureNamed(nameA))
+            
+        }
+        
+        
+        //playerMouthAnimation = mouthFrames
+        player.runAction((SKAction.animateWithTextures(playerFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"greenHit")
+    }
+    
+    func createOrangeHitAnimation(){
+        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaLaranjaHit")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = playerAnimatedAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "amebaMortaLaranja_\(i)"
+            playerFrames.append(playerAnimatedAtlas.textureNamed(nameA))
+            
+        }
+        
+        
+        //playerMouthAnimation = mouthFrames
+        player.runAction((SKAction.animateWithTextures(playerFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"orangeHit")
+    }
+    
+
     
     func createGreenMouthOpeningAnimation(){
         let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaVerdeBoca")
@@ -362,9 +412,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             adjustScore()
             eatCount()
         }else {
-            //monster.removeAllActions()
-            self.gameOver()
-            
+            if (projectile.name == "purple"){
+                createPurpleHitAnimation()
+                monster.removeFromParent()
+                life--
+            }else if (projectile.name == "green"){
+                createGreenHitAnimation()
+                monster.removeFromParent()
+                life--
+            }else {
+                createOrangeHitAnimation()
+                monster.removeFromParent()
+                life--
+            }
+
+            if (life == 0){
+                //monster.removeAllActions()
+                self.gameOver()
+            }
             
         }
         
