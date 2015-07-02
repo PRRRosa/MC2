@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "302"
             endingLineNumber = "302"
-            landmarkName = "createOrangeMouthOpeningAnimation()"
+            landmarkName = "createContent()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "303"
             endingLineNumber = "303"
-            landmarkName = "createOrangeMouthOpeningAnimation()"
+            landmarkName = "createContent()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
