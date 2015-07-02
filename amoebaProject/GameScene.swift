@@ -34,6 +34,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var randomEnemyNumber = 0
     var life = 3
     var alienSpeed = 1.0
+    
+    var life3:SKSpriteNode = SKSpriteNode()
+    var life2:SKSpriteNode = SKSpriteNode()
+    var life1:SKSpriteNode = SKSpriteNode()
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
@@ -321,6 +326,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.addChild(backgroundImg)
         
+        life1 = SKSpriteNode(imageNamed:"life1")
+        life1.position = CGPointMake(self.frame.size.width/4 - 70, self.frame.size.height * 0.15);
+        self.addChild(life1)
+        
+        life2 = SKSpriteNode(imageNamed:"life1")
+        life2.position = CGPointMake(self.frame.size.width/4 - 40, self.frame.size.height * 0.15);
+        self.addChild(life2)
+        
+        life3 = SKSpriteNode(imageNamed:"life1")
+        life3.position = CGPointMake(self.frame.size.width/4 - 10, self.frame.size.height * 0.15);
+        self.addChild(life3)
+        
         
         player = SKSpriteNode(imageNamed: "AmoebaVermelha")
         //player = SKSpriteNode(texture: firstFrame)
@@ -419,14 +436,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 createPurpleHitAnimation()
                 monster.removeFromParent()
                 life--
+                perdeVida()
+                
             }else if (projectile.name == "green"){
                 createGreenHitAnimation()
                 monster.removeFromParent()
                 life--
+                perdeVida()
             }else {
                 createOrangeHitAnimation()
                 monster.removeFromParent()
                 life--
+                perdeVida()
             }
 
             if (life == 0){
@@ -437,6 +458,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         
+    }
+    
+    func perdeVida()
+    {
+        if (life == 2)
+        {
+            life3.hidden = true
+        }
+        else if (life == 1)
+        {
+            life2.hidden = true
+        }
+        else if (life == 0)
+        {
+            life1.hidden = true
+        }
     }
     
     func eatCount(){
