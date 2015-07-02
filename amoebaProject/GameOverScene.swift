@@ -12,6 +12,7 @@ import SpriteKit
 class GameOverScene: SKScene {
     
     var againButton: SKNode! = nil
+    var menubutton: SKNode! = nil
     
     override init(size: CGSize) {
         
@@ -35,22 +36,26 @@ class GameOverScene: SKScene {
         backgroundImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
         backgroundImg.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
         
-        let gameOverImg = SKSpriteNode(imageNamed: "gameoverBack")
+        let gameOverImg = SKSpriteNode(imageNamed: "GameOVer")
         gameOverImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.7)
         
         
-        let retryImg = SKSpriteNode(imageNamed: "againButton")
-        retryImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.4)
+        let retryImg = SKSpriteNode(imageNamed: "againbutton-1")
+        retryImg.position = CGPointMake(self.frame.size.width/2+75, self.frame.size.height * 0.4)
         retryImg.name = "retry"
+        
+        let menu = SKSpriteNode(imageNamed: "menubutton-1")
+        menu.position = CGPointMake(self.frame.size.width/2-75, self.frame.size.height * 0.4)
+        menu.name = "menu"
 
         
 //        againButton = SKSpriteNode(imageNamed:"againButton")
 //        againButton.position = CGPoint(x:CGRectGetMidX(self.frame), y:self.frame.size.height/2);
         
         self.addChild(backgroundImg)
-        
         self.addChild(gameOverImg)
         self.addChild(retryImg)
+        self.addChild(menu)
         
 
 //        self.addChild(againButton)
@@ -84,37 +89,26 @@ class GameOverScene: SKScene {
             
                 if let name = nodeColor.name{
                     if(name == "retry"){
-                        let reveal = SKTransition.moveInWithDirection(SKTransitionDirection.Left, duration: 0.5)
+                        let reveal = SKTransition.moveInWithDirection(SKTransitionDirection.Left, duration: 0.0)
                         let scene = GameScene(size: size)
                         self.view?.presentScene(scene, transition:reveal)
-
-                      
                     }
-                    
-                    
+                    else if (name == "menu")
+                    {
+                        let reveal = SKTransition.moveInWithDirection(SKTransitionDirection.Left, duration: 0.0)
+                        let scene = MenuScene(size: size)
+                        self.view?.presentScene(scene, transition:reveal)
+                    }
                 }
-            }
+
+        }
     }
+    
+    //registro que salva a view principal para ter onde criar a proxima scene
     
     // 6
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent)
-    {
-        // Loop over all the touches in this event
-        for touch: AnyObject in touches
-        {
-            // Get the location of the touch in this scene
-            let location = touch.locationInNode(self)
-            // Check if the location of the touch is within the button's bounds
-            if againButton.containsPoint(location)
-            {
-                let reveal = SKTransition.flipHorizontalWithDuration(0.5)
-                let scene = GameScene(size: size)
-                self.view?.presentScene(scene, transition:reveal)
-            }
-        }
-    }
 }
