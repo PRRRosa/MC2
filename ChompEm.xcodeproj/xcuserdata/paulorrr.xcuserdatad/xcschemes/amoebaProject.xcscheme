@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D4B9BCE31B31E811009940A6"
-               BuildableName = "amoebaProject.app"
-               BlueprintName = "amoebaProject"
-               ReferencedContainer = "container:amoebaProject.xcodeproj">
+               BuildableName = "ChompEm.app"
+               BlueprintName = "ChompEm"
+               ReferencedContainer = "container:ChompEm.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D4B9BCFC1B31E811009940A6"
-               BuildableName = "amoebaProjectTests.xctest"
-               BlueprintName = "amoebaProjectTests"
-               ReferencedContainer = "container:amoebaProject.xcodeproj">
+               BuildableName = "ChompEmTests.xctest"
+               BlueprintName = "ChompEmTests"
+               ReferencedContainer = "container:ChompEm.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D4B9BCFC1B31E811009940A6"
-               BuildableName = "amoebaProjectTests.xctest"
-               BlueprintName = "amoebaProjectTests"
-               ReferencedContainer = "container:amoebaProject.xcodeproj">
+               BuildableName = "ChompEmTests.xctest"
+               BlueprintName = "ChompEmTests"
+               ReferencedContainer = "container:ChompEm.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D4B9BCE31B31E811009940A6"
-            BuildableName = "amoebaProject.app"
-            BlueprintName = "amoebaProject"
-            ReferencedContainer = "container:amoebaProject.xcodeproj">
+            BuildableName = "ChompEm.app"
+            BlueprintName = "ChompEm"
+            ReferencedContainer = "container:ChompEm.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D4B9BCE31B31E811009940A6"
-            BuildableName = "amoebaProject.app"
-            BlueprintName = "amoebaProject"
-            ReferencedContainer = "container:amoebaProject.xcodeproj">
+            BuildableName = "ChompEm.app"
+            BlueprintName = "ChompEm"
+            ReferencedContainer = "container:ChompEm.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D4B9BCE31B31E811009940A6"
-            BuildableName = "amoebaProject.app"
-            BlueprintName = "amoebaProject"
-            ReferencedContainer = "container:amoebaProject.xcodeproj">
+            BuildableName = "ChompEm.app"
+            BlueprintName = "ChompEm"
+            ReferencedContainer = "container:ChompEm.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

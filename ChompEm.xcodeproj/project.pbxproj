@@ -20,10 +20,10 @@
 		C0C2F1611B42D88600234065 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2F1601B42D88600234065 /* NotificationController.swift */; };
 		C0C2F1631B42D88600234065 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2F1621B42D88600234065 /* GlanceController.swift */; };
 		C0C2F1651B42D88600234065 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0C2F1641B42D88600234065 /* Images.xcassets */; };
-		C0C2F1691B42D88600234065 /* amoebaProject WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = C0C2F1681B42D88600234065 /* amoebaProject WatchKit App.app */; };
+		C0C2F1691B42D88600234065 /* ChompEm WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = C0C2F1681B42D88600234065 /* ChompEm WatchKit App.app */; };
 		C0C2F1711B42D88600234065 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C2F16F1B42D88600234065 /* Interface.storyboard */; };
 		C0C2F1731B42D88600234065 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0C2F1721B42D88600234065 /* Images.xcassets */; };
-		C0C2F1761B42D88600234065 /* amoebaProject WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C0C2F1591B42D88600234065 /* amoebaProject WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C0C2F1761B42D88600234065 /* ChompEm WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C0C2F1591B42D88600234065 /* ChompEm WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D407E60C1B430A4C002EB9AA /* amoebaLaranja.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D407E6091B430A4C002EB9AA /* amoebaLaranja.atlas */; };
 		D407E60D1B430A4C002EB9AA /* amoebaVerde.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D407E60A1B430A4C002EB9AA /* amoebaVerde.atlas */; };
 		D407E60E1B430A4C002EB9AA /* amoebaVioleta.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D407E60B1B430A4C002EB9AA /* amoebaVioleta.atlas */; };
@@ -78,7 +78,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				C0C2F1761B42D88600234065 /* amoebaProject WatchKit Extension.appex in Embed App Extensions */,
+				C0C2F1761B42D88600234065 /* ChompEm WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,14 +94,14 @@
 		C028FE921B3CE454000E37E9 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		C028FE941B3CE481000E37E9 /* HowToPlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPlayScene.swift; sourceTree = "<group>"; };
 		C028FE961B3CE4B4000E37E9 /* ScoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreScene.swift; sourceTree = "<group>"; };
-		C0C2F1591B42D88600234065 /* amoebaProject WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "amoebaProject WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0C2F1591B42D88600234065 /* ChompEm WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ChompEm WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C2F15C1B42D88600234065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0C2F15D1B42D88600234065 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		C0C2F15E1B42D88600234065 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		C0C2F1601B42D88600234065 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		C0C2F1621B42D88600234065 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		C0C2F1641B42D88600234065 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C0C2F1681B42D88600234065 /* amoebaProject WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "amoebaProject WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0C2F1681B42D88600234065 /* ChompEm WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChompEm WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C2F16E1B42D88600234065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0C2F1701B42D88600234065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		C0C2F1721B42D88600234065 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		D4772AB71B444E6B00E184CC /* amoebaLaranjaHit.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaLaranjaHit.atlas; sourceTree = "<group>"; };
 		D4772AB81B444E6B00E184CC /* amoebaVerdeHit.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaVerdeHit.atlas; sourceTree = "<group>"; };
 		D4772AB91B444E6B00E184CC /* amoebaVioletaHit.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = amoebaVioletaHit.atlas; sourceTree = "<group>"; };
-		D4B9BCE41B31E811009940A6 /* amoebaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amoebaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4B9BCE41B31E811009940A6 /* ChompEm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChompEm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B9BCE81B31E811009940A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4B9BCE91B31E811009940A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4B9BCEB1B31E811009940A6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		D4B9BCEF1B31E811009940A6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D4B9BCF21B31E811009940A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4B9BCF71B31E811009940A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D4B9BCFD1B31E811009940A6 /* amoebaProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = amoebaProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4B9BCFD1B31E811009940A6 /* ChompEmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChompEmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B9BD021B31E811009940A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4B9BD031B31E811009940A6 /* amoebaProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amoebaProjectTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -242,10 +242,10 @@
 		D4B9BCE51B31E811009940A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D4B9BCE41B31E811009940A6 /* amoebaProject.app */,
-				D4B9BCFD1B31E811009940A6 /* amoebaProjectTests.xctest */,
-				C0C2F1591B42D88600234065 /* amoebaProject WatchKit Extension.appex */,
-				C0C2F1681B42D88600234065 /* amoebaProject WatchKit App.app */,
+				D4B9BCE41B31E811009940A6 /* ChompEm.app */,
+				D4B9BCFD1B31E811009940A6 /* ChompEmTests.xctest */,
+				C0C2F1591B42D88600234065 /* ChompEm WatchKit Extension.appex */,
+				C0C2F1681B42D88600234065 /* ChompEm WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -299,9 +299,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C0C2F1581B42D88600234065 /* amoebaProject WatchKit Extension */ = {
+		C0C2F1581B42D88600234065 /* ChompEm WatchKit Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0C2F17C1B42D88700234065 /* Build configuration list for PBXNativeTarget "amoebaProject WatchKit Extension" */;
+			buildConfigurationList = C0C2F17C1B42D88700234065 /* Build configuration list for PBXNativeTarget "ChompEm WatchKit Extension" */;
 			buildPhases = (
 				C0C2F1551B42D88600234065 /* Sources */,
 				C0C2F1561B42D88600234065 /* Frameworks */,
@@ -312,14 +312,14 @@
 			dependencies = (
 				C0C2F16B1B42D88600234065 /* PBXTargetDependency */,
 			);
-			name = "amoebaProject WatchKit Extension";
+			name = "ChompEm WatchKit Extension";
 			productName = "amoebaProject WatchKit Extension";
-			productReference = C0C2F1591B42D88600234065 /* amoebaProject WatchKit Extension.appex */;
+			productReference = C0C2F1591B42D88600234065 /* ChompEm WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit-extension";
 		};
-		C0C2F1671B42D88600234065 /* amoebaProject WatchKit App */ = {
+		C0C2F1671B42D88600234065 /* ChompEm WatchKit App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0C2F17B1B42D88700234065 /* Build configuration list for PBXNativeTarget "amoebaProject WatchKit App" */;
+			buildConfigurationList = C0C2F17B1B42D88700234065 /* Build configuration list for PBXNativeTarget "ChompEm WatchKit App" */;
 			buildPhases = (
 				C0C2F1661B42D88600234065 /* Resources */,
 			);
@@ -327,14 +327,14 @@
 			);
 			dependencies = (
 			);
-			name = "amoebaProject WatchKit App";
+			name = "ChompEm WatchKit App";
 			productName = "amoebaProject WatchKit App";
-			productReference = C0C2F1681B42D88600234065 /* amoebaProject WatchKit App.app */;
+			productReference = C0C2F1681B42D88600234065 /* ChompEm WatchKit App.app */;
 			productType = "com.apple.product-type.application.watchapp";
 		};
-		D4B9BCE31B31E811009940A6 /* amoebaProject */ = {
+		D4B9BCE31B31E811009940A6 /* ChompEm */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4B9BD071B31E811009940A6 /* Build configuration list for PBXNativeTarget "amoebaProject" */;
+			buildConfigurationList = D4B9BD071B31E811009940A6 /* Build configuration list for PBXNativeTarget "ChompEm" */;
 			buildPhases = (
 				D4B9BCE01B31E811009940A6 /* Sources */,
 				D4B9BCE11B31E811009940A6 /* Frameworks */,
@@ -346,14 +346,14 @@
 			dependencies = (
 				C0C2F1751B42D88600234065 /* PBXTargetDependency */,
 			);
-			name = amoebaProject;
+			name = ChompEm;
 			productName = amoebaProject;
-			productReference = D4B9BCE41B31E811009940A6 /* amoebaProject.app */;
+			productReference = D4B9BCE41B31E811009940A6 /* ChompEm.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D4B9BCFC1B31E811009940A6 /* amoebaProjectTests */ = {
+		D4B9BCFC1B31E811009940A6 /* ChompEmTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4B9BD0A1B31E811009940A6 /* Build configuration list for PBXNativeTarget "amoebaProjectTests" */;
+			buildConfigurationList = D4B9BD0A1B31E811009940A6 /* Build configuration list for PBXNativeTarget "ChompEmTests" */;
 			buildPhases = (
 				D4B9BCF91B31E811009940A6 /* Sources */,
 				D4B9BCFA1B31E811009940A6 /* Frameworks */,
@@ -364,9 +364,9 @@
 			dependencies = (
 				D4B9BCFF1B31E811009940A6 /* PBXTargetDependency */,
 			);
-			name = amoebaProjectTests;
+			name = ChompEmTests;
 			productName = amoebaProjectTests;
-			productReference = D4B9BCFD1B31E811009940A6 /* amoebaProjectTests.xctest */;
+			productReference = D4B9BCFD1B31E811009940A6 /* ChompEmTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -400,7 +400,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D4B9BCDF1B31E811009940A6 /* Build configuration list for PBXProject "amoebaProject" */;
+			buildConfigurationList = D4B9BCDF1B31E811009940A6 /* Build configuration list for PBXProject "ChompEm" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -413,10 +413,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D4B9BCE31B31E811009940A6 /* amoebaProject */,
-				D4B9BCFC1B31E811009940A6 /* amoebaProjectTests */,
-				C0C2F1581B42D88600234065 /* amoebaProject WatchKit Extension */,
-				C0C2F1671B42D88600234065 /* amoebaProject WatchKit App */,
+				D4B9BCE31B31E811009940A6 /* ChompEm */,
+				D4B9BCFC1B31E811009940A6 /* ChompEmTests */,
+				C0C2F1581B42D88600234065 /* ChompEm WatchKit Extension */,
+				C0C2F1671B42D88600234065 /* ChompEm WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -428,7 +428,7 @@
 			files = (
 				90BA191C1B45958800D57CB3 /* Images.xcassets in Resources */,
 				C0C2F1651B42D88600234065 /* Images.xcassets in Resources */,
-				C0C2F1691B42D88600234065 /* amoebaProject WatchKit App.app in Resources */,
+				C0C2F1691B42D88600234065 /* ChompEm WatchKit App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,17 +515,17 @@
 /* Begin PBXTargetDependency section */
 		C0C2F16B1B42D88600234065 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C0C2F1671B42D88600234065 /* amoebaProject WatchKit App */;
+			target = C0C2F1671B42D88600234065 /* ChompEm WatchKit App */;
 			targetProxy = C0C2F16A1B42D88600234065 /* PBXContainerItemProxy */;
 		};
 		C0C2F1751B42D88600234065 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C0C2F1581B42D88600234065 /* amoebaProject WatchKit Extension */;
+			target = C0C2F1581B42D88600234065 /* ChompEm WatchKit Extension */;
 			targetProxy = C0C2F1741B42D88600234065 /* PBXContainerItemProxy */;
 		};
 		D4B9BCFF1B31E811009940A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D4B9BCE31B31E811009940A6 /* amoebaProject */;
+			target = D4B9BCE31B31E811009940A6 /* ChompEm */;
 			targetProxy = D4B9BCFE1B31E811009940A6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -569,7 +569,7 @@
 				);
 				INFOPLIST_FILE = "amoebaProject WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = "ChompEm WatchKit Extension";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -581,7 +581,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "amoebaProject WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = "ChompEm WatchKit Extension";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -599,7 +599,7 @@
 				IBSC_MODULE = amoebaProject_WatchKit_Extension;
 				INFOPLIST_FILE = "amoebaProject WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ChompEm WatchKit App";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -616,7 +616,7 @@
 				IBSC_MODULE = amoebaProject_WatchKit_Extension;
 				INFOPLIST_FILE = "amoebaProject WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ChompEm WatchKit App";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -716,7 +716,7 @@
 				INFOPLIST_FILE = amoebaProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ChompEm;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -731,7 +731,7 @@
 				INFOPLIST_FILE = amoebaProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ChompEm;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -751,7 +751,7 @@
 				);
 				INFOPLIST_FILE = amoebaProjectTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ChompEmTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amoebaProject.app/amoebaProject";
 			};
 			name = Debug;
@@ -766,7 +766,7 @@
 				);
 				INFOPLIST_FILE = amoebaProjectTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ChompEmTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amoebaProject.app/amoebaProject";
 			};
 			name = Release;
@@ -774,7 +774,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C0C2F17B1B42D88700234065 /* Build configuration list for PBXNativeTarget "amoebaProject WatchKit App" */ = {
+		C0C2F17B1B42D88700234065 /* Build configuration list for PBXNativeTarget "ChompEm WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C0C2F1791B42D88700234065 /* Debug */,
@@ -783,7 +783,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C0C2F17C1B42D88700234065 /* Build configuration list for PBXNativeTarget "amoebaProject WatchKit Extension" */ = {
+		C0C2F17C1B42D88700234065 /* Build configuration list for PBXNativeTarget "ChompEm WatchKit Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C0C2F1771B42D88700234065 /* Debug */,
@@ -792,7 +792,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4B9BCDF1B31E811009940A6 /* Build configuration list for PBXProject "amoebaProject" */ = {
+		D4B9BCDF1B31E811009940A6 /* Build configuration list for PBXProject "ChompEm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4B9BD051B31E811009940A6 /* Debug */,
@@ -801,7 +801,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4B9BD071B31E811009940A6 /* Build configuration list for PBXNativeTarget "amoebaProject" */ = {
+		D4B9BD071B31E811009940A6 /* Build configuration list for PBXNativeTarget "ChompEm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4B9BD081B31E811009940A6 /* Debug */,
@@ -810,7 +810,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4B9BD0A1B31E811009940A6 /* Build configuration list for PBXNativeTarget "amoebaProjectTests" */ = {
+		D4B9BD0A1B31E811009940A6 /* Build configuration list for PBXNativeTarget "ChompEmTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4B9BD0B1B31E811009940A6 /* Debug */,
