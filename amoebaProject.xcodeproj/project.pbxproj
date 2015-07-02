@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		301E47F91B42F73B00681A61 /* cartoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 301E47F81B42F73B00681A61 /* cartoon.ttf */; };
 		30E933261B3C060600DD9D0F /* gulp.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 30E933251B3C060600DD9D0F /* gulp.m4a */; };
+		90BA191C1B45958800D57CB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3161B39E2A8000BAA1F /* Images.xcassets */; };
+		90BA191D1B45958A00D57CB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3161B39E2A8000BAA1F /* Images.xcassets */; };
 		C010ECD21B3CED9C00151101 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010ECD11B3CED9C00151101 /* MenuScene.swift */; };
 		C028FE931B3CE454000E37E9 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE921B3CE454000E37E9 /* GameOverScene.swift */; };
 		C028FE951B3CE481000E37E9 /* HowToPlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE941B3CE481000E37E9 /* HowToPlayScene.swift */; };
@@ -377,7 +379,7 @@
 					};
 					C0C2F1671B42D88600234065 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 9Z6JFPM7L2;
+						DevelopmentTeam = 9468LRW88W;
 					};
 					D4B9BCE31B31E811009940A6 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -414,6 +416,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BA191C1B45958800D57CB3 /* Images.xcassets in Resources */,
 				C0C2F1651B42D88600234065 /* Images.xcassets in Resources */,
 				C0C2F1691B42D88600234065 /* amoebaProject WatchKit App.app in Resources */,
 			);
@@ -423,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BA191D1B45958A00D57CB3 /* Images.xcassets in Resources */,
 				C0C2F1711B42D88600234065 /* Interface.storyboard in Resources */,
 				C0C2F1731B42D88600234065 /* Images.xcassets in Resources */,
 			);
