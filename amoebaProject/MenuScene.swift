@@ -40,7 +40,8 @@ class MenuScene: SKScene
         let titleImg = SKSpriteNode(imageNamed: "Chompem")
         titleImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2 * 0.22)
         self.addChild(titleImg)
-        
+        titleImg.xScale = 0.8
+        titleImg.yScale = 0.8
         let player = SKSpriteNode(imageNamed: randomPlayerColor() as! String)
         player.position = CGPointMake(self.frame.size.width/2 * 0.4, self.frame.size.height * 0.3)
         self.addChild(player)
