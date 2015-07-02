@@ -11,6 +11,7 @@
 		30E933261B3C060600DD9D0F /* gulp.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 30E933251B3C060600DD9D0F /* gulp.m4a */; };
 		90BA191C1B45958800D57CB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3161B39E2A8000BAA1F /* Images.xcassets */; };
 		90BA191D1B45958A00D57CB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3161B39E2A8000BAA1F /* Images.xcassets */; };
+		90BA19201B45A69C00D57CB3 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BA191F1B45A69C00D57CB3 /* GameKit.framework */; };
 		C010ECD21B3CED9C00151101 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010ECD11B3CED9C00151101 /* MenuScene.swift */; };
 		C028FE931B3CE454000E37E9 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE921B3CE454000E37E9 /* GameOverScene.swift */; };
 		C028FE951B3CE481000E37E9 /* HowToPlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE941B3CE481000E37E9 /* HowToPlayScene.swift */; };
@@ -88,6 +89,7 @@
 		301E47F51B42F2CB00681A61 /* orange juice.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "orange juice.ttf"; sourceTree = "<group>"; };
 		301E47F81B42F73B00681A61 /* cartoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cartoon.ttf; sourceTree = "<group>"; };
 		30E933251B3C060600DD9D0F /* gulp.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = gulp.m4a; sourceTree = "<group>"; };
+		90BA191F1B45A69C00D57CB3 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		C010ECD11B3CED9C00151101 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		C028FE921B3CE454000E37E9 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		C028FE941B3CE481000E37E9 /* HowToPlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPlayScene.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BA19201B45A69C00D57CB3 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +228,7 @@
 		D4B9BCDB1B31E811009940A6 = {
 			isa = PBXGroup;
 			children = (
+				90BA191F1B45A69C00D57CB3 /* GameKit.framework */,
 				D44BE3181B39E344000BAA1F /* Animations */,
 				D44BE3131B3873A1000BAA1F /* Sounds */,
 				D4B9BCE61B31E811009940A6 /* amoebaProject */,
@@ -383,6 +387,12 @@
 					};
 					D4B9BCE31B31E811009940A6 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 9468LRW88W;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 					D4B9BCFC1B31E811009940A6 = {
 						CreatedOnToolsVersion = 6.3.2;
