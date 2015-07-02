@@ -669,7 +669,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //if((location.y >= self.frame.size.height/3 - 20) && (location.y <= self.frame.size.height/2)){
                 
                 if(location.x < self.frame.size.width * 0.3 ){
-                    sprite.position = CGPointMake((self.frame.size.width/2)/2 - 10, self.frame.size.height/3.5)
+                    sprite.position = CGPointMake((self.frame.size.width/2)/2, self.frame.size.height/3.5)
                 }
                 if(location.x > self.frame.size.width * 0.6){
                     sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2, self.frame.size.height/3.5)

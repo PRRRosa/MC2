@@ -55,19 +55,19 @@ class HowToPlayScene: SKScene
         redoButton.hidden = true
         
         myLabel = SKLabelNode(fontNamed:"Noteworthy")
-        myLabel.text = "Chompy está com fome"
+        myLabel.text = "Chompy is hungry"
         myLabel.fontSize = 25;
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)/4 + 70);
         self.addChild(myLabel)
         
         myLabel2 = SKLabelNode(fontNamed:"Noteworthy")
-        myLabel2.text = "e precisa comer muitos"
+        myLabel2.text = "and need to eat a lot" //"e precisa comer muitos"
         myLabel2.fontSize = 25;
         myLabel2.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)/4 + 30);
         self.addChild(myLabel2)
         
         myLabel3 = SKLabelNode(fontNamed:"Noteworthy")
-        myLabel3.text = "yummies"
+        myLabel3.text = "of yummies" //"yummies"
         myLabel3.fontSize = 25;
         myLabel3.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)/4 - 10);
         self.addChild(myLabel3)
@@ -106,9 +106,9 @@ class HowToPlayScene: SKScene
                     redoButton.hidden = false;
                     nextButton.hidden = false;
 
-                    myLabel.text = "Chompy se alimenta"
-                    myLabel2.text = "somente de yummies que"
-                    myLabel3.text = "formam sua cor"
+                    myLabel.text = "Chompy feeds" //"Chompy se alimenta"
+                    myLabel2.text = "only from yummies" //"somente de yummies que"
+                    myLabel3.text = "that forms his color" //"formam sua cor"
                     
                 }
                 
@@ -122,9 +122,9 @@ class HowToPlayScene: SKScene
                     nextButton.hidden = true;
                     redoButton.hidden = false;
                     
-                    myLabel.text = "Cuidado!"
-                    myLabel2.text = "Chompy só pode errar"
-                    myLabel3.text = "de yummy 3 vezes"
+                    myLabel.text = "Watch out!" //"Cuidado!"
+                    myLabel2.text = "Chompy can miss yummy's" //"Chompy só pode errar"
+                    myLabel3.text = "color only 3 times" //"de yummy 3 vezes"
                 
                     runAction(SKAction.sequence([
                         SKAction.waitForDuration(1.0),
@@ -151,9 +151,9 @@ class HowToPlayScene: SKScene
                     redoButton.hidden = true
                     nextButton.hidden = false
                     
-                    myLabel.text = "Chompy está com fome"
-                    myLabel2.text = "e precisa comer muitos"
-                    myLabel3.text = "yummies"
+                    myLabel.text = "Chompy is hungry" //"Chompy está com fome"
+                    myLabel2.text = "and need to eat a lot" //"e precisa comer muitos"
+                    myLabel3.text = "of yummies" //"yummies"
                 }
                 else if(gambi == 3)
                 {
@@ -164,9 +164,10 @@ class HowToPlayScene: SKScene
                     redoButton.hidden = false
                     nextButton.hidden = false
                     
-                    myLabel.text = "Chompy se alimenta"
-                    myLabel2.text = "somente de yummies que"
-                    myLabel3.text = "formam sua cor"
+                    myLabel.text = "Chompy feeds" //"Chompy se alimenta"
+                    myLabel2.text = "only from yummies" //"somente de yummies que"
+                    myLabel3.text = "that form his color" //"formam sua cor"
+
                 }
 
             }
