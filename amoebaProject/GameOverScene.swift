@@ -14,6 +14,8 @@ class GameOverScene: SKScene {
     var againButton: SKNode! = nil
     var menubutton: SKNode! = nil
     
+    var mainView: UIView?
+    
     override init(size: CGSize) {
         
         super.init(size: size)
@@ -95,9 +97,19 @@ class GameOverScene: SKScene {
                     }
                     else if (name == "menu")
                     {
-                        let reveal = SKTransition.moveInWithDirection(SKTransitionDirection.Left, duration: 0.0)
-                        let scene = MenuScene(size: size)
-                        self.view?.presentScene(scene, transition:reveal)
+                        
+                        mainView = self.view
+                        let skView = mainView as! SKView
+                        
+                        let gameScene = MenuScene(size: skView.bounds.size)
+                        gameScene.scaleMode = SKSceneScaleMode.AspectFill
+                        gameScene.registerView(mainView!)
+                        skView.presentScene(gameScene)
+                        
+                        //self.removeFromParent()
+                        //let reveal = SKTransition.moveInWithDirection(SKTransitionDirection.Left, duration: 0.0)
+                        //let scene = MenuScene(size: size)
+                        //self.view?.presentScene(scene, transition:reveal)
                     }
                 }
 
@@ -105,6 +117,10 @@ class GameOverScene: SKScene {
     }
     
     //registro que salva a view principal para ter onde criar a proxima scene
+    func registerView(view:UIView)
+    {
+        mainView = view
+    }
     
     // 6
     required init(coder aDecoder: NSCoder) {
