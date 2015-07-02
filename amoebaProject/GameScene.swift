@@ -522,18 +522,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(4 * alienSpeed)))
         
-        
-        
-//        actionArray.addObject(SKAction.runBlock({
-//            var transition:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
-//            //var gameOverScene:SKScene = GameOverScene(size: self.size, won: false)
-//            //self.view!.presentScene(gameOverScene, transition: transition)
-//        }))
-//        
-//        actionArray.addObject(SKAction.removeFromParent())
-//        
-//        alien.runAction(SKAction.sequence(actionArray as [AnyObject]))
-        
         let loseAction = SKAction.runBlock() {
             let reveal = SKTransition.flipVerticalWithDuration(0.5)
             let gameOverScene = GameOverScene(size: self.size)
@@ -679,9 +667,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     sprite.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3.5)
                 }
                 
-            //}else{
-                
-                
                 if let name = nodeColor.name{
                     if(name == "btnY"){
                         //player = SKSpriteNode(imageNamed: "AlienAmarelo" as String)
@@ -709,25 +694,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         println(player.name!)
                         //createBlueAnimation()
                     }
-                //}
             }
-            
-            
-            
-            //            sprite.xScale = 0.5
-            //            sprite.yScale = 0.5
-            //sprite.position = location
-            
-            
-            
-            // let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            //sprite.runAction(SKAction.repeatActionForever(action))
-            
-            //self.addChild(sprite)
-            
-            
-            
             
         }
     }
