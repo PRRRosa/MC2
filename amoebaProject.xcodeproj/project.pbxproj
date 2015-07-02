@@ -387,7 +387,6 @@
 					};
 					D4B9BCE31B31E811009940A6 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 9468LRW88W;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 1;
