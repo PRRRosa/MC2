@@ -56,7 +56,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.fontSize = 50
         //scoreLabel.fontColor = UIColor.greenColor()
         scoreLabel.text =  String(format: "%05d", arguments: [score])
-        scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.1)
+        scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.05)
         self.addChild(scoreLabel)
     }
     
