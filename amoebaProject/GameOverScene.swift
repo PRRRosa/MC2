@@ -18,7 +18,7 @@ class GameOverScene: SKScene {
     
     var mainView: UIView?
     
-    var colorType: Int?
+    var colorType: Int = 0
     
     override init(size: CGSize) {
         
