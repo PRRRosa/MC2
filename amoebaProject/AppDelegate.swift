@@ -68,7 +68,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         completionHandler() // per developer documentation, app will terminate if we fail to call this
     }
+    
+    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+        
+        if let userInfo = userInfo, request = userInfo["request"] as? String {
+            if request == "getCounter" {
 
-
+                if let score = NSUserDefaults.standardUserDefaults().objectForKey("HighestScore") as? NSInteger {
+                
+                    reply(["score": score])
+                    return
+                }
+                else{
+                    reply(["score": NSKeyedArchiver.archivedDataWithRootObject("0")])
+                    return
+                }
+            }
+        }
+       reply([:])
+    }
+    
 }
 

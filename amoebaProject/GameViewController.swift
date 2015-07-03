@@ -64,15 +64,15 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         let skView = self.view as! SKView
         
         if skView.scene == nil {
-            skView.showsFPS = true
-            skView.showsNodeCount = true
+//            skView.showsFPS = true
+//            skView.showsNodeCount = true
             
             let menuScene = MenuScene(size: skView.bounds.size)
             menuScene.scaleMode = SKSceneScaleMode.AspectFill
             menuScene.registerView(self.view)
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            skView.showsPhysics = true
+//            skView.showsFPS = true
+//            skView.showsNodeCount = true
+//            skView.showsPhysics = true
             
             skView.presentScene(menuScene)
 

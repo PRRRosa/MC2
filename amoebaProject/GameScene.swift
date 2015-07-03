@@ -306,13 +306,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func createContent(){
         
         //let firstFrame: SKTexture = playerVermelhoAnimation[0]
-        let bgMusicURL = NSBundle.mainBundle().URLForResource("dubstep", withExtension: "mp3")
+        let bgMusicURL = NSBundle.mainBundle().URLForResource("zuera7", withExtension: "mp3")
         
         backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: bgMusicURL, error: nil)
         
         backgroundMusicPlayer.numberOfLoops = -1
         backgroundMusicPlayer.prepareToPlay()
-        //backgroundMusicPlayer.play()
+        backgroundMusicPlayer.volume -= 0.5
+        backgroundMusicPlayer.play()
         
         let gulpEffect = NSBundle.mainBundle().URLForResource("gulp", withExtension: "m4a")
         gulpSound = AVAudioPlayer(contentsOfURL: gulpEffect, error: nil)
@@ -739,7 +740,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func gameOver(){
         
-        if let savedScore: Int = NSUserDefaults.standardUserDefaults().objectForKey("HighestScore") as? Int{
+        if let savedScore: NSInteger = NSUserDefaults.standardUserDefaults().objectForKey("HighestScore") as? NSInteger{
         println(savedScore)
             if savedScore < score{
                 NSUserDefaults.standardUserDefaults().setObject(score, forKey:"HighestScore")
@@ -757,7 +758,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
             }
         }else{
-            var highestScore:Int = score
+            var highestScore: NSInteger = score
                     NSUserDefaults.standardUserDefaults().setObject(highestScore, forKey:"HighestScore")
                     NSUserDefaults.standardUserDefaults().synchronize()
                     //inserir score no gameCenter
