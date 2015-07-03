@@ -37,6 +37,7 @@ class MenuScene: SKScene
         backgroundImg.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
         self.addChild(backgroundImg)
         
+                
         let titleImg = SKSpriteNode(imageNamed: "Chompem")
         titleImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2 * 0.22)
         self.addChild(titleImg)

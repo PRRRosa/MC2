@@ -14,9 +14,11 @@ class GameOverScene: SKScene {
     var againButton: SKNode! = nil
     var menubutton: SKNode! = nil
     
+    var player: SKSpriteNode = SKSpriteNode()
+    
     var mainView: UIView?
     
-    var player: SKSpriteNode = SKSpriteNode()
+    var colorType: Int?
     
     override init(size: CGSize) {
         
@@ -43,15 +45,25 @@ class GameOverScene: SKScene {
         let gameOverImg = SKSpriteNode(imageNamed: "GameOVer")
         gameOverImg.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.7)
         
+        
         let retryImg = SKSpriteNode(imageNamed: "againbutton-1")
-        retryImg.position = CGPointMake(self.frame.size.width/2+75, self.frame.size.height * 0.4)
+        retryImg.position = CGPointMake(self.frame.size.width/2 + 75, self.frame.size.height/9)
         retryImg.name = "retry"
         
         let menu = SKSpriteNode(imageNamed: "menubutton-1")
-        menu.position = CGPointMake(self.frame.size.width/2-75, self.frame.size.height * 0.4)
+        menu.position = CGPointMake(self.frame.size.width/2-75, self.frame.size.height/9)
         menu.name = "menu"
         
-        
+        player = SKSpriteNode(imageNamed: "amoebaV_00")
+        player.position  = CGPointMake(self.frame.size.width/2, menu.position.y + 150)
+        player.zPosition += 1
+        if (colorType == 0){
+            createPurpleHitAnimation()
+        } else if (colorType == 1){
+            createOrangeHitAnimation()
+        }else {
+            createGreenHitAnimation()
+        }
 
         
 //        againButton = SKSpriteNode(imageNamed:"againButton")
@@ -61,11 +73,11 @@ class GameOverScene: SKScene {
         self.addChild(gameOverImg)
         self.addChild(retryImg)
         self.addChild(menu)
-        
-        
-        player.position  = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
-        createOrangeHitAnimation()
         self.addChild(player)
+
+        
+        
+        
         
 
 //        self.addChild(againButton)
@@ -103,7 +115,7 @@ class GameOverScene: SKScene {
         
         
         //playerMouthAnimation = mouthFrames
-        player.runAction((SKAction.animateWithTextures(playerFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"purpleHit")
+        player.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"purpleHit")
     }
     
     func createGreenHitAnimation(){
@@ -119,7 +131,7 @@ class GameOverScene: SKScene {
         
         
         //playerMouthAnimation = mouthFrames
-        player.runAction((SKAction.animateWithTextures(playerFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"greenHit")
+        player.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"greenHit")
     }
     
     func createOrangeHitAnimation(){

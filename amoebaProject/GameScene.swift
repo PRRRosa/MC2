@@ -774,6 +774,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         let reveal = SKTransition.flipVerticalWithDuration(0.5)
         let gameOverScene = GameOverScene(size: self.size)
+        if (player.name == "purple"){
+            gameOverScene.colorType = 0
+        }else if (player.name == "orange"){
+                gameOverScene.colorType = 1
+            }else {
+                gameOverScene.colorType = 2
+            }
+        
         self.view?.presentScene(gameOverScene, transition: reveal)
     }
 }
