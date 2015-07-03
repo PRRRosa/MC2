@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="15A204h" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
@@ -51,12 +51,12 @@
                     <items>
                         <group alignment="left" id="t8f-Gd-c4y">
                             <items>
-                                <label height="42.5" alignment="left" text="chompEM           Last Score:" numberOfLines="2" id="dVn-k0-2pr"/>
+                                <label height="42.5" alignment="left" text="chompEM           High Score:" numberOfLines="2" id="dVn-k0-2pr"/>
                             </items>
                         </group>
                         <group alignment="left" backgroundImage="Tinta_0" id="uCw-4Q-Ouw">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="oi" id="rJf-5Y-gR2">
+                                <label alignment="center" verticalAlignment="center" text="00" id="rJf-5Y-gR2">
                                     <fontDescription key="font" type="system" weight="light" pointSize="14"/>
                                 </label>
                             </items>

@@ -64,6 +64,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         let skView = self.view as! SKView
         
         if skView.scene == nil {
+
             //skView.showsFPS = true
             //skView.showsNodeCount = true
             

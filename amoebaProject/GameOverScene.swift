@@ -14,7 +14,11 @@ class GameOverScene: SKScene {
     var againButton: SKNode! = nil
     var menubutton: SKNode! = nil
     
+    var player: SKSpriteNode = SKSpriteNode()
+    
     var mainView: UIView?
+    
+    var colorType: Int = 0
     
     override init(size: CGSize) {
         
@@ -43,12 +47,23 @@ class GameOverScene: SKScene {
         
         
         let retryImg = SKSpriteNode(imageNamed: "againbutton-1")
-        retryImg.position = CGPointMake(self.frame.size.width/2+75, self.frame.size.height * 0.4)
+        retryImg.position = CGPointMake(self.frame.size.width/2 + 75, self.frame.size.height/9)
         retryImg.name = "retry"
         
         let menu = SKSpriteNode(imageNamed: "menubutton-1")
-        menu.position = CGPointMake(self.frame.size.width/2-75, self.frame.size.height * 0.4)
+        menu.position = CGPointMake(self.frame.size.width/2-75, self.frame.size.height/9)
         menu.name = "menu"
+        
+        player = SKSpriteNode(imageNamed: "amoebaV_00")
+        player.position  = CGPointMake(self.frame.size.width/2, menu.position.y + 150)
+        player.zPosition += 1
+        if (colorType == 0){
+            createPurpleHitAnimation()
+        } else if (colorType == 1){
+            createOrangeHitAnimation()
+        }else {
+            createGreenHitAnimation()
+        }
 
         
 //        againButton = SKSpriteNode(imageNamed:"againButton")
@@ -58,6 +73,11 @@ class GameOverScene: SKScene {
         self.addChild(gameOverImg)
         self.addChild(retryImg)
         self.addChild(menu)
+        self.addChild(player)
+
+        
+        
+        
         
 
 //        self.addChild(againButton)
@@ -81,6 +101,56 @@ class GameOverScene: SKScene {
        
         
     }
+    
+    func createPurpleHitAnimation(){
+        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaVioletaHit")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = playerAnimatedAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "amebaMortaRoxa_\(i)"
+            playerFrames.append(playerAnimatedAtlas.textureNamed(nameA))
+            
+        }
+        
+        
+        //playerMouthAnimation = mouthFrames
+        player.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"purpleHit")
+    }
+    
+    func createGreenHitAnimation(){
+        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaVerdeHit")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = playerAnimatedAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "amebaMortaVerde_\(i)"
+            playerFrames.append(playerAnimatedAtlas.textureNamed(nameA))
+            
+        }
+        
+        
+        //playerMouthAnimation = mouthFrames
+        player.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"greenHit")
+    }
+    
+    func createOrangeHitAnimation(){
+        let playerAnimatedAtlas = SKTextureAtlas(named: "amoebaLaranjaHit")
+        var playerFrames = [SKTexture]()
+        
+        let numImages = playerAnimatedAtlas.textureNames.count
+        for (var i = 0; i < numImages; i++) {
+            let nameA = "amebaMortaLaranja_\(i)"
+            playerFrames.append(playerAnimatedAtlas.textureNamed(nameA))
+            
+        }
+        
+        
+        //playerMouthAnimation = mouthFrames
+        player.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(playerFrames, timePerFrame: 0.01, resize: true, restore: true)), withKey:"orangeHit")
+    }
+    
+    
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
