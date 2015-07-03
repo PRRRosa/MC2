@@ -328,15 +328,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(backgroundImg)
         
         life1 = SKSpriteNode(imageNamed:"life1")
-        life1.position = CGPointMake(self.frame.size.width/4 - 70, self.frame.size.height * 0.15);
+        life1.position = CGPointMake(self.frame.size.width/4 - 60, self.frame.size.height * 0.15);
         self.addChild(life1)
         
         life2 = SKSpriteNode(imageNamed:"life1")
-        life2.position = CGPointMake(self.frame.size.width/4 - 40, self.frame.size.height * 0.15);
+        life2.position = CGPointMake(self.frame.size.width/4 - 30, self.frame.size.height * 0.15);
         self.addChild(life2)
         
         life3 = SKSpriteNode(imageNamed:"life1")
-        life3.position = CGPointMake(self.frame.size.width/4 - 10, self.frame.size.height * 0.15);
+        life3.position = CGPointMake(self.frame.size.width/4 , self.frame.size.height * 0.15);
         self.addChild(life3)
         
         
@@ -775,6 +775,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         let reveal = SKTransition.flipVerticalWithDuration(0.5)
         let gameOverScene = GameOverScene(size: self.size)
+        if (player.name == "purple"){
+            gameOverScene.colorType = 0
+        }else if (player.name == "orange"){
+                gameOverScene.colorType = 1
+            }else {
+                gameOverScene.colorType = 2
+            }
+        
         self.view?.presentScene(gameOverScene, transition: reveal)
     }
 }

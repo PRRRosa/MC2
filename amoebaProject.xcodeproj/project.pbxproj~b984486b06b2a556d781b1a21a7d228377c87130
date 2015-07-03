@@ -13,7 +13,6 @@
 		90BA191D1B45958A00D57CB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3161B39E2A8000BAA1F /* Images.xcassets */; };
 		90BA19201B45A69C00D57CB3 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BA191F1B45A69C00D57CB3 /* GameKit.framework */; };
 		C010ECD21B3CED9C00151101 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010ECD11B3CED9C00151101 /* MenuScene.swift */; };
-		C01F8C6E1B46EF4D008DEEA4 /* zuera7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C01F8C6D1B46EF4D008DEEA4 /* zuera7.mp3 */; };
 		C028FE931B3CE454000E37E9 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE921B3CE454000E37E9 /* GameOverScene.swift */; };
 		C028FE951B3CE481000E37E9 /* HowToPlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE941B3CE481000E37E9 /* HowToPlayScene.swift */; };
 		C028FE971B3CE4B4000E37E9 /* ScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE961B3CE4B4000E37E9 /* ScoreScene.swift */; };
@@ -92,7 +91,6 @@
 		30E933251B3C060600DD9D0F /* gulp.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = gulp.m4a; sourceTree = "<group>"; };
 		90BA191F1B45A69C00D57CB3 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		C010ECD11B3CED9C00151101 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
-		C01F8C6D1B46EF4D008DEEA4 /* zuera7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = zuera7.mp3; sourceTree = "<group>"; };
 		C028FE921B3CE454000E37E9 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		C028FE941B3CE481000E37E9 /* HowToPlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPlayScene.swift; sourceTree = "<group>"; };
 		C028FE961B3CE4B4000E37E9 /* ScoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreScene.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 		D44BE3131B3873A1000BAA1F /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				C01F8C6D1B46EF4D008DEEA4 /* zuera7.mp3 */,
 				30E933251B3C060600DD9D0F /* gulp.m4a */,
 				D44BE3141B3873A1000BAA1F /* dubstep.mp3 */,
 			);
@@ -454,7 +451,6 @@
 				D4B9BCF81B31E811009940A6 /* LaunchScreen.xib in Resources */,
 				D44BE3171B39E2A8000BAA1F /* Images.xcassets in Resources */,
 				D407E60E1B430A4C002EB9AA /* amoebaVioleta.atlas in Resources */,
-				C01F8C6E1B46EF4D008DEEA4 /* zuera7.mp3 in Resources */,
 				D4772ABB1B444E6B00E184CC /* amoebaVerdeHit.atlas in Resources */,
 				D407E6121B430DEF002EB9AA /* amoebaLaranjaBoca.atlas in Resources */,
 				D44BE3151B3873A1000BAA1F /* dubstep.mp3 in Resources */,
