@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		301E47F91B42F73B00681A61 /* cartoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 301E47F81B42F73B00681A61 /* cartoon.ttf */; };
 		30E933261B3C060600DD9D0F /* gulp.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 30E933251B3C060600DD9D0F /* gulp.m4a */; };
+		90BA191C1B45958800D57CB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3161B39E2A8000BAA1F /* Images.xcassets */; };
+		90BA191D1B45958A00D57CB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44BE3161B39E2A8000BAA1F /* Images.xcassets */; };
+		90BA19201B45A69C00D57CB3 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BA191F1B45A69C00D57CB3 /* GameKit.framework */; };
 		C010ECD21B3CED9C00151101 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010ECD11B3CED9C00151101 /* MenuScene.swift */; };
 		C028FE931B3CE454000E37E9 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE921B3CE454000E37E9 /* GameOverScene.swift */; };
 		C028FE951B3CE481000E37E9 /* HowToPlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028FE941B3CE481000E37E9 /* HowToPlayScene.swift */; };
@@ -86,6 +89,7 @@
 		301E47F51B42F2CB00681A61 /* orange juice.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "orange juice.ttf"; sourceTree = "<group>"; };
 		301E47F81B42F73B00681A61 /* cartoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cartoon.ttf; sourceTree = "<group>"; };
 		30E933251B3C060600DD9D0F /* gulp.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = gulp.m4a; sourceTree = "<group>"; };
+		90BA191F1B45A69C00D57CB3 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		C010ECD11B3CED9C00151101 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		C028FE921B3CE454000E37E9 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		C028FE941B3CE481000E37E9 /* HowToPlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPlayScene.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BA19201B45A69C00D57CB3 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +228,7 @@
 		D4B9BCDB1B31E811009940A6 = {
 			isa = PBXGroup;
 			children = (
+				90BA191F1B45A69C00D57CB3 /* GameKit.framework */,
 				D44BE3181B39E344000BAA1F /* Animations */,
 				D44BE3131B3873A1000BAA1F /* Sounds */,
 				D4B9BCE61B31E811009940A6 /* amoebaProject */,
@@ -377,10 +383,15 @@
 					};
 					C0C2F1671B42D88600234065 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 9Z6JFPM7L2;
+						DevelopmentTeam = 9468LRW88W;
 					};
 					D4B9BCE31B31E811009940A6 = {
 						CreatedOnToolsVersion = 6.3.2;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 					D4B9BCFC1B31E811009940A6 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -414,6 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BA191C1B45958800D57CB3 /* Images.xcassets in Resources */,
 				C0C2F1651B42D88600234065 /* Images.xcassets in Resources */,
 				C0C2F1691B42D88600234065 /* amoebaProject WatchKit App.app in Resources */,
 			);
@@ -423,6 +435,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BA191D1B45958A00D57CB3 /* Images.xcassets in Resources */,
 				C0C2F1711B42D88600234065 /* Interface.storyboard in Resources */,
 				C0C2F1731B42D88600234065 /* Images.xcassets in Resources */,
 			);
@@ -555,7 +568,7 @@
 				);
 				INFOPLIST_FILE = "amoebaProject WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = "amoebaProject WatchKit Extension";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -567,7 +580,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "amoebaProject WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = "amoebaProject WatchKit Extension";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -585,7 +598,7 @@
 				IBSC_MODULE = amoebaProject_WatchKit_Extension;
 				INFOPLIST_FILE = "amoebaProject WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "amoebaProject WatchKit App";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -602,7 +615,7 @@
 				IBSC_MODULE = amoebaProject_WatchKit_Extension;
 				INFOPLIST_FILE = "amoebaProject WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "amoebaProject WatchKit App";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -702,7 +715,7 @@
 				INFOPLIST_FILE = amoebaProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = amoebaProject;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -717,7 +730,7 @@
 				INFOPLIST_FILE = amoebaProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = amoebaProject;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -737,7 +750,7 @@
 				);
 				INFOPLIST_FILE = amoebaProjectTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = amoebaProjectTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amoebaProject.app/amoebaProject";
 			};
 			name = Debug;
@@ -752,7 +765,7 @@
 				);
 				INFOPLIST_FILE = amoebaProjectTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = amoebaProjectTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amoebaProject.app/amoebaProject";
 			};
 			name = Release;

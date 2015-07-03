@@ -17,7 +17,7 @@ class NotificationController: WKUserNotificationInterfaceController {
         // Initialize variables here.
         super.init()
         
-        imgAmeba.setImageNamed("Amoeba_")
+        imgAmeba.setImageNamed("Notification_")
         
         // Configure interface objects here.
     }

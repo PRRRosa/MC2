@@ -34,6 +34,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var randomEnemyNumber = 0
     var life = 3
     var alienSpeed = 1.0
+    
+    var life3:SKSpriteNode = SKSpriteNode()
+    var life2:SKSpriteNode = SKSpriteNode()
+    var life1:SKSpriteNode = SKSpriteNode()
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
@@ -51,7 +56,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.fontSize = 50
         //scoreLabel.fontColor = UIColor.greenColor()
         scoreLabel.text =  String(format: "%05d", arguments: [score])
-        scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.1)
+        scoreLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height * 0.05)
         self.addChild(scoreLabel)
     }
     
@@ -321,6 +326,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.addChild(backgroundImg)
         
+        life1 = SKSpriteNode(imageNamed:"life1")
+        life1.position = CGPointMake(self.frame.size.width/4 - 60, self.frame.size.height * 0.15);
+        self.addChild(life1)
+        
+        life2 = SKSpriteNode(imageNamed:"life1")
+        life2.position = CGPointMake(self.frame.size.width/4 - 30, self.frame.size.height * 0.15);
+        self.addChild(life2)
+        
+        life3 = SKSpriteNode(imageNamed:"life1")
+        life3.position = CGPointMake(self.frame.size.width/4 , self.frame.size.height * 0.15);
+        self.addChild(life3)
+        
         
         player = SKSpriteNode(imageNamed: "AmoebaVermelha")
         //player = SKSpriteNode(texture: firstFrame)
@@ -419,14 +436,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 createPurpleHitAnimation()
                 monster.removeFromParent()
                 life--
+                perdeVida()
+                
             }else if (projectile.name == "green"){
                 createGreenHitAnimation()
                 monster.removeFromParent()
                 life--
+                perdeVida()
             }else {
                 createOrangeHitAnimation()
                 monster.removeFromParent()
                 life--
+                perdeVida()
             }
 
             if (life == 0){
@@ -437,6 +458,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         
+    }
+    
+    func perdeVida()
+    {
+        if (life == 2)
+        {
+            life3.hidden = true
+        }
+        else if (life == 1)
+        {
+            life2.hidden = true
+        }
+        else if (life == 0)
+        {
+            life1.hidden = true
+        }
     }
     
     func eatCount(){
@@ -521,18 +558,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var actionArray:NSMutableArray = NSMutableArray()
         
         actionArray.addObject(SKAction.moveTo(CGPointMake(position, -alien.size.height), duration: NSTimeInterval(4 * alienSpeed)))
-        
-        
-        
-//        actionArray.addObject(SKAction.runBlock({
-//            var transition:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
-//            //var gameOverScene:SKScene = GameOverScene(size: self.size, won: false)
-//            //self.view!.presentScene(gameOverScene, transition: transition)
-//        }))
-//        
-//        actionArray.addObject(SKAction.removeFromParent())
-//        
-//        alien.runAction(SKAction.sequence(actionArray as [AnyObject]))
         
         let loseAction = SKAction.runBlock() {
             let reveal = SKTransition.flipVerticalWithDuration(0.5)
@@ -669,7 +694,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //if((location.y >= self.frame.size.height/3 - 20) && (location.y <= self.frame.size.height/2)){
                 
                 if(location.x < self.frame.size.width * 0.3 ){
-                    sprite.position = CGPointMake((self.frame.size.width/2)/2 - 10, self.frame.size.height/3.5)
+                    sprite.position = CGPointMake((self.frame.size.width/2)/2, self.frame.size.height/3.5)
                 }
                 if(location.x > self.frame.size.width * 0.6){
                     sprite.position = CGPointMake((self.frame.size.width/2)+(self.frame.size.width/2)/2, self.frame.size.height/3.5)
@@ -678,9 +703,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if((location.x >= self.frame.size.width * 0.3) && (location.x <= self.frame.size.width * 0.6)){
                     sprite.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3.5)
                 }
-                
-            //}else{
-                
                 
                 if let name = nodeColor.name{
                     if(name == "btnY"){
@@ -709,25 +731,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         println(player.name!)
                         //createBlueAnimation()
                     }
-                //}
             }
-            
-            
-            
-            //            sprite.xScale = 0.5
-            //            sprite.yScale = 0.5
-            //sprite.position = location
-            
-            
-            
-            // let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            //sprite.runAction(SKAction.repeatActionForever(action))
-            
-            //self.addChild(sprite)
-            
-            
-            
             
         }
     }
@@ -770,6 +774,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         let reveal = SKTransition.flipVerticalWithDuration(0.5)
         let gameOverScene = GameOverScene(size: self.size)
+        if (player.name == "purple"){
+            gameOverScene.colorType = 0
+        }else if (player.name == "orange"){
+                gameOverScene.colorType = 1
+            }else {
+                gameOverScene.colorType = 2
+            }
+        
         self.view?.presentScene(gameOverScene, transition: reveal)
     }
 }

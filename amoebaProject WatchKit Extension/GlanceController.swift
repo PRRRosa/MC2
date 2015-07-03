@@ -12,8 +12,11 @@ import Foundation
 
 class GlanceController: WKInterfaceController {
 
+    @IBOutlet weak var lblScore: WKInterfaceLabel!
+    @IBOutlet weak var tinta: WKInterfaceGroup!
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        tinta.setBackgroundImageNamed("Tinta_")
         
         // Configure interface objects here.
     }
@@ -21,6 +24,8 @@ class GlanceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        self.tinta.startAnimatingWithImagesInRange(NSMakeRange(0, 45), duration: 2, repeatCount: 1)
     }
 
     override func didDeactivate() {
