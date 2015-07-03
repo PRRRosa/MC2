@@ -46,6 +46,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             createContent()
             contentCreated = true
         }
+        //println(NSUserDefaults.standardUserDefaults().objectForKey("HighestScore")!)
         
     }
     
